@@ -322,71 +322,94 @@ body {
 header.site-header {
     background: var(--bg-card);
     border-bottom: 1px solid var(--border-color);
-    padding: 0.75rem 1.5rem;
+    padding: 0.6rem 2rem;
     position: sticky;
     top: 0;
     z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
     transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .header-branding {
     display: flex;
     align-items: center;
-    gap: 0.8rem;
+    gap: 1.1rem;
+    text-decoration: none;
+}
+
+.header-logo-img {
+    height: 52px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.2s ease, filter 0.25s ease;
+}
+
+.header-branding:hover .header-logo-img {
+    transform: scale(1.03);
+}
+
+body[data-theme="dark"] .header-logo-img {
+    filter: invert(0.92) hue-rotate(180deg) brightness(1.2);
 }
 
 .header-title {
     font-family: var(--font-urdu);
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     color: var(--accent-emerald);
     line-height: 1.4;
+    font-weight: 700;
 }
 
 .header-subtitle {
-    font-size: 0.8rem;
+    font-size: 1.02rem;
     color: var(--accent-gold);
     background: var(--quote-bg);
     border: 1px solid var(--quote-border);
-    padding: 2px 8px;
+    padding: 4px 12px;
     border-radius: 6px;
-    font-weight: 600;
+    font-weight: 700;
+    font-family: var(--font-urdu);
+    line-height: 1.6;
 }
 
 .header-controls {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.8rem;
 }
 
 /* Nav Links - Segmented Pill Control */
 .nav-links {
     display: flex;
     background: var(--ctrl-bg);
-    padding: 3px;
-    border-radius: 9px;
-    gap: 3px;
+    padding: 4px;
+    border-radius: 10px;
+    gap: 4px;
     transition: background-color 0.25s ease;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--text-secondary);
-    font-size: 0.84rem;
+    font-family: var(--font-urdu);
+    font-size: 1.1rem;
     font-weight: 600;
-    padding: 0.4rem 0.9rem;
-    border-radius: 7px;
+    padding: 0.45rem 1.2rem;
+    border-radius: 8px;
     transition: all 0.2s ease;
     white-space: nowrap;
+    line-height: 1.6;
 }
 
 .nav-links a.active {
     color: var(--accent-emerald);
     background: var(--bg-card);
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    font-weight: 700;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.12);
 }
 
 .nav-links a:hover:not(.active) {
@@ -397,25 +420,28 @@ header.site-header {
 .settings-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.5rem;
     background: var(--ctrl-bg);
     color: var(--text-primary);
     border: 1px solid var(--border-color);
-    padding: 0.42rem 0.85rem;
+    padding: 0.45rem 1.15rem;
     border-radius: 8px;
-    font-size: 0.84rem;
+    font-family: var(--font-urdu);
+    font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
-    font-family: inherit;
+    line-height: 1.6;
 }
 
 .settings-btn:hover {
     background: var(--ctrl-bg-hover);
-    color: var(--accent-emerald);
+    border-color: var(--accent-emerald);
 }
 
 .settings-btn svg {
+    width: 18px;
+    height: 18px;
     flex-shrink: 0;
 }
 
@@ -687,12 +713,23 @@ body[data-theme="dark"] .frontispiece-title-img {
 .foreword-article h2 {
     font-family: var(--font-urdu);
     color: var(--accent-emerald);
-    font-size: calc(1.85rem * var(--font-scale));
+    font-size: calc(2.3rem * var(--font-scale));
     text-align: center;
     margin-bottom: 1.5rem;
-    line-height: 2.0;
+    line-height: 1.9;
     padding-bottom: 1rem;
     border-bottom: 1px dashed var(--border-color);
+    font-weight: 700;
+}
+
+.chapter-main-title {
+    font-family: var(--font-urdu);
+    color: var(--accent-emerald);
+    font-size: calc(2.35rem * var(--font-scale));
+    text-align: center;
+    margin: 2.2rem 0 1.5rem 0;
+    line-height: 1.9;
+    font-weight: 700;
 }
 
 .khutbah-banner {
@@ -707,7 +744,7 @@ body[data-theme="dark"] .frontispiece-title-img {
 
 .khutbah-arabic {
     font-family: var(--font-persian);
-    font-size: calc(1.65rem * var(--font-scale));
+    font-size: calc(1.85rem * var(--font-scale));
     line-height: 2.2;
     color: var(--accent-emerald);
     font-weight: 700;
@@ -716,7 +753,7 @@ body[data-theme="dark"] .frontispiece-title-img {
 
 .essay-subheading {
     font-family: var(--font-urdu);
-    font-size: calc(1.45rem * var(--font-scale));
+    font-size: calc(1.6rem * var(--font-scale));
     color: var(--accent-emerald);
     line-height: 1.9;
     margin: 2.4rem 0 1rem;
@@ -725,6 +762,7 @@ body[data-theme="dark"] .frontispiece-title-img {
     display: flex;
     align-items: center;
     gap: 0.6rem;
+    font-weight: 700;
 }
 
 .subheading-bullet {
@@ -1277,8 +1315,8 @@ footer.site-footer {
     header.site-header {
         flex-direction: column;
         align-items: stretch;
-        gap: 0.7rem;
-        padding: 0.75rem 0.9rem;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
     }
 
     .header-branding {
@@ -1286,13 +1324,19 @@ footer.site-footer {
         width: 100%;
     }
 
-    .header-title {
-        font-size: 1.25rem;
+    .header-logo-img {
+        height: 44px;
+    }
+
+    .header-subtitle {
+        font-size: 0.95rem;
+        padding: 3px 8px;
     }
 
     .header-controls {
         width: 100%;
         justify-content: space-between;
+        gap: 0.5rem;
     }
 
     .nav-links {
@@ -1302,13 +1346,13 @@ footer.site-footer {
     .nav-links a {
         flex: 1;
         text-align: center;
-        padding: 0.42rem 0.5rem;
-        font-size: 0.8rem;
+        padding: 0.45rem 0.6rem;
+        font-size: 0.98rem;
     }
 
     .settings-btn {
-        padding: 0.42rem 0.65rem;
-        font-size: 0.8rem;
+        padding: 0.45rem 0.85rem;
+        font-size: 0.98rem;
     }
 
     .container {
@@ -1615,17 +1659,17 @@ def build_html_editions(batches):
 </head>
 <body>
   <header class="site-header">
-    <div class="header-branding">
-      <div class="header-title">گُلِسْتَانِ سَعْدِیْ</div>
-      <div class="header-subtitle">{subtitle}</div>
-    </div>
+    <a href="index.html" class="header-branding" title="گُلِسْتَانِ سَعْدِیْ — صفحۂ اول">
+      <img src="images/header_logo.png" alt="گُلِسْتَانِ مُتَرْجَمْ" class="header-logo-img"/>
+      <span class="header-subtitle">{subtitle}</span>
+    </a>
     <div class="header-controls">
       <nav class="nav-links">
         <a href="original.html" class="{orig_active}">اصل متن مع ترجمہ</a>
         <a href="study.html" class="{study_active}">مطالعہ و فرہنگ</a>
       </nav>
       <button type="button" id="settingsToggle" class="settings-btn" aria-label="ترتیبات / Reader Settings" title="ترتیبات (Settings)">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="3"></circle>
           <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
         </svg>
@@ -1835,7 +1879,7 @@ def build_html_editions(batches):
 
             elif stype == "bilingual_text":
                 d_header = f'<div class="page-marker">صفحات {b["batch_info"]["pages_pdf"][0]} تا {b["batch_info"]["pages_pdf"][1]} (کتابی صفحہ {b["batch_info"]["pages_book"][0]} تا {b["batch_info"]["pages_book"][1]})</div>'
-                d_header += f'<h2 style="font-family:var(--font-urdu);color:var(--accent-emerald);text-align:center;margin:2rem 0;">{escape_xml(sec["title_ur"])}</h2>'
+                d_header += f'<h2 class="chapter-main-title">{escape_xml(sec["title_ur"])}</h2>'
                 body_orig.append(d_header)
                 body_study.append(d_header)
 
