@@ -957,47 +957,87 @@ body[data-theme="dark"] .frontispiece-title-img {
     text-align: right;
 }
 
-.page-footnotes-title {
+.footnote-mark-ref {
     font-family: var(--font-urdu);
-    font-size: 1.12rem;
-    font-weight: 700;
+    font-size: 0.85em;
+    color: var(--accent-emerald);
+    text-decoration: none;
+    margin: 0 3px;
+    font-weight: bold;
+    vertical-align: super;
+    line-height: 1;
+    transition: color 0.15s ease;
+}
+
+.footnote-mark-ref:hover {
     color: var(--accent-crimson);
-    margin-bottom: 0.5rem;
+}
+
+.page-footnotes-container {
+    margin-top: 1.8rem;
+    padding-top: 1.1rem;
+    border-top: 1.5px solid var(--border-color);
+    position: relative;
+}
+
+.page-footnotes-container::before {
+    content: "✤  حواشیِ کتاب  ✤";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-card);
+    padding: 0 14px;
+    font-family: var(--font-urdu);
+    font-size: 0.92rem;
+    color: var(--accent-emerald);
+    letter-spacing: 0.05em;
+}
+
+.page-footnotes-title {
+    display: none;
 }
 
 .footnote-entry {
     font-family: var(--font-urdu);
-    font-size: calc(1.02rem * var(--font-scale) * var(--urdu-size-offset));
-    color: var(--text-secondary);
-    line-height: 2.1;
-    margin-bottom: 0.4rem;
-    padding-right: 0.4rem;
+    font-size: calc(1.04rem * var(--font-scale) * var(--urdu-size-offset));
+    color: var(--text-primary);
+    line-height: var(--line-height-urdu);
+    margin-bottom: 0.5rem;
+    padding-right: 0.3rem;
     text-align: justify;
     text-justify: inter-word;
 }
 
+.fn-num {
+    color: var(--accent-crimson);
+    font-weight: bold;
+    margin-left: 6px;
+}
+
 /* ============================================================
-   COLLAPSIBLE STUDY SCAFFOLDING (Study Edition)
+   COLLAPSIBLE ENGLISH STUDY DRAWER (Study Edition)
+   Hidden by default so original book page remains completely visible
    ============================================================ */
-.study-collapse {
-    margin: 0.5rem 0 0.8rem 0;
-    border: 1px dashed var(--study-border);
+.en-study-collapse {
+    margin: 0.3rem 0 0.6rem 0;
+    border: 1px solid transparent;
     border-radius: 8px;
+    background: transparent;
+    transition: all 0.2s ease;
+}
+
+.en-study-collapse[open] {
+    border-color: var(--border-color);
     background: var(--study-bg);
-    overflow: hidden;
-    transition: border-color 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    padding-bottom: 0.4rem;
 }
 
-.study-collapse[open] {
-    border-style: solid;
-    border-color: var(--accent-emerald);
-    box-shadow: 0 2px 10px rgba(22, 92, 50, 0.05);
-}
-
-.study-summary {
+.en-study-summary {
     list-style: none;
     cursor: pointer;
-    padding: 0.4rem 0.8rem;
+    padding: 0.2rem 0;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -1005,68 +1045,138 @@ body[data-theme="dark"] .frontispiece-title-img {
     outline: none;
 }
 
-.study-summary::-webkit-details-marker {
+.en-study-summary::-webkit-details-marker {
     display: none;
 }
 
-.study-badge {
+.en-study-badge {
     display: inline-flex;
     align-items: center;
-    gap: 0.45rem;
-    font-family: var(--font-urdu);
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--tag-color);
-    background: var(--tag-bg);
-    border: 1px solid var(--tag-border);
-    padding: 3px 12px;
-    border-radius: 12px;
-    transition: all 0.2s ease;
+    gap: 0.4rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 3px 11px;
+    border-radius: 14px;
+    transition: all 0.18s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
 }
 
-.study-summary:hover .study-badge {
+.en-study-summary:hover .en-study-badge {
     background: var(--ctrl-bg-hover);
     color: var(--accent-emerald);
     border-color: var(--accent-emerald);
 }
 
-.study-collapse[open] .study-badge {
+.en-study-collapse[open] .en-study-badge {
     background: var(--accent-emerald);
     color: #ffffff;
     border-color: var(--accent-emerald);
 }
 
-.study-drawer {
-    padding: 1.1rem 1.3rem;
-    border-top: 1px solid var(--study-border);
+.en-badge-arrow {
+    font-size: 0.72rem;
+    transition: transform 0.2s ease;
 }
 
-.study-notes-en {
-    font-size: calc(0.92rem * var(--font-scale));
+.en-study-collapse[open] .en-badge-arrow {
+    transform: rotate(180deg);
+}
+
+.en-study-drawer {
+    padding: 0.9rem 1.1rem;
+    border-top: 1px solid var(--border-color);
+    direction: ltr;
+    text-align: left;
+}
+
+.en-trans-card {
+    background: var(--bg-card);
+    border-left: 3.5px solid var(--accent-gold);
+    border-radius: 4px;
+    padding: 0.65rem 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+.en-card-label {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.73rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent-gold);
+    margin-bottom: 0.25rem;
+}
+
+.en-trans-quote {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: calc(1rem * var(--font-scale));
+    font-style: italic;
     color: var(--text-primary);
-    margin-bottom: 0.8rem;
     line-height: 1.6;
 }
 
-.study-notes-ur {
-    font-family: var(--font-urdu);
-    font-size: calc(1.12rem * var(--font-scale) * var(--urdu-size-offset));
-    line-height: var(--line-height-urdu);
+.en-notes-card {
+    background: var(--bg-card);
+    border-left: 3.5px solid var(--accent-emerald);
+    border-radius: 4px;
+    padding: 0.65rem 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+.en-notes-card .en-card-label {
+    color: var(--accent-emerald);
+}
+
+.en-notes-text {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: calc(0.9rem * var(--font-scale));
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.ur-notes-card {
+    background: var(--bg-card);
+    border-right: 3.5px solid var(--accent-emerald);
+    border-left: none;
+    border-radius: 4px;
+    padding: 0.65rem 0.9rem;
+    margin-bottom: 0.75rem;
     direction: rtl;
     text-align: right;
+}
+
+.ur-notes-card .ur-card-label {
+    font-family: var(--font-urdu);
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: var(--accent-emerald);
+    margin-bottom: 0.25rem;
+}
+
+.ur-notes-card .ur-notes-text {
+    font-family: var(--font-urdu);
+    font-size: calc(1.08rem * var(--font-scale) * var(--urdu-size-offset));
+    line-height: var(--line-height-urdu);
     color: var(--text-primary);
-    margin-bottom: 1rem;
-    background: var(--bg-card);
-    padding: 0.75rem 0.9rem;
-    border-radius: 6px;
-    border-right: 3px solid var(--accent-emerald);
+}
+
+.en-vocab-card {
+    margin-top: 0.75rem;
+}
+
+.en-vocab-card .en-card-label {
+    color: var(--persian-color);
 }
 
 /* Vocabulary Table */
 .vocab-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 0.8rem;
+    margin-top: 0.5rem;
     font-size: calc(0.88rem * var(--font-scale));
 }
 

@@ -1060,47 +1060,87 @@ body[data-theme="dark"] .frontispiece-title-img {
     text-align: right;
 }
 
-.page-footnotes-title {
+.footnote-mark-ref {
     font-family: var(--font-urdu);
-    font-size: 1.12rem;
-    font-weight: 700;
+    font-size: 0.85em;
+    color: var(--accent-emerald);
+    text-decoration: none;
+    margin: 0 3px;
+    font-weight: bold;
+    vertical-align: super;
+    line-height: 1;
+    transition: color 0.15s ease;
+}
+
+.footnote-mark-ref:hover {
     color: var(--accent-crimson);
-    margin-bottom: 0.5rem;
+}
+
+.page-footnotes-container {
+    margin-top: 1.8rem;
+    padding-top: 1.1rem;
+    border-top: 1.5px solid var(--border-color);
+    position: relative;
+}
+
+.page-footnotes-container::before {
+    content: "✤  حواشیِ کتاب  ✤";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-card);
+    padding: 0 14px;
+    font-family: var(--font-urdu);
+    font-size: 0.92rem;
+    color: var(--accent-emerald);
+    letter-spacing: 0.05em;
+}
+
+.page-footnotes-title {
+    display: none;
 }
 
 .footnote-entry {
     font-family: var(--font-urdu);
-    font-size: calc(1.02rem * var(--font-scale) * var(--urdu-size-offset));
-    color: var(--text-secondary);
-    line-height: 2.1;
-    margin-bottom: 0.4rem;
-    padding-right: 0.4rem;
+    font-size: calc(1.04rem * var(--font-scale) * var(--urdu-size-offset));
+    color: var(--text-primary);
+    line-height: var(--line-height-urdu);
+    margin-bottom: 0.5rem;
+    padding-right: 0.3rem;
     text-align: justify;
     text-justify: inter-word;
 }
 
+.fn-num {
+    color: var(--accent-crimson);
+    font-weight: bold;
+    margin-left: 6px;
+}
+
 /* ============================================================
-   COLLAPSIBLE STUDY SCAFFOLDING (Study Edition)
+   COLLAPSIBLE ENGLISH STUDY DRAWER (Study Edition)
+   Hidden by default so original book page remains completely visible
    ============================================================ */
-.study-collapse {
-    margin: 0.5rem 0 0.8rem 0;
-    border: 1px dashed var(--study-border);
+.en-study-collapse {
+    margin: 0.3rem 0 0.6rem 0;
+    border: 1px solid transparent;
     border-radius: 8px;
+    background: transparent;
+    transition: all 0.2s ease;
+}
+
+.en-study-collapse[open] {
+    border-color: var(--border-color);
     background: var(--study-bg);
-    overflow: hidden;
-    transition: border-color 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    padding-bottom: 0.4rem;
 }
 
-.study-collapse[open] {
-    border-style: solid;
-    border-color: var(--accent-emerald);
-    box-shadow: 0 2px 10px rgba(22, 92, 50, 0.05);
-}
-
-.study-summary {
+.en-study-summary {
     list-style: none;
     cursor: pointer;
-    padding: 0.4rem 0.8rem;
+    padding: 0.2rem 0;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -1108,68 +1148,138 @@ body[data-theme="dark"] .frontispiece-title-img {
     outline: none;
 }
 
-.study-summary::-webkit-details-marker {
+.en-study-summary::-webkit-details-marker {
     display: none;
 }
 
-.study-badge {
+.en-study-badge {
     display: inline-flex;
     align-items: center;
-    gap: 0.45rem;
-    font-family: var(--font-urdu);
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--tag-color);
-    background: var(--tag-bg);
-    border: 1px solid var(--tag-border);
-    padding: 3px 12px;
-    border-radius: 12px;
-    transition: all 0.2s ease;
+    gap: 0.4rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 3px 11px;
+    border-radius: 14px;
+    transition: all 0.18s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
 }
 
-.study-summary:hover .study-badge {
+.en-study-summary:hover .en-study-badge {
     background: var(--ctrl-bg-hover);
     color: var(--accent-emerald);
     border-color: var(--accent-emerald);
 }
 
-.study-collapse[open] .study-badge {
+.en-study-collapse[open] .en-study-badge {
     background: var(--accent-emerald);
     color: #ffffff;
     border-color: var(--accent-emerald);
 }
 
-.study-drawer {
-    padding: 1.1rem 1.3rem;
-    border-top: 1px solid var(--study-border);
+.en-badge-arrow {
+    font-size: 0.72rem;
+    transition: transform 0.2s ease;
 }
 
-.study-notes-en {
-    font-size: calc(0.92rem * var(--font-scale));
+.en-study-collapse[open] .en-badge-arrow {
+    transform: rotate(180deg);
+}
+
+.en-study-drawer {
+    padding: 0.9rem 1.1rem;
+    border-top: 1px solid var(--border-color);
+    direction: ltr;
+    text-align: left;
+}
+
+.en-trans-card {
+    background: var(--bg-card);
+    border-left: 3.5px solid var(--accent-gold);
+    border-radius: 4px;
+    padding: 0.65rem 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+.en-card-label {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.73rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent-gold);
+    margin-bottom: 0.25rem;
+}
+
+.en-trans-quote {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: calc(1rem * var(--font-scale));
+    font-style: italic;
     color: var(--text-primary);
-    margin-bottom: 0.8rem;
     line-height: 1.6;
 }
 
-.study-notes-ur {
-    font-family: var(--font-urdu);
-    font-size: calc(1.12rem * var(--font-scale) * var(--urdu-size-offset));
-    line-height: var(--line-height-urdu);
+.en-notes-card {
+    background: var(--bg-card);
+    border-left: 3.5px solid var(--accent-emerald);
+    border-radius: 4px;
+    padding: 0.65rem 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+.en-notes-card .en-card-label {
+    color: var(--accent-emerald);
+}
+
+.en-notes-text {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: calc(0.9rem * var(--font-scale));
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.ur-notes-card {
+    background: var(--bg-card);
+    border-right: 3.5px solid var(--accent-emerald);
+    border-left: none;
+    border-radius: 4px;
+    padding: 0.65rem 0.9rem;
+    margin-bottom: 0.75rem;
     direction: rtl;
     text-align: right;
+}
+
+.ur-notes-card .ur-card-label {
+    font-family: var(--font-urdu);
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: var(--accent-emerald);
+    margin-bottom: 0.25rem;
+}
+
+.ur-notes-card .ur-notes-text {
+    font-family: var(--font-urdu);
+    font-size: calc(1.08rem * var(--font-scale) * var(--urdu-size-offset));
+    line-height: var(--line-height-urdu);
     color: var(--text-primary);
-    margin-bottom: 1rem;
-    background: var(--bg-card);
-    padding: 0.75rem 0.9rem;
-    border-radius: 6px;
-    border-right: 3px solid var(--accent-emerald);
+}
+
+.en-vocab-card {
+    margin-top: 0.75rem;
+}
+
+.en-vocab-card .en-card-label {
+    color: var(--persian-color);
 }
 
 /* Vocabulary Table */
 .vocab-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 0.8rem;
+    margin-top: 0.5rem;
     font-size: calc(0.88rem * var(--font-scale));
 }
 
@@ -1754,52 +1864,69 @@ def render_study_accordion(entry):
     vocab = study.get("vocabulary", [])
     notes_en = study.get("notes_en", "")
     notes_ur = study.get("notes_ur", "")
+    english_trans = entry.get("english_trans", "")
 
-    if not (vocab or notes_en or notes_ur):
+    if not (vocab or notes_en or notes_ur or english_trans):
         return ""
 
-    s_html = """          <details class="study-collapse">
-            <summary class="study-summary">
-              <span class="study-badge">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                </svg>
-                <span>حل لغات و فرہنگ</span>
+    eid = entry.get("id", "")
+    s_html = f"""          <details class="en-study-collapse" id="study_{eid}">
+            <summary class="en-study-summary" title="Click to view English translation, notes, and vocabulary">
+              <span class="en-study-badge">
+                <span class="en-flag">🇬🇧</span>
+                <span class="en-badge-text">English Notes &amp; Translation</span>
+                <span class="en-badge-arrow">▾</span>
               </span>
             </summary>
-            <div class="study-drawer">
+            <div class="en-study-drawer">
+"""
+    if english_trans:
+        s_html += f"""              <div class="en-trans-card">
+                <div class="en-card-label">English Translation</div>
+                <div class="en-trans-quote">“{escape_xml(english_trans)}”</div>
+              </div>
 """
     if notes_en:
-        s_html += f'              <div class="study-notes-en"><strong>Grammar & Context (English):</strong> {escape_xml(notes_en)}</div>\n'
+        s_html += f"""              <div class="en-notes-card">
+                <div class="en-card-label">Grammar &amp; Commentary (English)</div>
+                <div class="en-notes-text">{escape_xml(notes_en)}</div>
+              </div>
+"""
     if notes_ur:
-        s_html += f'              <div class="study-notes-ur"><strong>وضاحت و نکات (اردو):</strong> {escape_xml(notes_ur)}</div>\n'
-
+        s_html += f"""              <div class="ur-notes-card">
+                <div class="ur-card-label">وضاحت و نکات (اضافی)</div>
+                <div class="ur-notes-text">{escape_xml(notes_ur)}</div>
+              </div>
+"""
     if vocab:
-        s_html += """              <table class="vocab-table">
-                <thead>
-                  <tr>
-                    <th>لفظ (Word)</th>
-                    <th>صرفی حیثیت (Grammar)</th>
-                    <th>Urdu Meaning</th>
-                    <th>English Meaning</th>
-                    <th>Urdu Cognates (مشترک الفاظ)</th>
-                  </tr>
-                </thead>
-                <tbody>
+        s_html += """              <div class="en-vocab-card">
+                <div class="en-card-label">Vocabulary &amp; Root Analysis</div>
+                <table class="vocab-table">
+                  <thead>
+                    <tr>
+                      <th>لفظ (Word)</th>
+                      <th>صرفی حیثیت (Grammar)</th>
+                      <th>English Meaning</th>
+                      <th>اردو معنی</th>
+                      <th>Urdu Cognates (مشترک الفاظ)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
 """
         for v in vocab:
             cognates_html = "".join([f'<span class="cognate-tag">{escape_xml(c.strip())}</span>' for c in v.get("urdu_cognates", "").split("،")])
-            s_html += f"""                  <tr>
-                    <td class="vocab-persian" data-label="لفظ">{escape_xml(v["persian"])}</td>
-                    <td data-label="صرفی حیثیت">{escape_xml(v.get("grammar", ""))}</td>
-                    <td style="direction:rtl;font-family:var(--font-urdu);" data-label="Urdu">{escape_xml(v.get("meaning_ur", ""))}</td>
-                    <td data-label="English">{escape_xml(v.get("meaning_en", ""))}</td>
-                    <td data-label="مشترک الفاظ">{cognates_html}</td>
-                  </tr>
+            s_html += f"""                    <tr>
+                      <td class="vocab-persian" data-label="لفظ">{escape_xml(v["persian"])}</td>
+                      <td data-label="Grammar">{escape_xml(v.get("grammar", ""))}</td>
+                      <td data-label="English">{escape_xml(v.get("meaning_en", ""))}</td>
+                      <td style="direction:rtl;font-family:var(--font-urdu);" data-label="Urdu">{escape_xml(v.get("meaning_ur", ""))}</td>
+                      <td data-label="مشترک الفاظ">{cognates_html}</td>
+                    </tr>
 """
-        s_html += "                </tbody>\n              </table>\n"
-
+        s_html += """                  </tbody>
+                </table>
+              </div>
+"""
     s_html += "            </div>\n          </details>\n"
     return s_html
 
@@ -1807,10 +1934,12 @@ def render_book_page(section_title, book_page, page_entries, is_study=False):
     urdu_page = to_urdu_numerals(book_page) if str(book_page).isdigit() else str(book_page)
 
     page_footnotes = []
+    fn_map = {}
     for e in page_entries:
         for fn in e.get("footnotes", []):
-            if fn not in page_footnotes:
+            if fn not in fn_map:
                 page_footnotes.append(fn)
+                fn_map[fn] = len(page_footnotes)
 
     html = f"""<section class="book-page-leaf" id="page_{book_page}">
   <!-- 3-Part Lithograph Running Header -->
@@ -1828,10 +1957,18 @@ def render_book_page(section_title, book_page, page_entries, is_study=False):
         etype = e.get("type", "prose")
         eid = e.get("id", "")
 
+        # Generate footnote callouts if this entry has footnotes
+        fn_callouts = []
+        for fn in e.get("footnotes", []):
+            fn_idx = fn_map[fn]
+            urdu_sym = f"{to_urdu_numerals(fn_idx)}؎"
+            fn_callouts.append(f'<sup class="fn-callout"><a href="#fn_p{book_page}_{fn_idx}" class="footnote-mark-ref" title="حاشیہ نمبر {urdu_sym}">[{urdu_sym}]</a></sup>')
+        fn_callouts_html = "".join(fn_callouts)
+
         if etype in ["bismillah", "quran"]:
             arabic_txt = e.get("arabic") or e.get("persian", "")
             html += f"""      <div class="quran-block" id="{eid}">
-        <div class="quran-arabic">{escape_xml(arabic_txt)}</div>
+        <div class="quran-arabic">{escape_xml(arabic_txt)}{fn_callouts_html}</div>
         <div class="urdu-interlinear-quran">{escape_xml(e.get("urdu_interlinear", ""))}</div>
 """
             if is_study:
@@ -1840,7 +1977,7 @@ def render_book_page(section_title, book_page, page_entries, is_study=False):
 
         elif etype == "prose":
             html += f"""      <div class="prose-interlinear-block" id="{eid}">
-        <div class="persian-prose">{escape_xml(e.get("persian", ""))}</div>
+        <div class="persian-prose">{escape_xml(e.get("persian", ""))}{fn_callouts_html}</div>
         <div class="urdu-interlinear-prose">{escape_xml(e.get("urdu_interlinear", ""))}</div>
 """
             if is_study:
@@ -1858,7 +1995,7 @@ def render_book_page(section_title, book_page, page_entries, is_study=False):
           </div>
           <div class="verse-col-divider"></div>
           <div class="verse-col verse-col-left">
-            <div class="persian-verse">{escape_xml(e.get("persian_m2", ""))}</div>
+            <div class="persian-verse">{escape_xml(e.get("persian_m2", ""))}{fn_callouts_html}</div>
             <div class="urdu-interlinear-verse">{escape_xml(e.get("urdu_m2", ""))}</div>
           </div>
         </div>
@@ -1869,10 +2006,13 @@ def render_book_page(section_title, book_page, page_entries, is_study=False):
 
         elif etype == "stanza":
             header_txt = e.get("header_persian", "قطعہ")
+            lines = e.get("lines", [])
             html += f"""      <div class="couplet-block" id="{eid}">
         <div class="verse-ornament">{escape_xml(header_txt)}</div>
 """
-            for line in e.get("lines", []):
+            for l_idx, line in enumerate(lines):
+                is_last_line = (l_idx == len(lines) - 1)
+                line_fn_html = fn_callouts_html if is_last_line else ""
                 html += f"""        <div class="verse-couplet-grid">
           <div class="verse-col verse-col-right">
             <div class="persian-verse">{escape_xml(line.get("persian_m1", ""))}</div>
@@ -1880,7 +2020,7 @@ def render_book_page(section_title, book_page, page_entries, is_study=False):
           </div>
           <div class="verse-col-divider"></div>
           <div class="verse-col verse-col-left">
-            <div class="persian-verse">{escape_xml(line.get("persian_m2", ""))}</div>
+            <div class="persian-verse">{escape_xml(line.get("persian_m2", ""))}{line_fn_html}</div>
             <div class="urdu-interlinear-verse">{escape_xml(line.get("urdu_m2", ""))}</div>
           </div>
         </div>
@@ -1892,12 +2032,16 @@ def render_book_page(section_title, book_page, page_entries, is_study=False):
     html += "    </div>\n"
 
     if page_footnotes:
-        html += """    <div class="page-footnotes-container">
+        html += f"""    <div class="page-footnotes-container">
       <div class="page-footnotes-title">حواشی و تشریحاتِ صفحہ:</div>
 """
-        for fn in page_footnotes:
-            html += f'      <div class="footnote-entry">• {escape_xml(fn)}</div>\n'
+        for idx, fn in enumerate(page_footnotes, 1):
+            urdu_sym = f"{to_urdu_numerals(idx)}؎"
+            html += f'      <div class="footnote-entry" id="fn_p{book_page}_{idx}"><span class="fn-num">[{urdu_sym}]</span> {escape_xml(fn)}</div>\n'
         html += "    </div>\n"
+
+    html += "  </div>\n</section>\n"
+    return html
 
     html += "  </div>\n</section>\n"
     return html
@@ -2152,14 +2296,11 @@ def build_html_editions(batches):
                 body_orig.append(d_header)
                 body_study.append(d_header)
 
-                # Reading toolbar with Expand/Collapse All Study Notes button (Study Edition only)
+                # Reading toolbar with Expand/Collapse All English Notes button (Study Edition only)
                 study_toolbar = """<div class="study-reading-toolbar">
-  <button type="button" id="toggleAllNotesBtn" class="btn-toggle-notes" title="تمام فرہنگ اور تشریحات کھولیں یا بند کریں">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-    </svg>
-    <span id="toggleAllNotesText">تمام حل لغات کھولیں (Expand All Notes)</span>
+  <button type="button" id="toggleAllNotesBtn" class="btn-toggle-notes" title="تمام انگریزی نوٹس اور ترجمہ کھولیں یا چھپائیں">
+    <span style="font-size:1.15rem;line-height:1;">🇬🇧</span>
+    <span id="toggleAllNotesText">انگریزی نوٹس و ترجمہ کھولیں (Show English Notes &amp; Translation)</span>
   </button>
 </div>"""
                 body_study.append(study_toolbar)
@@ -2455,17 +2596,20 @@ table.verse-table td.col-divider {
                     body_s += entry_o
 
                     # Study rendering
+                    english_trans = e.get("english_trans", "")
                     study = e.get("study", {})
-                    if study.get("vocabulary") or study.get("notes_en") or study.get("notes_ur"):
+                    if english_trans or study.get("vocabulary") or study.get("notes_en") or study.get("notes_ur"):
                         body_s += '<div class="study-box">'
+                        if english_trans:
+                            body_s += f'<div style="font-style:italic;margin-bottom:0.7em;color:#1a221e;background:#faf7f0;padding:8px 12px;border-left:3px solid #996515;"><strong>English Translation:</strong> “{escape_xml(english_trans)}”</div>'
                         if study.get("notes_en"):
                             body_s += f'<p><strong>Study Note (English):</strong> {escape_xml(study["notes_en"])}</p>'
                         if study.get("notes_ur"):
                             body_s += f'<p><strong>وضاحت (اردو):</strong> {escape_xml(study["notes_ur"])}</p>'
                         if study.get("vocabulary"):
-                            body_s += '<table class="vocab"><tr><th>لفظ</th><th>معنی (اردو)</th><th>English</th><th>اردو مشترک الفاظ</th></tr>'
+                            body_s += '<table class="vocab"><tr><th>لفظ</th><th>English</th><th>معنی (اردو)</th><th>اردو مشترک الفاظ</th></tr>'
                             for v in study["vocabulary"]:
-                                body_s += f'<tr><td><strong>{escape_xml(v["persian"])}</strong></td><td>{escape_xml(v.get("meaning_ur",""))}</td><td>{escape_xml(v.get("meaning_en",""))}</td><td>{escape_xml(v.get("urdu_cognates",""))}</td></tr>'
+                                body_s += f'<tr><td><strong>{escape_xml(v["persian"])}</strong></td><td>{escape_xml(v.get("meaning_en",""))}</td><td>{escape_xml(v.get("meaning_ur",""))}</td><td>{escape_xml(v.get("urdu_cognates",""))}</td></tr>'
                             body_s += '</table>'
                         body_s += '</div>'
                     body_s += '<hr/>'

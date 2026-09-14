@@ -186,21 +186,21 @@
       }
     });
 
-    // Global Study Notes Accordion Toggle (Expand / Collapse All)
+    // Global English Study Notes Accordion Toggle (Expand / Collapse All English Notes)
     const toggleAllNotesBtn = document.getElementById('toggleAllNotesBtn');
     const toggleAllNotesText = document.getElementById('toggleAllNotesText');
     if (toggleAllNotesBtn) {
       let allExpanded = false;
       toggleAllNotesBtn.addEventListener('click', () => {
         allExpanded = !allExpanded;
-        const detailsList = document.querySelectorAll('details.study-collapse');
+        const detailsList = document.querySelectorAll('details.en-study-collapse');
         detailsList.forEach(d => {
           d.open = allExpanded;
         });
         if (toggleAllNotesText) {
           toggleAllNotesText.textContent = allExpanded 
-            ? 'تمام حل لغات بند کریں (Collapse All Notes)' 
-            : 'تمام حل لغات کھولیں (Expand All Notes)';
+            ? 'انگریزی نوٹس و ترجمہ چھپائیں (Hide English Notes & Translation)' 
+            : 'انگریزی نوٹس و ترجمہ کھولیں (Show English Notes & Translation)';
         }
       });
     }
