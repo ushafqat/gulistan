@@ -820,6 +820,34 @@ body[data-theme="dark"] .frontispiece-title-img {
     gap: 0.8rem;
 }
 
+/* Page In-line Section Title Cartouche */
+.page-section-cartouche {
+    margin: 1.6rem 0 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    background: var(--banner-bg);
+    border: 2px double var(--border-jadwal);
+    border-radius: 6px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.cartouche-title-persian {
+    font-family: var(--font-urdu);
+    font-size: calc(1.4rem * var(--font-scale));
+    font-weight: 700;
+    color: var(--accent-emerald);
+    line-height: 2.1;
+}
+
+.cartouche-title-urdu {
+    font-family: var(--font-urdu);
+    font-size: calc(1.02rem * var(--font-scale));
+    color: var(--text-secondary);
+    line-height: 1.85;
+    margin-top: 0.25rem;
+}
+
 /* Centered Calligraphic Verse Ornament (بیت / قطعہ) */
 .verse-ornament {
     text-align: center;

@@ -923,6 +923,34 @@ body[data-theme="dark"] .frontispiece-title-img {
     gap: 0.8rem;
 }
 
+/* Page In-line Section Title Cartouche */
+.page-section-cartouche {
+    margin: 1.6rem 0 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    background: var(--banner-bg);
+    border: 2px double var(--border-jadwal);
+    border-radius: 6px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.cartouche-title-persian {
+    font-family: var(--font-urdu);
+    font-size: calc(1.4rem * var(--font-scale));
+    font-weight: 700;
+    color: var(--accent-emerald);
+    line-height: 2.1;
+}
+
+.cartouche-title-urdu {
+    font-family: var(--font-urdu);
+    font-size: calc(1.02rem * var(--font-scale));
+    color: var(--text-secondary);
+    line-height: 1.85;
+    margin-top: 0.25rem;
+}
+
 /* Centered Calligraphic Verse Ornament (بیت / قطعہ) */
 .verse-ornament {
     text-align: center;
@@ -1954,6 +1982,13 @@ def render_book_page(section_title, book_page, page_entries, is_study=False):
     <div class="page-content-flow">
 """
     for e in page_entries:
+        if e.get("section_banner"):
+            sb = e["section_banner"]
+            html += f"""      <div class="page-section-cartouche">
+        <div class="cartouche-title-persian">{escape_xml(sb.get("persian", ""))}</div>
+        <div class="cartouche-title-urdu">{escape_xml(sb.get("urdu", ""))}</div>
+      </div>\n"""
+
         etype = e.get("type", "prose")
         eid = e.get("id", "")
 
@@ -1985,10 +2020,10 @@ def render_book_page(section_title, book_page, page_entries, is_study=False):
             html += "      </div>\n"
 
         elif etype == "couplet":
-            header_txt = e.get("header_persian", "بیت")
+            header_txt = e.get("header_persian")
+            ornament_html = f'        <div class="verse-ornament">{escape_xml(header_txt)}</div>\n' if header_txt else ""
             html += f"""      <div class="couplet-block" id="{eid}">
-        <div class="verse-ornament">{escape_xml(header_txt)}</div>
-        <div class="verse-couplet-grid">
+{ornament_html}        <div class="verse-couplet-grid">
           <div class="verse-col verse-col-right">
             <div class="persian-verse">{escape_xml(e.get("persian_m1", ""))}</div>
             <div class="urdu-interlinear-verse">{escape_xml(e.get("urdu_m1", ""))}</div>
@@ -2005,11 +2040,11 @@ def render_book_page(section_title, book_page, page_entries, is_study=False):
             html += "      </div>\n"
 
         elif etype == "stanza":
-            header_txt = e.get("header_persian", "قطعہ")
+            header_txt = e.get("header_persian")
+            ornament_html = f'        <div class="verse-ornament">{escape_xml(header_txt)}</div>\n' if header_txt else ""
             lines = e.get("lines", [])
             html += f"""      <div class="couplet-block" id="{eid}">
-        <div class="verse-ornament">{escape_xml(header_txt)}</div>
-"""
+{ornament_html}"""
             for l_idx, line in enumerate(lines):
                 is_last_line = (l_idx == len(lines) - 1)
                 line_fn_html = fn_callouts_html if is_last_line else ""
@@ -2290,34 +2325,38 @@ def build_html_editions(batches):
                 body_orig.append(fw_html)
                 body_study.append(fw_html)
 
-            elif stype == "bilingual_text":
-                d_header = f'<div class="page-marker">صفحات {b["batch_info"]["pages_pdf"][0]} تا {b["batch_info"]["pages_pdf"][1]} (کتابی صفحہ {b["batch_info"]["pages_book"][0]} تا {b["batch_info"]["pages_book"][1]})</div>'
-                d_header += f'<h2 class="chapter-main-title">{escape_xml(sec["title_ur"])}</h2>'
-                body_orig.append(d_header)
-                body_study.append(d_header)
+    # Gather all bilingual entries across batches by book page
+    bilingual_pages = {}
+    for b in batches:
+        for sec in b["sections"]:
+            if sec.get("content_type") == "bilingual_text":
+                for e in sec.get("entries", []):
+                    bp = str(e.get("book_page") or "1")
+                    if bp not in bilingual_pages:
+                        bilingual_pages[bp] = []
+                    bilingual_pages[bp].append(e)
 
-                # Reading toolbar with Expand/Collapse All English Notes button (Study Edition only)
-                study_toolbar = """<div class="study-reading-toolbar">
+    if bilingual_pages:
+        d_header = '<h2 class="chapter-main-title">دِیْبَاجَہ (مقدمۂ کتاب)</h2>'
+        body_orig.append(d_header)
+        body_study.append(d_header)
+
+        # Reading toolbar with Expand/Collapse All English Notes button (Study Edition only)
+        study_toolbar = """<div class="study-reading-toolbar">
   <button type="button" id="toggleAllNotesBtn" class="btn-toggle-notes" title="تمام انگریزی نوٹس اور ترجمہ کھولیں یا چھپائیں">
     <span style="font-size:1.15rem;line-height:1;">🇬🇧</span>
     <span id="toggleAllNotesText">انگریزی نوٹس و ترجمہ کھولیں (Show English Notes &amp; Translation)</span>
   </button>
 </div>"""
-                body_study.append(study_toolbar)
+        body_study.append(study_toolbar)
 
-                # Group entries by book_page for continuous book-page layout
-                pages_dict = {}
-                for e in sec.get("entries", []):
-                    bp = e.get("book_page") or "1"
-                    if bp not in pages_dict:
-                        pages_dict[bp] = []
-                    pages_dict[bp].append(e)
-
-                for bp, page_entries in pages_dict.items():
-                    orig_page_html = render_book_page(sec["title_ur"], bp, page_entries, is_study=False)
-                    study_page_html = render_book_page(sec["title_ur"], bp, page_entries, is_study=True)
-                    body_orig.append(orig_page_html)
-                    body_study.append(study_page_html)
+        sorted_pages = sorted(bilingual_pages.keys(), key=lambda x: int(x) if x.isdigit() else 999)
+        for bp in sorted_pages:
+            page_entries = bilingual_pages[bp]
+            orig_page_html = render_book_page("دیباچہ", bp, page_entries, is_study=False)
+            study_page_html = render_book_page("دیباچہ", bp, page_entries, is_study=True)
+            body_orig.append(orig_page_html)
+            body_study.append(study_page_html)
 
     with open(os.path.join(HTML_DIR, "original.html"), "w", encoding="utf-8") as f:
         f.write(header_template.format(
@@ -2548,7 +2587,14 @@ table.verse-table td.col-divider {
 
                 for e in sec.get("entries", []):
                     # Original rendering
-                    entry_o = f'<div id="{e["id"]}">'
+                    entry_o = ""
+                    if e.get("section_banner"):
+                        sb = e["section_banner"]
+                        entry_o += f"""<div style="margin:22px 0 16px 0;padding:12px 16px;background:#e2f0e6;border:2px solid #165c32;border-radius:6px;text-align:center;">
+  <div style="font-size:1.35em;font-weight:bold;color:#165c32;line-height:2.0;">{escape_xml(sb.get("persian",""))}</div>
+  <div style="font-size:0.95em;color:#4a5c52;margin-top:4px;line-height:1.8;">{escape_xml(sb.get("urdu",""))}</div>
+</div>"""
+                    entry_o += f'<div id="{e["id"]}">'
                     if e["type"] in ["bismillah", "quran"]:
                         entry_o += f'<div class="quran">{escape_xml(e.get("persian") or e.get("arabic"))}</div>'
                         entry_o += f'<div class="urdu-interlinear" style="text-align:center;">{escape_xml(e["urdu_interlinear"])}</div>'
@@ -2556,7 +2602,8 @@ table.verse-table td.col-divider {
                         entry_o += f'<div class="persian-text">{escape_xml(e["persian"])}</div>'
                         entry_o += f'<div class="urdu-interlinear">{escape_xml(e["urdu_interlinear"])}</div>'
                     elif e["type"] == "couplet":
-                        entry_o += f'<div class="verse-ornament">✤ {escape_xml(e.get("header_persian", "بیت"))} ✤</div>'
+                        if e.get("header_persian"):
+                            entry_o += f'<div class="verse-ornament">✤ {escape_xml(e["header_persian"])} ✤</div>'
                         entry_o += f"""<table class="verse-table">
   <tr>
     <td>
@@ -2570,7 +2617,8 @@ table.verse-table td.col-divider {
   </tr>
 </table>"""
                     elif e["type"] == "stanza":
-                        entry_o += f'<div class="verse-ornament">✤ {escape_xml(e.get("header_persian", "قطعہ"))} ✤</div>'
+                        if e.get("header_persian"):
+                            entry_o += f'<div class="verse-ornament">✤ {escape_xml(e["header_persian"])} ✤</div>'
                         for l in e.get("lines", []):
                             entry_o += f"""<table class="verse-table">
   <tr>

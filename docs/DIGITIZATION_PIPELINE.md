@@ -64,7 +64,10 @@ This updates:
 * `dist/Gulistan_Study_Edition.epub` & `docs/Gulistan_Study_Edition.epub`
 
 ### Step 6: WebKit Visual Verification
-Render headless browser snapshots of newly compiled pages using `scratch/render_snapshot.swift` and inspect with `view_file` to verify font metrics, couplet balance, and drawer behavior.
+Render headless browser snapshots of newly compiled pages using `scripts/snapshot_pages.swift` and inspect with `view_file` to verify font metrics, couplet balance, and drawer behavior:
+```bash
+swift scripts/snapshot_pages.swift dist/html/study.html page_11 page_18
+```
 
 ### Step 7: Git Commit & GitHub Pages Deployment
 ```bash
