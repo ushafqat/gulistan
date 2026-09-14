@@ -144,6 +144,8 @@ def generate_css():
     /* Typography settings */
     --font-urdu: 'Mehr Nastaliq', 'Noto Nastaliq Urdu', serif;
     --font-persian: 'Amiri', serif;
+    --font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-ui-urdu: 'Noto Naskh Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-scale: 1.0;
     --line-height-urdu: 2.3;
     --urdu-size-offset: 1.05;
@@ -382,67 +384,35 @@ body[data-theme="dark"] .header-logo-img {
     gap: 0.8rem;
 }
 
-/* Nav Links - Segmented Pill Control */
-.nav-links {
-    display: flex;
-    background: var(--ctrl-bg);
-    padding: 4px;
-    border-radius: 10px;
-    gap: 4px;
-    transition: background-color 0.25s ease;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-secondary);
-    font-family: var(--font-urdu);
-    font-size: 1.1rem;
-    font-weight: 600;
-    padding: 0.45rem 1.2rem;
-    border-radius: 8px;
-    transition: all 0.2s ease;
-    white-space: nowrap;
-    line-height: 1.6;
-}
-
-.nav-links a.active {
-    color: var(--accent-emerald);
-    background: var(--bg-card);
-    font-weight: 700;
-    box-shadow: 0 1px 5px rgba(0,0,0,0.12);
-}
-
-.nav-links a:hover:not(.active) {
-    color: var(--text-primary);
-}
-
-/* Settings Toggle Button */
-.settings-btn {
+/* Header Action Buttons (ToC & Settings) */
+.header-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.45rem;
     background: var(--ctrl-bg);
     color: var(--text-primary);
     border: 1px solid var(--border-color);
-    padding: 0.45rem 1.15rem;
+    padding: 0.45rem 0.95rem;
     border-radius: 8px;
-    font-family: var(--font-urdu);
-    font-size: 1.1rem;
+    font-family: var(--font-ui-urdu);
+    font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
-    line-height: 1.6;
+    line-height: 1.25;
+    white-space: nowrap;
 }
 
-.settings-btn:hover {
+.header-btn:hover {
     background: var(--ctrl-bg-hover);
     border-color: var(--accent-emerald);
 }
 
-.settings-btn svg {
-    width: 18px;
-    height: 18px;
+.header-btn svg {
+    width: 17px;
+    height: 17px;
     flex-shrink: 0;
+    color: var(--accent-emerald);
 }
 
 .container {
@@ -544,11 +514,14 @@ body[data-theme="dark"] .frontispiece-title-img {
 .fp-badge {
     background: var(--tag-bg);
     color: var(--tag-color);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     padding: 2px 8px;
     border-radius: 6px;
     border: 1px solid var(--tag-border);
     margin-right: 0.4rem;
+    font-family: var(--font-ui-urdu);
+    line-height: 1.35;
+    vertical-align: middle;
 }
 
 .fp-inst {
@@ -607,7 +580,8 @@ body[data-theme="dark"] .frontispiece-title-img {
     cursor: pointer;
     text-decoration: none;
     transition: all 0.2s ease;
-    font-family: inherit;
+    font-family: var(--font-ui-urdu);
+    line-height: 1.35;
 }
 
 .view-cover-btn:hover, .download-epub-btn:hover {
@@ -1364,12 +1338,13 @@ body[data-theme="dark"] .frontispiece-title-img {
     border: 1.5px solid var(--accent-emerald);
     padding: 0.45rem 1.2rem;
     border-radius: 20px;
-    font-family: var(--font-urdu);
-    font-size: 1.05rem;
-    font-weight: 700;
+    font-family: var(--font-ui-urdu);
+    font-size: 0.88rem;
+    font-weight: 600;
     cursor: pointer;
     box-shadow: 0 2px 6px rgba(0,0,0,0.04);
     transition: all 0.2s ease;
+    line-height: 1.35;
 }
 
 .btn-toggle-notes:hover {
@@ -1381,13 +1356,15 @@ footer.site-footer {
     text-align: center;
     padding: 2rem 1rem;
     color: var(--text-secondary);
-    font-size: 0.85rem;
+    font-family: var(--font-ui-urdu);
+    font-size: 0.88rem;
     border-top: 1px solid var(--border-color);
     margin-top: 3.5rem;
+    line-height: 1.6;
 }
 
 /* ============================================================
-   SETTINGS DRAWER & MODAL STYLES
+   SETTINGS DRAWER & MODAL STYLES (System UI Typography)
    ============================================================ */
 .settings-overlay {
     position: fixed;
@@ -1426,6 +1403,7 @@ footer.site-footer {
     transform: translateY(20px) scale(0.97);
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     direction: rtl;
+    font-family: var(--font-ui-urdu);
 }
 
 .settings-overlay.open .settings-modal {
@@ -1438,13 +1416,15 @@ footer.site-footer {
     align-items: center;
     padding: 1.1rem 1.35rem;
     border-bottom: 1px solid var(--border-color);
+    font-family: var(--font-ui-urdu);
 }
 
 .settings-header h3 {
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--accent-emerald);
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family: var(--font-ui-urdu);
+    margin: 0;
 }
 
 .settings-close-btn {
@@ -1469,6 +1449,7 @@ footer.site-footer {
     display: flex;
     flex-direction: column;
     gap: 1.4rem;
+    font-family: var(--font-ui-urdu);
 }
 
 .setting-group {
@@ -1481,17 +1462,81 @@ footer.site-footer {
     display: flex;
     flex-direction: column;
     gap: 0.15rem;
+    font-family: var(--font-ui-urdu);
 }
 
 .label-title {
     font-size: 0.92rem;
     font-weight: 700;
     color: var(--text-primary);
+    font-family: var(--font-ui-urdu);
 }
 
 .label-desc {
     font-size: 0.77rem;
     color: var(--text-secondary);
+    font-family: var(--font-ui-urdu);
+}
+
+/* Edition Switcher in Settings */
+.edition-switcher {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+    margin-top: 0.25rem;
+}
+
+.edition-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.75rem 0.85rem;
+    border-radius: 10px;
+    border: 1.5px solid var(--border-color);
+    background: var(--ctrl-bg);
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    direction: ltr;
+    text-align: left;
+    gap: 0.2rem;
+}
+
+.edition-btn:hover {
+    border-color: var(--accent-emerald);
+    background: var(--ctrl-bg-hover);
+    transform: translateY(-1px);
+}
+
+.edition-btn.active {
+    border-color: var(--accent-emerald);
+    background: var(--bg-card);
+    box-shadow: 0 2px 10px rgba(22, 92, 50, 0.12);
+    outline: 2px solid var(--accent-emerald);
+}
+
+.edition-btn .edition-title {
+    font-family: var(--font-system);
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--accent-emerald);
+    line-height: 1.25;
+}
+
+.edition-btn .edition-title-ur {
+    font-family: var(--font-ui-urdu);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    direction: rtl;
+    line-height: 1.35;
+}
+
+.edition-btn .edition-desc {
+    font-family: var(--font-system);
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    line-height: 1.3;
 }
 
 .segmented-options {
@@ -1517,7 +1562,7 @@ footer.site-footer {
     gap: 0.2rem;
     transition: all 0.2s ease;
     color: var(--text-secondary);
-    font-family: inherit;
+    font-family: var(--font-ui-urdu);
 }
 
 .opt-btn:hover {
@@ -1546,6 +1591,7 @@ footer.site-footer {
 .opt-btn small {
     font-size: 0.7rem;
     opacity: 0.85;
+    font-family: var(--font-ui-urdu);
 }
 
 .theme-options {
@@ -1568,7 +1614,7 @@ footer.site-footer {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s;
-    font-family: inherit;
+    font-family: var(--font-ui-urdu);
 }
 
 .theme-btn:hover {
@@ -1607,7 +1653,7 @@ footer.site-footer {
     border-radius: 6px;
     font-size: 0.76rem;
     cursor: pointer;
-    font-family: inherit;
+    font-family: var(--font-ui-urdu);
     transition: all 0.2s;
 }
 
@@ -1617,50 +1663,484 @@ footer.site-footer {
 }
 
 /* ============================================================
+   TABLE OF CONTENTS (ToC) MODAL DRAWER
+   ============================================================ */
+.toc-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.52);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    padding: 1rem;
+}
+
+.toc-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.toc-modal {
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 580px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 14px 44px rgba(0,0,0,0.25);
+    transform: translateY(20px) scale(0.97);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    direction: rtl;
+    font-family: var(--font-ui-urdu);
+}
+
+.toc-overlay.open .toc-modal {
+    transform: translateY(0) scale(1);
+}
+
+.toc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem 1.35rem;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--bg-card);
+    font-family: var(--font-ui-urdu);
+}
+
+.toc-header-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.toc-header-title-wrap svg {
+    color: var(--accent-emerald);
+}
+
+.toc-header h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--accent-emerald);
+    font-family: var(--font-ui-urdu);
+    margin: 0;
+}
+
+.toc-close-btn {
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    line-height: 1;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.toc-close-btn:hover {
+    background: rgba(0,0,0,0.06);
+    color: var(--text-primary);
+}
+
+/* Resume Reading Banner in ToC */
+.toc-resume-banner {
+    background: var(--banner-bg);
+    border-bottom: 1px solid var(--banner-border);
+    padding: 0.75rem 1.35rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
+    font-family: var(--font-ui-urdu);
+}
+
+.toc-resume-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.toc-resume-badge {
+    font-size: 0.72rem;
+    color: var(--accent-emerald);
+    font-weight: 700;
+    font-family: var(--font-ui-urdu);
+}
+
+.toc-resume-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-family: var(--font-ui-urdu);
+}
+
+.toc-resume-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--accent-emerald);
+    color: #ffffff;
+    border: none;
+    padding: 0.45rem 0.9rem;
+    border-radius: 8px;
+    font-family: var(--font-ui-urdu);
+    font-size: 0.84rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.toc-resume-btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+
+.toc-resume-btn svg {
+    transform: scaleX(-1);
+}
+
+/* ToC Navigation Tabs */
+.toc-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--ctrl-bg);
+    padding: 0.35rem 0.6rem 0 0.6rem;
+    gap: 0.4rem;
+    font-family: var(--font-ui-urdu);
+}
+
+.toc-tab-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    padding: 0.65rem 0.8rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+    color: var(--text-secondary);
+    font-family: var(--font-ui-urdu);
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    border-radius: 6px 6px 0 0;
+}
+
+.toc-tab-btn small {
+    font-size: 0.72rem;
+    opacity: 0.8;
+    font-family: var(--font-system);
+}
+
+.toc-tab-btn:hover {
+    color: var(--text-primary);
+    background: rgba(0,0,0,0.03);
+}
+
+.toc-tab-btn.active {
+    background: var(--bg-card);
+    color: var(--accent-emerald);
+    border-bottom-color: var(--accent-emerald);
+}
+
+/* ToC Modal Body */
+.toc-body {
+    padding: 1.1rem 1.35rem;
+    overflow-y: auto;
+    flex: 1;
+    max-height: calc(90vh - 160px);
+    font-family: var(--font-ui-urdu);
+}
+
+.toc-tab-pane {
+    display: none;
+}
+
+.toc-tab-pane.active {
+    display: block;
+}
+
+/* Sections List */
+.toc-section-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.toc-section-item {
+    border: 1px solid var(--border-color);
+    border-radius: 9px;
+    background: var(--bg-card);
+    transition: all 0.2s ease;
+}
+
+.toc-section-item:hover {
+    border-color: var(--accent-emerald);
+    background: var(--quote-bg);
+}
+
+.toc-section-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    gap: 0.8rem;
+    font-family: var(--font-ui-urdu);
+}
+
+.toc-sec-title-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.toc-sec-title-ur {
+    font-size: 0.96rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.45;
+    font-family: var(--font-ui-urdu);
+}
+
+.toc-sec-title-en {
+    font-size: 0.76rem;
+    color: var(--text-secondary);
+    font-family: var(--font-system);
+}
+
+.toc-sec-page {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--accent-emerald);
+    background: var(--tag-bg);
+    border: 1px solid var(--tag-border);
+    padding: 3px 9px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-family: var(--font-ui-urdu);
+}
+
+/* Page Jump Grid */
+.toc-page-intro {
+    font-size: 0.84rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.9rem;
+    line-height: 1.4;
+    font-family: var(--font-ui-urdu);
+}
+
+.toc-page-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(68px, 1fr));
+    gap: 0.55rem;
+}
+
+.page-chip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55rem 0.35rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--ctrl-bg);
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    gap: 0.1rem;
+    font-family: var(--font-ui-urdu);
+}
+
+.page-chip:hover {
+    border-color: var(--accent-emerald);
+    background: var(--ctrl-bg-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+}
+
+.chip-ur {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--accent-emerald);
+    line-height: 1.2;
+    font-family: var(--font-ui-urdu);
+}
+
+.chip-en {
+    font-size: 0.68rem;
+    color: var(--text-secondary);
+    font-family: var(--font-system);
+}
+
+/* ============================================================
+   FLOATING RESUME READING TOAST
+   ============================================================ */
+.resume-toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 900;
+    background: var(--bg-card);
+    border: 1.5px solid var(--accent-emerald);
+    border-radius: 12px;
+    padding: 0.65rem 1rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.16);
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    direction: rtl;
+    font-family: var(--font-ui-urdu);
+    transform: translateY(120px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    max-width: calc(100vw - 48px);
+}
+
+.resume-toast.show {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.resume-toast-content {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+.resume-toast-icon svg {
+    color: var(--accent-emerald);
+    display: block;
+}
+
+.resume-toast-text {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+    font-family: var(--font-ui-urdu);
+}
+
+.resume-toast-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.resume-toast-btn {
+    background: var(--accent-emerald);
+    color: #ffffff;
+    border: none;
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--font-ui-urdu);
+    transition: all 0.2s;
+}
+
+.resume-toast-btn:hover {
+    filter: brightness(1.1);
+}
+
+.resume-toast-dismiss {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.3rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 0.3rem;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.resume-toast-dismiss:hover {
+    color: var(--text-primary);
+    background: rgba(0,0,0,0.06);
+}
+
+/* ============================================================
    MOBILE RESPONSIVENESS (< 640px)
    ============================================================ */
 @media screen and (max-width: 640px) {
     header.site-header {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.75rem;
-        padding: 0.75rem 1rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 0.85rem;
     }
 
     .header-branding {
-        justify-content: space-between;
-        width: 100%;
+        gap: 0.6rem;
     }
 
     .header-logo-img {
-        height: 44px;
+        height: 38px;
     }
 
     .header-subtitle {
-        font-size: 0.95rem;
-        padding: 3px 8px;
+        font-size: 0.82rem;
+        padding: 2px 6px;
     }
 
     .header-controls {
-        width: 100%;
+        gap: 0.4rem;
+    }
+
+    .header-btn {
+        padding: 0.38rem 0.65rem;
+        font-size: 0.85rem;
+        gap: 0.3rem;
+    }
+
+    .header-btn svg {
+        width: 15px;
+        height: 15px;
+    }
+
+    .resume-toast {
+        bottom: 16px;
+        right: 16px;
+        left: 16px;
+        max-width: none;
         justify-content: space-between;
-        gap: 0.5rem;
     }
 
-    .nav-links {
-        flex: 1;
+    .resume-toast-text {
+        max-width: 150px;
     }
 
-    .nav-links a {
-        flex: 1;
-        text-align: center;
-        padding: 0.45rem 0.6rem;
-        font-size: 0.98rem;
-    }
-
-    .settings-btn {
-        padding: 0.45rem 0.85rem;
-        font-size: 0.98rem;
+    .edition-switcher {
+        grid-template-columns: 1fr;
     }
 
     .container {
@@ -2081,6 +2561,156 @@ def render_book_page(section_title, book_page, page_entries, is_study=False):
     html += "  </div>\n</section>\n"
     return html
 
+def render_toc_html(batches, bilingual_pages):
+    # 1. Sections list
+    sections = [
+        {
+            "id": "frontispiece",
+            "title_ur": "سرورق و تعارفِ کتاب",
+            "title_en": "Title Page & Frontispiece",
+            "page_num": "۱"
+        },
+        {
+            "id": "pesh_lafz",
+            "title_ur": "پیش لفظ — سوانح حیات حضرت شیخ سعدی شیرازیؒ",
+            "title_en": "Foreword — Biography of Sheikh Saadi",
+            "page_num": "۱–۴"
+        }
+    ]
+
+    for b in batches:
+        for sec in b.get("sections", []):
+            if sec.get("content_type") == "bilingual_text":
+                entries = sec.get("entries", [])
+                if entries:
+                    bps = [e.get("book_page") for e in entries if e.get("book_page")]
+                    if bps:
+                        first_bp = bps[0]
+                        last_bp = bps[-1]
+                        prange = f"{first_bp}–{last_bp}" if first_bp != last_bp else f"{first_bp}"
+                    else:
+                        first_bp = 1
+                        prange = "۱"
+                    tur = sec.get("title_ur") or sec.get("title") or "فصل"
+                    ten = sec.get("title_en") or ""
+                    sections.append({
+                        "id": f"page_{first_bp}",
+                        "title_ur": tur,
+                        "title_en": ten,
+                        "page_num": prange
+                    })
+
+    sec_items_html = []
+    for s in sections:
+        ur_p = to_urdu_numerals(s["page_num"])
+        en_sub = f'<span class="toc-sec-title-en">{escape_xml(s["title_en"])}</span>' if s.get("title_en") else ''
+        sec_items_html.append(f"""          <li class="toc-section-item">
+            <a href="#{s['id']}" class="toc-section-link">
+              <div class="toc-sec-title-wrap">
+                <span class="toc-sec-title-ur">{escape_xml(s['title_ur'])}</span>
+                {en_sub}
+              </div>
+              <span class="toc-sec-page">صفحہ {ur_p}</span>
+            </a>
+          </li>""")
+    sections_list_html = "\n".join(sec_items_html)
+
+    # 2. Pages tab chips
+    page_chips_html = []
+    # Foreword pages 1 to 4
+    for p in range(1, 5):
+        ur_num = to_urdu_numerals(p)
+        page_chips_html.append(f"""          <a href="#pesh_lafz" class="page-chip" title="پیش لفظ صفحہ {ur_num}">
+            <span class="chip-ur">{ur_num}</span>
+            <span class="chip-en">p.{p}</span>
+          </a>""")
+    # Bilingual book pages
+    sorted_pages = sorted(bilingual_pages.keys(), key=lambda x: int(x) if x.isdigit() else 999)
+    for bp in sorted_pages:
+        ur_num = to_urdu_numerals(bp)
+        page_chips_html.append(f"""          <a href="#page_{bp}" class="page-chip" title="صفحہ {ur_num}">
+            <span class="chip-ur">{ur_num}</span>
+            <span class="chip-en">p.{bp}</span>
+          </a>""")
+    pages_grid_html = "\n".join(page_chips_html)
+
+    return f"""  <!-- Table of Contents (ToC) Modal Drawer -->
+  <div id="tocOverlay" class="toc-overlay" aria-hidden="true">
+    <div class="toc-modal" role="dialog" aria-modal="true" aria-labelledby="tocModalTitle">
+      <div class="toc-header">
+        <div class="toc-header-title-wrap">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="8" y1="6" x2="21" y2="6"></line>
+            <line x1="8" y1="12" x2="21" y2="12"></line>
+            <line x1="8" y1="18" x2="21" y2="18"></line>
+            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+          </svg>
+          <h3 id="tocModalTitle">فہرستِ مضامین (Table of Contents)</h3>
+        </div>
+        <button type="button" id="tocClose" class="toc-close-btn" aria-label="بند کریں">&times;</button>
+      </div>
+
+      <!-- Reading Resume Banner in ToC -->
+      <div id="tocResumeBanner" class="toc-resume-banner" style="display:none;">
+        <div class="toc-resume-info">
+          <span class="toc-resume-badge">آخری مطالعہ (Last Read)</span>
+          <span id="tocResumeTitle" class="toc-resume-title">صفحہ ۱</span>
+        </div>
+        <button type="button" id="tocResumeBtn" class="toc-resume-btn">
+          <span>یہیں سے جاری رکھیں</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <div class="toc-tabs">
+        <button type="button" class="toc-tab-btn active" data-toc-tab="sections">
+          <span>ابواب و مضامین</span>
+          <small>Sections</small>
+        </button>
+        <button type="button" class="toc-tab-btn" data-toc-tab="pages">
+          <span>صفحات کا انتخاب</span>
+          <small>Page Jump (1–18)</small>
+        </button>
+      </div>
+
+      <div class="toc-body">
+        <!-- Sections Tab Content -->
+        <div id="tocTabSections" class="toc-tab-pane active">
+          <ul class="toc-section-list">
+{sections_list_html}
+          </ul>
+        </div>
+
+        <!-- Pages Tab Content -->
+        <div id="tocTabPages" class="toc-tab-pane">
+          <div class="toc-page-intro">
+            <span>کتاب کے اصل صفحات پر براہِ راست جائیں (Jump directly to any book page):</span>
+          </div>
+          <div class="toc-page-grid">
+{pages_grid_html}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Resume Reading Toast -->
+  <div id="resumeToast" class="resume-toast" aria-hidden="true">
+    <div class="resume-toast-content">
+      <div class="resume-toast-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+      </div>
+      <span id="resumeToastText" class="resume-toast-text">آخری مطالعہ: صفحہ ۱</span>
+    </div>
+    <div class="resume-toast-actions">
+      <button type="button" id="resumeToastBtn" class="resume-toast-btn">پڑھیں</button>
+      <button type="button" id="resumeToastDismiss" class="resume-toast-dismiss" aria-label="Dismiss">&times;</button>
+    </div>
+  </div>"""
+
 def build_html_editions(batches):
     copy_assets()
     generate_css()
@@ -2112,11 +2742,18 @@ def build_html_editions(batches):
       <span class="header-subtitle">{subtitle}</span>
     </a>
     <div class="header-controls">
-      <nav class="nav-links">
-        <a href="original.html" class="{orig_active}">اصل متن مع ترجمہ</a>
-        <a href="study.html" class="{study_active}">مطالعہ و فرہنگ</a>
-      </nav>
-      <button type="button" id="settingsToggle" class="settings-btn" aria-label="ترتیبات / Reader Settings" title="ترتیبات (Settings)">
+      <button type="button" id="tocToggle" class="header-btn" aria-label="فہرستِ مضامین / Table of Contents" title="فہرستِ مضامین (Table of Contents)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="8" y1="6" x2="21" y2="6"></line>
+          <line x1="8" y1="12" x2="21" y2="12"></line>
+          <line x1="8" y1="18" x2="21" y2="18"></line>
+          <line x1="3" y1="6" x2="3.01" y2="6"></line>
+          <line x1="3" y1="12" x2="3.01" y2="12"></line>
+          <line x1="3" y1="18" x2="3.01" y2="18"></line>
+        </svg>
+        <span>فہرست</span>
+      </button>
+      <button type="button" id="settingsToggle" class="header-btn" aria-label="ترتیبات / Reader Settings" title="ترتیبات (Settings)">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="3"></circle>
           <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
@@ -2143,6 +2780,26 @@ def build_html_editions(batches):
         <button type="button" id="settingsClose" class="settings-close-btn" aria-label="بند کریں">&times;</button>
       </div>
       <div class="settings-body">
+        <!-- Edition Mode Switcher -->
+        <div class="setting-group">
+          <div class="setting-label">
+            <span class="label-title">Edition Mode (ورژن کا انتخاب)</span>
+            <span class="label-desc">Switch between Faithful Original and English Study Edition</span>
+          </div>
+          <div class="edition-switcher">
+            <a href="original.html" class="edition-btn {orig_active}">
+              <span class="edition-title">Faithful Original</span>
+              <span class="edition-title-ur">اصل متن مع ترجمہ</span>
+              <span class="edition-desc">Persian text, Urdu interlinear &amp; footnotes only</span>
+            </a>
+            <a href="study.html" class="edition-btn {study_active}">
+              <span class="edition-title">Study Edition 🇬🇧</span>
+              <span class="edition-title-ur">ایڈیشن مطالعہ و فرہنگ</span>
+              <span class="edition-desc">Bilingual explanations, vocabulary &amp; English notes</span>
+            </a>
+          </div>
+        </div>
+
         <!-- Urdu Font -->
         <div class="setting-group">
           <div class="setting-label">
@@ -2233,6 +2890,8 @@ def build_html_editions(batches):
     </div>
   </div>
 
+{toc_html}
+
   <script src="settings.js"></script>
 </body>
 </html>
@@ -2246,7 +2905,7 @@ def build_html_editions(batches):
         for sec in b["sections"]:
             stype = sec.get("content_type")
             if stype == "metadata":
-                m_html = """<div class="frontispiece-card">
+                m_html = """<div class="frontispiece-card" id="frontispiece">
   <div class="frontispiece-jadwal">
     <div class="frontispiece-ribbon-top"></div>
     <div class="frontispiece-inner">
@@ -2358,21 +3017,42 @@ def build_html_editions(batches):
             body_orig.append(orig_page_html)
             body_study.append(study_page_html)
 
+    toc_html = render_toc_html(batches, bilingual_pages)
+
     with open(os.path.join(HTML_DIR, "original.html"), "w", encoding="utf-8") as f:
         f.write(header_template.format(
             title="گلستان سعدی — اصل متن مع ترجمہ",
-            subtitle="اصل متن مع ترجمہ",
+            subtitle="اصل متن مع ترجمہ"
+        ) + "\n".join(body_orig) + footer_template.format(
             orig_active="active",
-            study_active=""
-        ) + "\n".join(body_orig) + footer_template)
+            study_active="",
+            toc_html=toc_html
+        ))
 
     with open(os.path.join(HTML_DIR, "study.html"), "w", encoding="utf-8") as f:
         f.write(header_template.format(
             title="گلستان سعدی — ایڈیشن مطالعہ و فرہنگ",
-            subtitle="ایڈیشن مطالعہ و فرہنگ",
+            subtitle="ایڈیشن مطالعہ و فرہنگ"
+        ) + "\n".join(body_study) + footer_template.format(
             orig_active="",
-            study_active="active"
-        ) + "\n".join(body_study) + footer_template)
+            study_active="active",
+            toc_html=toc_html
+        ))
+
+    # Also write index.html in HTML_DIR
+    index_html = """<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=study.html" />
+  <title>گُلِسْتَانِ سَعْدِیْ</title>
+</head>
+<body>
+  <p>صفحہ منتقل ہو رہا ہے... <a href="study.html">یہاں کلک کریں</a></p>
+</body>
+</html>"""
+    with open(os.path.join(HTML_DIR, "index.html"), "w", encoding="utf-8") as f:
+        f.write(index_html)
 
     print("Successfully built HTML editions in dist/html/")
 

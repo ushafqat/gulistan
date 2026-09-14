@@ -25,11 +25,18 @@
       <span class="header-subtitle">ایڈیشن مطالعہ و فرہنگ</span>
     </a>
     <div class="header-controls">
-      <nav class="nav-links">
-        <a href="original.html" class="">اصل متن مع ترجمہ</a>
-        <a href="study.html" class="active">مطالعہ و فرہنگ</a>
-      </nav>
-      <button type="button" id="settingsToggle" class="settings-btn" aria-label="ترتیبات / Reader Settings" title="ترتیبات (Settings)">
+      <button type="button" id="tocToggle" class="header-btn" aria-label="فہرستِ مضامین / Table of Contents" title="فہرستِ مضامین (Table of Contents)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="8" y1="6" x2="21" y2="6"></line>
+          <line x1="8" y1="12" x2="21" y2="12"></line>
+          <line x1="8" y1="18" x2="21" y2="18"></line>
+          <line x1="3" y1="6" x2="3.01" y2="6"></line>
+          <line x1="3" y1="12" x2="3.01" y2="12"></line>
+          <line x1="3" y1="18" x2="3.01" y2="18"></line>
+        </svg>
+        <span>فہرست</span>
+      </button>
+      <button type="button" id="settingsToggle" class="header-btn" aria-label="ترتیبات / Reader Settings" title="ترتیبات (Settings)">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="3"></circle>
           <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
@@ -39,7 +46,7 @@
     </div>
   </header>
   <main class="container">
-<div class="frontispiece-card">
+<div class="frontispiece-card" id="frontispiece">
   <div class="frontispiece-jadwal">
     <div class="frontispiece-ribbon-top"></div>
     <div class="frontispiece-inner">
@@ -5034,6 +5041,26 @@
         <button type="button" id="settingsClose" class="settings-close-btn" aria-label="بند کریں">&times;</button>
       </div>
       <div class="settings-body">
+        <!-- Edition Mode Switcher -->
+        <div class="setting-group">
+          <div class="setting-label">
+            <span class="label-title">Edition Mode (ورژن کا انتخاب)</span>
+            <span class="label-desc">Switch between Faithful Original and English Study Edition</span>
+          </div>
+          <div class="edition-switcher">
+            <a href="original.html" class="edition-btn ">
+              <span class="edition-title">Faithful Original</span>
+              <span class="edition-title-ur">اصل متن مع ترجمہ</span>
+              <span class="edition-desc">Persian text, Urdu interlinear &amp; footnotes only</span>
+            </a>
+            <a href="study.html" class="edition-btn active">
+              <span class="edition-title">Study Edition 🇬🇧</span>
+              <span class="edition-title-ur">ایڈیشن مطالعہ و فرہنگ</span>
+              <span class="edition-desc">Bilingual explanations, vocabulary &amp; English notes</span>
+            </a>
+          </div>
+        </div>
+
         <!-- Urdu Font -->
         <div class="setting-group">
           <div class="setting-label">
@@ -5121,6 +5148,216 @@
       <div class="settings-footer">
         <button type="button" id="settingsReset" class="reset-btn">پہلے جیسی حالت (Reset Defaults)</button>
       </div>
+    </div>
+  </div>
+
+  <!-- Table of Contents (ToC) Modal Drawer -->
+  <div id="tocOverlay" class="toc-overlay" aria-hidden="true">
+    <div class="toc-modal" role="dialog" aria-modal="true" aria-labelledby="tocModalTitle">
+      <div class="toc-header">
+        <div class="toc-header-title-wrap">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="8" y1="6" x2="21" y2="6"></line>
+            <line x1="8" y1="12" x2="21" y2="12"></line>
+            <line x1="8" y1="18" x2="21" y2="18"></line>
+            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+          </svg>
+          <h3 id="tocModalTitle">فہرستِ مضامین (Table of Contents)</h3>
+        </div>
+        <button type="button" id="tocClose" class="toc-close-btn" aria-label="بند کریں">&times;</button>
+      </div>
+
+      <!-- Reading Resume Banner in ToC -->
+      <div id="tocResumeBanner" class="toc-resume-banner" style="display:none;">
+        <div class="toc-resume-info">
+          <span class="toc-resume-badge">آخری مطالعہ (Last Read)</span>
+          <span id="tocResumeTitle" class="toc-resume-title">صفحہ ۱</span>
+        </div>
+        <button type="button" id="tocResumeBtn" class="toc-resume-btn">
+          <span>یہیں سے جاری رکھیں</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <div class="toc-tabs">
+        <button type="button" class="toc-tab-btn active" data-toc-tab="sections">
+          <span>ابواب و مضامین</span>
+          <small>Sections</small>
+        </button>
+        <button type="button" class="toc-tab-btn" data-toc-tab="pages">
+          <span>صفحات کا انتخاب</span>
+          <small>Page Jump (1–18)</small>
+        </button>
+      </div>
+
+      <div class="toc-body">
+        <!-- Sections Tab Content -->
+        <div id="tocTabSections" class="toc-tab-pane active">
+          <ul class="toc-section-list">
+          <li class="toc-section-item">
+            <a href="#frontispiece" class="toc-section-link">
+              <div class="toc-sec-title-wrap">
+                <span class="toc-sec-title-ur">سرورق و تعارفِ کتاب</span>
+                <span class="toc-sec-title-en">Title Page &amp; Frontispiece</span>
+              </div>
+              <span class="toc-sec-page">صفحہ ۱</span>
+            </a>
+          </li>
+          <li class="toc-section-item">
+            <a href="#pesh_lafz" class="toc-section-link">
+              <div class="toc-sec-title-wrap">
+                <span class="toc-sec-title-ur">پیش لفظ — سوانح حیات حضرت شیخ سعدی شیرازیؒ</span>
+                <span class="toc-sec-title-en">Foreword — Biography of Sheikh Saadi</span>
+              </div>
+              <span class="toc-sec-page">صفحہ ۱–۴</span>
+            </a>
+          </li>
+          <li class="toc-section-item">
+            <a href="#page_5" class="toc-section-link">
+              <div class="toc-sec-title-wrap">
+                <span class="toc-sec-title-ur">دیباچہ حضرت شیخ سعدی شیرازیؒ</span>
+                <span class="toc-sec-title-en">Dibacha (Author's Preface) by Sheikh Saadi Shirazi</span>
+              </div>
+              <span class="toc-sec-page">صفحہ ۵–۸</span>
+            </a>
+          </li>
+          <li class="toc-section-item">
+            <a href="#page_9" class="toc-section-link">
+              <div class="toc-sec-title-wrap">
+                <span class="toc-sec-title-ur">دیباچہ: حیرتِ عشق و مجلسِ مراقبہ</span>
+                <span class="toc-sec-title-en">Dibacha: Mystical Bewilderment &amp; Silent Contemplation</span>
+              </div>
+              <span class="toc-sec-page">صفحہ ۹</span>
+            </a>
+          </li>
+          <li class="toc-section-item">
+            <a href="#page_10" class="toc-section-link">
+              <div class="toc-sec-title-wrap">
+                <span class="toc-sec-title-ur">ذِکْرِ مَحَامِدِ پَادْشَاہِ اِسْلَامْ اَتَابَکْ اَبُوْ بَکْرِ بْنِ سَعْدِ بْنِ زَنْگِیْؒ</span>
+                <span class="toc-sec-title-en">In Praise of the Sovereign of Islam, Atabak Abu Bakr ibn Sa'd ibn Zangi</span>
+              </div>
+              <span class="toc-sec-page">صفحہ ۱۰–۱۲</span>
+            </a>
+          </li>
+          <li class="toc-section-item">
+            <a href="#page_12" class="toc-section-link">
+              <div class="toc-sec-title-wrap">
+                <span class="toc-sec-title-ur">دَرْ سَبَبِ تَالِیْفِ کِتَابْ (کتاب کی تصنیف کا سبب)</span>
+                <span class="toc-sec-title-en">On the Cause of Composing the Book</span>
+              </div>
+              <span class="toc-sec-page">صفحہ ۱۲–۱۸</span>
+            </a>
+          </li>
+          <li class="toc-section-item">
+            <a href="#page_18" class="toc-section-link">
+              <div class="toc-sec-title-wrap">
+                <span class="toc-sec-title-ur">ذِکْرِ پَادْشَاہْ زَادَۂ جَہَاں سَعْدِ بْنِ اَبِیْ بَکْرِ بْنِ سَعْدٍ نَوَّرَ اللہُ قَبْرَہُ</span>
+                <span class="toc-sec-title-en">Dedication to the Prince of the World, Sa'd ibn Abi Bakr ibn Sa'd</span>
+              </div>
+              <span class="toc-sec-page">صفحہ ۱۸</span>
+            </a>
+          </li>
+          </ul>
+        </div>
+
+        <!-- Pages Tab Content -->
+        <div id="tocTabPages" class="toc-tab-pane">
+          <div class="toc-page-intro">
+            <span>کتاب کے اصل صفحات پر براہِ راست جائیں (Jump directly to any book page):</span>
+          </div>
+          <div class="toc-page-grid">
+          <a href="#pesh_lafz" class="page-chip" title="پیش لفظ صفحہ ۱">
+            <span class="chip-ur">۱</span>
+            <span class="chip-en">p.1</span>
+          </a>
+          <a href="#pesh_lafz" class="page-chip" title="پیش لفظ صفحہ ۲">
+            <span class="chip-ur">۲</span>
+            <span class="chip-en">p.2</span>
+          </a>
+          <a href="#pesh_lafz" class="page-chip" title="پیش لفظ صفحہ ۳">
+            <span class="chip-ur">۳</span>
+            <span class="chip-en">p.3</span>
+          </a>
+          <a href="#pesh_lafz" class="page-chip" title="پیش لفظ صفحہ ۴">
+            <span class="chip-ur">۴</span>
+            <span class="chip-en">p.4</span>
+          </a>
+          <a href="#page_5" class="page-chip" title="صفحہ ۵">
+            <span class="chip-ur">۵</span>
+            <span class="chip-en">p.5</span>
+          </a>
+          <a href="#page_6" class="page-chip" title="صفحہ ۶">
+            <span class="chip-ur">۶</span>
+            <span class="chip-en">p.6</span>
+          </a>
+          <a href="#page_7" class="page-chip" title="صفحہ ۷">
+            <span class="chip-ur">۷</span>
+            <span class="chip-en">p.7</span>
+          </a>
+          <a href="#page_8" class="page-chip" title="صفحہ ۸">
+            <span class="chip-ur">۸</span>
+            <span class="chip-en">p.8</span>
+          </a>
+          <a href="#page_9" class="page-chip" title="صفحہ ۹">
+            <span class="chip-ur">۹</span>
+            <span class="chip-en">p.9</span>
+          </a>
+          <a href="#page_10" class="page-chip" title="صفحہ ۱۰">
+            <span class="chip-ur">۱۰</span>
+            <span class="chip-en">p.10</span>
+          </a>
+          <a href="#page_11" class="page-chip" title="صفحہ ۱۱">
+            <span class="chip-ur">۱۱</span>
+            <span class="chip-en">p.11</span>
+          </a>
+          <a href="#page_12" class="page-chip" title="صفحہ ۱۲">
+            <span class="chip-ur">۱۲</span>
+            <span class="chip-en">p.12</span>
+          </a>
+          <a href="#page_13" class="page-chip" title="صفحہ ۱۳">
+            <span class="chip-ur">۱۳</span>
+            <span class="chip-en">p.13</span>
+          </a>
+          <a href="#page_14" class="page-chip" title="صفحہ ۱۴">
+            <span class="chip-ur">۱۴</span>
+            <span class="chip-en">p.14</span>
+          </a>
+          <a href="#page_15" class="page-chip" title="صفحہ ۱۵">
+            <span class="chip-ur">۱۵</span>
+            <span class="chip-en">p.15</span>
+          </a>
+          <a href="#page_16" class="page-chip" title="صفحہ ۱۶">
+            <span class="chip-ur">۱۶</span>
+            <span class="chip-en">p.16</span>
+          </a>
+          <a href="#page_17" class="page-chip" title="صفحہ ۱۷">
+            <span class="chip-ur">۱۷</span>
+            <span class="chip-en">p.17</span>
+          </a>
+          <a href="#page_18" class="page-chip" title="صفحہ ۱۸">
+            <span class="chip-ur">۱۸</span>
+            <span class="chip-en">p.18</span>
+          </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Resume Reading Toast -->
+  <div id="resumeToast" class="resume-toast" aria-hidden="true">
+    <div class="resume-toast-content">
+      <div class="resume-toast-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+      </div>
+      <span id="resumeToastText" class="resume-toast-text">آخری مطالعہ: صفحہ ۱</span>
+    </div>
+    <div class="resume-toast-actions">
+      <button type="button" id="resumeToastBtn" class="resume-toast-btn">پڑھیں</button>
+      <button type="button" id="resumeToastDismiss" class="resume-toast-dismiss" aria-label="Dismiss">&times;</button>
     </div>
   </div>
 
