@@ -3011,9 +3011,20 @@ def build_html_editions(batches):
 
         sorted_pages = sorted(bilingual_pages.keys(), key=lambda x: int(x) if x.isdigit() else 999)
         for bp in sorted_pages:
+            bp_num = int(bp) if bp.isdigit() else 1
+            if bp_num >= 25:
+                sec_title = "باب ۱"
+            else:
+                sec_title = "دیباچہ"
+
+            if bp_num == 25:
+                c1_header = '<h2 class="chapter-main-title" id="chapter_1">بَابِ اَوَّلْ: دَرْ سِیْرَتِ پَادْشَاہَاں</h2>'
+                body_orig.append(c1_header)
+                body_study.append(c1_header)
+
             page_entries = bilingual_pages[bp]
-            orig_page_html = render_book_page("دیباچہ", bp, page_entries, is_study=False)
-            study_page_html = render_book_page("دیباچہ", bp, page_entries, is_study=True)
+            orig_page_html = render_book_page(sec_title, bp, page_entries, is_study=False)
+            study_page_html = render_book_page(sec_title, bp, page_entries, is_study=True)
             body_orig.append(orig_page_html)
             body_study.append(study_page_html)
 

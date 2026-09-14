@@ -1,0 +1,1593 @@
+import json
+import os
+
+batch_03 = {
+  "batch_info": {
+    "batch_id": 3,
+    "pages_pdf": [21, 30],
+    "pages_book": [19, 28],
+    "title_ur": "دیباچہ (تکملہ) اور باب اول: در سیرتِ پادشاہاں (صفحات ۱۹ تا ۲۸)",
+    "title_en": "Dibacha (Conclusion) & Chapter 1: On the Manners of Kings (Pages 19 to 28)"
+  },
+  "sections": [
+    {
+      "section_id": "dibacha_eulogy_amir_kabir",
+      "title_ur": "دیباچہ: مدحِ امیر کبیر فخر الدین ابوبکر بن ابی نصر",
+      "title_en": "Dibacha: Eulogy of Prime Minister Amir Kabir Fakhr al-Din",
+      "pdf_page": 21,
+      "book_page": 19,
+      "content_type": "bilingual_text",
+      "entries": [
+        {
+          "id": "entry_p19_01",
+          "book_page": 19,
+          "pdf_page": 21,
+          "type": "prose",
+          "persian": "اَلْمَنْصُوْرُ عَلَى الْأَعْدَاءِ، عَضُدُ الدَّوْلَةِ الْقَاهِرَةِ، سِرَاجُ الْمِلَّةِ الْبَاهِرَةِ، جَمَالُ الْأَنَامِ، مَفْخَرُ الْإِسْلَامِ، سَعْدُ بْنُ الْأَتَابِكِ الْأَعْظَمِ، شَہِنْشَاہُ الْمُعَظَّمْ، مَالِكُ رِقَابِ الْأُمَمِ، مَوْلَى مُلُوْكِ الْعَرَبِ وَالْعَجَمِ، سُلْطَانُ الْبَرِّ وَالْبَحْرِ، وَارِثُ مُلْكِ سُلَيْمَانَ، مُظَفَّرُ الدِّيْنِ اَبُوْ بَكْرِ بْنُ سَعْدِ بْنِ زَنْگِیْ، اَدَامَ اللّٰہُ اِقْبَالَہُمَا، وَضَاعَفَ اِجْلَالَہُمَا، وَجَعَلَ اِلَى کُلِّ خَیْرٍ مَآلَہُمَا، بِکَرْمَہٖ لُطْفِ خُدَاوَنْدِیْ مُطَالَعَہ فَرْمَایَدْ، قِطْعَہ:",
+          "urdu_interlinear": "دشمنوں پر فتحمند ہے، غالب حکومت کا بازو ہے، روشن ملّت کا چراغ ہے، مخلوق کا حسن ہے۔ اسلام کے لئے باعثِ فخر ہے یعنی سعد جو اُس اتابک اعظم کا بیٹا ہے جو کہ بڑا بادشاہ ہے، اُمّتوں کی گردنوں کا مالک ہے، عجم اور عرب کے بادشاہوں کا آقا ہے، خشکی اور سمندر کا بادشاہ ہے، ملکِ سلیمان کا وارث ہے، دین کا فتحمند ہے، یعنی ابوبکر جو بیٹا سعد کا ہے جو بیٹا زنگی کا، خدا ان کا اقبال ہمیشہ قائم رکھے اور دونوں کی بزرگی کو دوگنا کرے اور ہر بھلائی کی طرف ان کا انجام کرے، مالکانہ مہربانی سے مطالعہ کرے ۔",
+          "english_trans": "The victorious over enemies, the arm of the conquering empire, the lamp of the resplendent faith, the beauty of mankind, the glory of Islam: Sa'd, son of the Supreme Atabak, the exalted Emperor, ruler of the necks of nations, master of the kings of Arabs and Persians, monarch of land and sea, heir to the realm of Solomon: Muzaffar al-Din Abu Bakr bin Sa'd bin Zangi — may God perpetuate the prosperity of them both, double their majesty, and direct their destiny toward every good! May he deign to peruse this work with princely graciousness!",
+          "footnotes": [],
+          "study": {
+            "notes_en": "Saadi concludes the formal sovereign encomium combining Prince Sa'd and his father Atabak Muzaffar al-Din Abu Bakr. Notice the dual Arabic prayers ('iqbālahumā', 'ijlālahumā', 'ma'ālahumā') blessing both ruler and heir.",
+            "notes_ur": "سعدی نے یہاں اتابک ابوبکر اور ان کے فرزند شہزادہ سعد دونوں کا جامع خطاب و مدحیہ کلمات مکمل کیے ہیں اور صیغہ تثنیہ کے ساتھ دونوں کے اقبال، بلندیٔ درجات اور حسنِ عاقبت کی دعا مانگی ہے۔",
+            "vocabulary": [
+              {
+                "persian": "عَضُد",
+                "grammar": "اسم (عربی)",
+                "meaning_en": "upper arm, support, strength",
+                "meaning_ur": "بازو، قوت و سہارا",
+                "urdu_cognates": "عضد الدولہ"
+              },
+              {
+                "persian": "رِقَاب",
+                "grammar": "اسم جمع (رقبہ کی جمع)",
+                "meaning_en": "necks (subjugated peoples)",
+                "meaning_ur": "گردنیں (مالک رقاب یعنی فرمانروا)",
+                "urdu_cognates": "رقبہ، رقاب"
+              },
+              {
+                "persian": "مَآل",
+                "grammar": "اسم ظرف/مصدر",
+                "meaning_en": "outcome, ultimate end",
+                "meaning_ur": "انجام، عاقبت",
+                "urdu_cognates": "مآل کار"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p19_02",
+          "book_page": 19,
+          "pdf_page": 21,
+          "type": "stanza",
+          "header_persian": "قِطْعَہ",
+          "header_urdu": "قطعہ",
+          "lines": [
+            {
+              "persian_m1": "گَرْ اِلْتِفَاتِ خُدَاوَنْدِیْشْ بَیَارَایَدْ",
+              "persian_m2": "نِگَارْخَانَۂ چِیْنِیْ وَ نَقْشِ اَرْژَنْگَسْت",
+              "urdu_m1": "اگر اس (گلستان) کو شاہی توجہ سنوار دے",
+              "urdu_m2": "تو وہ چین کا نگارخانہ ہے اور ارژنگ کا کھینچا ہوا نقش ہے"
+            },
+            {
+              "persian_m1": "اُمِیْدْ ہَسْتْ کَہ رُوْئے مَلَالْ دَرْ نَکَشَدْ",
+              "persian_m2": "اَزِیْں سُخَنْ کَہ گُلِسْتَانْ نَہ جَائے دِلْتَنْگَسْت",
+              "urdu_m1": "امید تو یہی ہے کہ وہ ملال سے منہ نہ پھیرے گا",
+              "urdu_m2": "اس کلام سے اس لئے کہ گلستان دلتنگی کا مقام نہیں ہے"
+            },
+            {
+              "persian_m1": "عَلَى الْخُصُوْصْ کَہ دِیْبَاجَۂ ہُمَایُوْنَشْ",
+              "persian_m2": "بِنَامِ سَعْدِ اَبُوْ بَکْرِ سَعْدِ بْنِ زَنْگِیْسْت",
+              "urdu_m1": "خصوصاً جبکہ اس کا متبرک دیباچہ",
+              "urdu_m2": "ابوبکر بن سعد بن زنگی کے نیک نام سے ہے"
+            }
+          ],
+          "english_trans": "If royal favor should adorn it, / It will surpass the picture-galleries of China and the paintings of Arzhang! / High hope is held that weariness shall not turn away / From these discourses, for the Rose Garden is no place of melancholy — / Especially since its auspicious preface / Is adorned with the blessed name of Sa'd bin Abu Bakr bin Sa'd bin Zangi!",
+          "footnotes": [],
+          "study": {
+            "notes_en": "'Arzhang' (or Artang) refers to the legendary illustrated holy book of Mani (the ancient Persian prophet and painter), renowned in Persian literature as the paragon of visual beauty.",
+            "notes_ur": "'ارژنگ' مانی نقاش کی شہرۂ آفاق کتاب تھی جس کی تصویریں حسن و کمال میں ضرب المثل تھیں۔ سعدی کہتے ہیں کہ اگر بادشاہِ وقت اس کتاب کو قبولیت بخشے تو یہ چین کے نگارخانے اور ارژنگ سے بھی بڑھ کر حسین بن جائے گی۔",
+            "vocabulary": [
+              {
+                "persian": "نِگَارْخَانَہ",
+                "grammar": "اسمِ ظرفِ مکاں",
+                "meaning_en": "picture gallery, art studio",
+                "meaning_ur": "تصویر خانہ، عجائب گھر",
+                "urdu_cognates": "نگارخانہ، نگار"
+              },
+              {
+                "persian": "اَرْژَنْگ",
+                "grammar": "اسمِ علم",
+                "meaning_en": "Arzhang (Mani's book of paintings)",
+                "meaning_ur": "مانی نقاش کا مصور صحیفہ",
+                "urdu_cognates": "ارژنگ"
+              },
+              {
+                "persian": "دِلْتَنْگ",
+                "grammar": "صفتِ مرکب",
+                "meaning_en": "sorrowful, melancholic, weary",
+                "meaning_ur": "غمگین، اداس، تنگ دل",
+                "urdu_cognates": "دلتنگ، دلتنگی"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p19_03",
+          "book_page": 19,
+          "pdf_page": 21,
+          "type": "prose",
+          "section_banner": {
+            "persian": "ذِکْرِ اَمِیْرِ کَبِیْرِ فَخْرِ الدِّیْنِ اَبِیْ بَکْرِ بْنِ اَبِیْ نَصْرٍ طَالَ عُمْرُہٗ",
+            "urdu": "امیرِ کبیر فخر الدین ابی بکر بن ابی نصر کا ذکر، خدا اُس کی عمر دراز کرے"
+          },
+          "persian": "دِیْگَر عَرُوْسِ فِکْرِ مَنْ اَزْ بﮯ جَمَالِیْ سَرْ بَرْ نَیَارَدْ، وَ دِیْدَۂ یَأْسْ اَزْ پُشْتِ پَائے خَجَالَتْ بَرْ نَدَارَدْ، وَ دَرْ زُمْرَۂ صَاحِبْ نَظَرَاں مُتَجَلِّیْ نَشَوَدْ، مَگَرْ آنْکَہ مُتَحَلِّیْ گَرْدَدْ بَہ زِیْوَرِ قَبُوْلِ...",
+          "urdu_interlinear": "علاوہ ازیں میرے فکر کی دُلھن بدصورتی کی وجہ سے سر نہیں اٹھائے گی اور مایوسی کی نگاہ شرمندگی کے پشتِ پا سے نہیں ہٹائے گی اور صاحبِ نظر لوگوں کی جماعت میں روشن نہیں ہوگی جب تک کہ وہ امیرِ کبیر کی مقبولیت کے زیور سے...",
+          "english_trans": "Furthermore, the bride of my thought would never lift her head due to lack of beauty, nor raise the downcast eye of despair from the instep of bashfulness, nor radiate among men of discernment, unless she be adorned with the jewel of acceptance of...",
+          "footnotes": [],
+          "study": {
+            "notes_en": "Saadi uses the metaphor of 'arūs-e fikr' (the bride of thought) looking down at the ground in shame until endorsed by the Grand Vizier Fakhr al-Din Abi Bakr bin Abi Nasr.",
+            "notes_ur": "سعدی نے اپنی شاعری اور فکر کو ایک حیا دار دلہن سے تشبیہ دی ہے جو خجالت کی وجہ سے نگاہیں جھکائے ہوئے ہے اور اس کی رونق وزیرِ اعظم کی تائید و قبولیت کی محتاج ہے۔",
+            "vocabulary": [
+              {
+                "persian": "عَرُوْس",
+                "grammar": "اسم (عربی)",
+                "meaning_en": "bride",
+                "meaning_ur": "دلہن",
+                "urdu_cognates": "عروس، عروسی"
+              },
+              {
+                "persian": "خَجَالَت",
+                "grammar": "اسم (عربی)",
+                "meaning_en": "shame, embarrassment, bashfulness",
+                "meaning_ur": "شرمندگی، جھجھک",
+                "urdu_cognates": "خجالت"
+              },
+              {
+                "persian": "مُتَحَلِّی",
+                "grammar": "اسمِ فاعل (عربی)",
+                "meaning_en": "decked, ornamented, adorned",
+                "meaning_ur": "آراستہ، زیور پہنا ہوا",
+                "urdu_cognates": "حلیہ، تحلی"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p20_01",
+          "book_page": 20,
+          "pdf_page": 22,
+          "type": "prose",
+          "persian": "اَمِیْرِ کَبِیْر، عَالِم، عَادِل، مُظَفَّر، مَنْصُوْر، ظَہِیْرِ سَرِیْرِ سَلْطَنَتْ، مُشِیْرِ تَدْبِیْرِ مَمْلَکَتْ، کَہْفُ الْفُقَرَاءِ، مَلَاذُ الْغُرَبَاءِ، مُرَبِّی الْفُضَلَاءِ، مُحِبُّ الْأَتْقِیَاءِ، اِفْتِخَارِ آلِ فَارِس، یَمِیْنُ الْمُلْکِ، مَلِکُ الْخَوَاصّ، بَارْبَکْ، فَخْرُ الدَّوْلَةِ وَالدِّیْنِ، غِیَاثُ الْإِسْلَامِ وَالْمُسْلِمِیْنَ، عُمْدَةُ الْمُلُوْکِ وَالسَّلَاطِیْنِ، اَبِیْ بَکْرِ بْنِ اَبِیْ نَصْرٍ، اَطَالَ اللّٰہُ عُمْرَہٗ، وَ اَجَلَّ قَدْرَہٗ، وَ شَرَحَ صَدْرَہٗ، وَ ضَاعَفَ اَجْرَہٗ، کَہ مَمْدُوْحِ اَکَابِرِ آفَاقْ اَسْت، وَ مَجْمُوْعِ مَکَارِمِ اَخْلَاقْ۔ شِعْر:",
+          "urdu_interlinear": "آراستہ نہ ہو، جو کہ عالم، منصف، کامیاب، منصور، تختِ سلطنت کا مددگار، مملکت کی تدبیر کا مشیر، فقراء کی جائے پناہ، غرباء کا ٹھکانا، فضلاء کو پالنے والا، متقیوں کا دوست، اہلِ فارس کے لئے فخر، ملک کا دایاں ہاتھ، مقربانِ بارگاہ کا سردار، وزیرِ حضوری، دولت اور دین کا فخر، اسلام اور مسلمانوں کا فریاد رس، بادشاہوں اور سلاطین کا معتمد علیہ ہے یعنی ابوبکر بن ابی نصر، خدا اُس کی عمر دراز کرے اور اس کا مرتبہ بڑھائے اور اُس کا دل کھول دے اور اُس کا ثواب دوگنا کر دے جو کہ دنیا کے بزرگوں کا ممدوح ہے اور عمدہ اخلاق کا مجموعہ ہے۔",
+          "english_trans": "...adorned with the jewel of acceptance of the Grand Vizier: learned, just, victorious, aided by Heaven, supporter of the throne of empire, counselor in realm administration, refuge of the poor, sanctuary of strangers, patron of scholars, lover of the pious, glory of the house of Fars, right arm of the state, master of dignitaries, chamberlain of the court, pride of dominion and faith, succor of Islam and Muslims, mainstay of kings and sultans: Abu Bakr bin Abi Nasr — may God lengthen his days, exalt his rank, expand his chest, and double his reward! — who is praised by the great ones of the world and is the embodiment of noble virtues.",
+          "footnotes": [],
+          "study": {
+            "notes_en": "A prime example of classical Persian epistolary honorifics (*al-alqaab*). Notice terms like 'Bārbak' (Grand Chamberlain / Master of Ceremonies at court) and 'Kahf al-fuqarā' (cave/sanctuary of the destitute).",
+            "notes_ur": "'باربک' ترکی زبان کا لفظ ہے جو دربارِ شاہی کے نقیب، چوبدار یا وزیرِ خاص کے لیے بولا جاتا تھا۔ 'کہف الفقراء' میں لفظِ کہف سے مراد امن اور حفاظت کا وہ غار ہے جہاں بے بس پناہ لیں۔",
+            "vocabulary": [
+              {
+                "persian": "ظَہِیْر",
+                "grammar": "اسم صفت (عربی)",
+                "meaning_en": "supporter, helper, patron",
+                "meaning_ur": "مددگار، پشت پناہ",
+                "urdu_cognates": "ظہیر، مظہر"
+              },
+              {
+                "persian": "کَہْف",
+                "grammar": "اسم (عربی)",
+                "meaning_en": "cave, safe asylum",
+                "meaning_ur": "غار، امن کی جگہ",
+                "urdu_cognates": "اصحابِ کہف"
+              },
+              {
+                "persian": "بَارْبَک",
+                "grammar": "اسم منصب",
+                "meaning_en": "grand chamberlain, lord steward",
+                "meaning_ur": "درباری سردار، بارگاہ کا نگران",
+                "urdu_cognates": "باربک"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p20_02",
+          "book_page": 20,
+          "pdf_page": 22,
+          "type": "couplet",
+          "header_persian": "شِعْر",
+          "header_urdu": "شعر",
+          "persian_m1": "ہَرْ کَہ دَرْ سَایَۂ عِنَایَتِ اوْسْت",
+          "persian_m2": "گُنَہَشْ طَاعَتَسْتْ وَ دُشْمَنِ دُوْسْت",
+          "urdu_m1": "جو اُس کی مہربانی کے سایہ میں ہے",
+          "urdu_m2": "اُس کا گناہ بھی عبادت ہے اور اس کا دشمن بھی دوست",
+          "english_trans": "Whoever rests beneath the shadow of his favor: / Even his faults turn to acts of devotion, and his enemies become friends!",
+          "footnotes": [],
+          "study": {
+            "notes_en": "Hyperbolic praise (*ghuluw*) typical of Persian court panegyrics, illustrating the transformative power of the patron's benevolent protection.",
+            "notes_ur": "مدح کا بلیغ انداز ہے کہ جس پر امیر کی نظرِ کرم ہو جائے اس کی لغزشیں بھی معاف ہو کر نیکی بن جاتی ہیں اور مخالفین بھی دوستی کا دم بھرنے لگتے ہیں۔",
+            "vocabulary": [
+              {
+                "persian": "عِنَایَت",
+                "grammar": "اسم (عربی)",
+                "meaning_en": "favor, grace, benevolence",
+                "meaning_ur": "مہربانی، توجہ",
+                "urdu_cognates": "عنایت، عنایات"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p20_03",
+          "book_page": 20,
+          "pdf_page": 22,
+          "type": "prose",
+          "persian": "بَرْ ہَرْ یَکْ اَزْ سَائِرِ بَنْدَگَانْ وَ حَوَاشِیْ خِدْمَتِے مُعَیَّنْ اَسْت، کَہ اَگَرْ دَرْ اَدَائے بَرْخِے اَزْ آں تَہَاوُنْ وَ تَکَاسُلْ رَوَا دَارَنْد، دَرْ مَعْرِضِ خِطَابْ آیَنْد، وَ دَرْ مَحَلِّ عِتَاب، مَگَرْ بَرِیْں طَائِفَۂ دَرْوِیْشَاں، کَہ شُکْرِ نِعْمَتِ بُزُرْگَاں بَرْ اِیْشَاں وَاجِبْ، وَ ذِکْرِ جَمِیْلْ وَ دُعَائے خَیْر، وَ اَدَائے چُنِیْں خِدْمَتْ دَرْ حَدِّ غَیْبَتْ اَوْلَىٰ تَرَسْتْ، کَہ دَرْ حُضُوْر، اِیْں بَہ تَصَنُّعْ نَزْدِیْکْ سْت، وَ آں اَزْ تَکَلُّفْ دُوْر، وَ بَہ اِجَابَتْ مَقْرُوْنْ۔ قِطْعَہ:",
+          "urdu_interlinear": "حاشیہ نشین اور غلاموں میں سے ہر ایک پر ایک خدمت مقرر ہے کہ اگر اس کے ادا کرنے میں تھوڑی سی بھی ڈھیل اور سستی جائز رکھیں تو ان سے جواب طلب ہو جائے اور عتاب میں آ جائیں، بجز فقیروں کے اُس گروہ کے کہ جن پر بزرگوں کا شکر یہ ادا کرنا ضروری ہے اور بہتر ذکر اور اچھی دعائیں، اور اس طرح کی خدمت گذاری پیٹھ پیچھے زیادہ بہتر ہے اس لئے کہ یہ آمنے سامنے میں بناوٹ سے قریب ہو جاتی ہے اور وہ تکلف سے دور اور قبولیت سے نزدیک ہے۔",
+          "english_trans": "Upon each of the royal servants and retainers a specific duty is assigned; if they permit even the slightest negligence or indolence in performing any part of it, they are subjected to reproach and fall into disfavor. Excepted from this is this band of dervishes: for whom the duty is gratitude for the favors of the great, honourable mention, and prayers for their welfare. And performing such a service in their absence is far superior: for in their presence, praise borders upon dissimulation, whereas in absence it is far from artifice and closer to Divine acceptance!",
+          "footnotes": [],
+          "study": {
+            "notes_en": "Saadi artfully contrasts the servile obligations of courtiers with the authentic spiritual mission of dervishes. Prayer uttered in absence (*ghaybat*) is pure and devoid of flattering affectation (*tasannu'*).",
+            "notes_ur": "سعدی نے واضح کیا کہ درباری نوکروں پر ظاہری خدمات کا بوجھ ہوتا ہے، جبکہ درویش کا اصل وظیفہ غائبانہ دعا اور شکر گزاری ہے۔ روبرو تعریف چاپلوسی لگتی ہے جبکہ پیٹھ پیچھے کی گئی دعا اخلاص پر مبنی اور بارگاہِ الٰہی میں مقبول ہوتی ہے۔",
+            "vocabulary": [
+              {
+                "persian": "تَہَاوُن",
+                "grammar": "مصدر (عربی)",
+                "meaning_en": "negligence, slackness",
+                "meaning_ur": "ڈھیل، سستی، غفلت",
+                "urdu_cognates": "تہاون"
+              },
+              {
+                "persian": "تَصَنُّع",
+                "grammar": "مصدر (عربی)",
+                "meaning_en": "artifice, affectation, pretension",
+                "meaning_ur": "بناوٹ، دکھاوا، تصنع",
+                "urdu_cognates": "تصنع، مصنوعی"
+              },
+              {
+                "persian": "مَقْرُوْن",
+                "grammar": "اسم مفعول (عربی)",
+                "meaning_en": "accompanied, adjacent, joined",
+                "meaning_ur": "قریب، ملا ہوا",
+                "urdu_cognates": "مقرون، قرین"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "section_id": "dibacha_taqseer_khidmat_buzurjmihr",
+      "title_ur": "دیباچہ: تقصیرِ خدمت، کلامِ بزرگمہر اور حکمتِ لقمان",
+      "title_en": "Dibacha: Reasons for Seclusion, Buzurjmihr on Speech & Wisdom of Luqman",
+      "pdf_page": 23,
+      "book_page": 21,
+      "content_type": "bilingual_text",
+      "entries": [
+        {
+          "id": "entry_p21_01",
+          "book_page": 21,
+          "pdf_page": 23,
+          "type": "stanza",
+          "header_persian": "قِطْعَہ",
+          "header_urdu": "قطعہ",
+          "lines": [
+            {
+              "persian_m1": "پُشْتِ دوتَائے فَلَکْ رَاسْتْ شُدْ اَزْ خُرَّمِیْ",
+              "persian_m2": "تَا چُو تُو فَرْزَنْد زَادْ مَادَرِ اَیَّامْ رَا",
+              "urdu_m1": "خوشی کی وجہ سے آسمان کی کُبڑی کمر سیدھی ہوگئی",
+              "urdu_m2": "جب سے مادرِ ایام نے تجھ جیسا فرزند جنا"
+            },
+            {
+              "persian_m1": "حِکْمَتِ مَحْضَسْتْ اَگَرْ لُطْفِ جَہَاں آفَرِیْں",
+              "persian_m2": "خَاصْ کُنَدْ بَنْدَۂ مَصْلَحَتِ عَامْ رَا",
+              "urdu_m1": "یہ خالص حکمت ہے اگر جہان کے پیدا کرنے والے کی",
+              "urdu_m2": "مہربانی عوام کی بھلائی کی خاطر کسی کو مخصوص کرے"
+            },
+            {
+              "persian_m1": "دَوْلَتِ جَاوِیْدْ یَافْتْ ہَرْ کَہ نِکُوْ نَامْ زِیْسْت",
+              "persian_m2": "کَزْ عَقِبَشْ ذِکْرِ خَیْر زِنْدَہ کُنَدْ نَامْ رَا",
+              "urdu_m1": "جو نیک نامی سے زندہ رہا اُس نے لازوال دولت پائی",
+              "urdu_m2": "اس لئے کہ اُس کے بعد اُس کا ذکرِ خیر نام کو زندہ رکھے گا"
+            },
+            {
+              "persian_m1": "وَصْفِ تُرَا گَرْ کُنَدْ وَرْ نَکُنَدْ اَہْلِ فَضْل",
+              "persian_m2": "حَاجَتِ مَشَّاطَہ نِیْسْتْ رُوْئے دِلَارَامْ رَا",
+              "urdu_m1": "اہلِ فضل خواہ تیری تعریف کریں یا نہ کریں",
+              "urdu_m2": "حسین چہرہ کو بناؤ سنگھار کرنے والی کی احتیاج نہیں ہوتی"
+            }
+          ],
+          "english_trans": "The bent back of the sky straightened with joy, / Ever since the mother of time bore a son such as thee! / It is pure Divine wisdom if the grace of the World-Creator / Singles out one servant for the welfare of all mankind. / Eternal wealth has he attained who lived with a fair name, / For after him, his noble reputation shall keep his memory alive. / Whether men of learning praise thee or praise thee not: / A heart-ravishing countenance has no need of a tirewoman!",
+          "footnotes": [],
+          "study": {
+            "notes_en": "'Māt-e mashshātah' (need of a cosmetic tirewoman) is a proverbial Persian motif: innate beauty requires no external adornment, just as genuine virtue requires no panegyric flattering.",
+            "notes_ur": "'مشاطہ' دلہن کو آراستہ کرنے والی عورت کو کہتے ہیں۔ سعدی کا ضرب المثل مصرع ہے کہ حسنِ حقیقی کسی بناوٹ کا محتاج نہیں ہوتا، ممدوح کے اوصاف خود اتنے تابناک ہیں کہ شعراء کی مدح کے محتاج نہیں۔",
+            "vocabulary": [
+              {
+                "persian": "دوتَا",
+                "grammar": "صفتِ مرکب",
+                "meaning_en": "bent, doubled over",
+                "meaning_ur": "کبڑا، دوہرا، جھکا ہوا",
+                "urdu_cognates": "دوتا"
+              },
+              {
+                "persian": "مَشَّاطَہ",
+                "grammar": "اسم (عربی)",
+                "meaning_en": "tirewoman, bridal dresser",
+                "meaning_ur": "دلہن کا بناؤ سنگھار کرنے والی",
+                "urdu_cognates": "مشاطہ"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p21_02",
+          "book_page": 21,
+          "pdf_page": 23,
+          "type": "prose",
+          "section_banner": {
+            "persian": "ذِکْرِ تَقْصِیْرِ خِدْمَتْ وَ مُوْجِبِ اِخْتِیَارِ عُزْلَتْ",
+            "urdu": "خدمت میں کوتاہی اور گوشہ نشینی اختیار کرنے کے سبب کا ذکر"
+          },
+          "persian": "تَقْصِیْر وَ تَقَاعُدے کَہ دَرْ مُوَاظَبَتِ خِدْمَتِ بَارْگَاہِ خُدَاوَنْدِیْ مِیْ رَوَدْ بِنَابَرْ آنْسْتْ کَہ طَائِفَۂ اَزْ حُکَمَائے ہِنْدُوْسْتَانْ دَرْ فَضَائِلِ بُزُرْجْمِہْرْ سُخَنْ مِیْ گُفْتَنْد، بِآخِرْ جُز اِیْں عَیْبَشْ نَدَانِسْتَنْدْ کَہ دَرْ سُخَنْ گُفْتَنْ بَطِیْءْ اَسْت، یَعْنِیْ دِرَنْگِ بَسِیَارْ ہَمِیْ کُنَدْ، وَ مُسْتَمِعْ رَا بَسِیْ مُنْتَظِر مِیْ بَایَدْ بُوْدْ، تَا وَے تَقْرِیْرِ سُخَنِیْ کُنَدْ۔ بُزُرْجْمِہْرْ بِشْنِیْدْ وَ گُفْت: اَنْدِیْشَہ کَرْدَنْ کَہ چِہ گُوْیَمْ، بِہْ اَزْ پَشِیْمَانِیْ خُوْرْدَنْ کَہ چِرَا گُفْتَمْ۔ نَظْم:",
+          "urdu_interlinear": "جو کوتاہی اور سستی بادشاہ کے دربار کی مستقل حاضری میں ہوتی ہے اس وجہ سے ہے کہ ہندوستان کے عقلمندوں کا ایک گروہ بزرگمہر کی خوبیوں کی بات کر رہا تھا، آخر کار اس کا عیب سوائے اس کے نہ جانا کہ وہ بات کرنے میں سست ہے۔ یعنی بہت دیر کرتا ہے، اور سننے والے کو بہت منتظر ہونا پڑتا ہے تو کہیں وہ ایک بات کی تقریر کرتا ہے۔ بزرگمہر نے سنا اور بولا سوچا کہ میں کیا کہوں اس کی پشیمانی اٹھانے سے بہتر ہے کہ میں نے کیوں کہا۔",
+          "english_trans": "The shortcoming and laxity that occurs in my continuous attendance at the royal court is due to this: that a group of Indian sages were discussing the virtues of Buzurjmihr, and in the end found no defect in him except that he was slow in speech — meaning he paused at great length, and the listener had to wait long before he delivered an utterance. When Buzurjmihr heard of this, he said: 'Reflecting beforehand on what to say is far better than swallowing remorse over why I said it!'",
+          "footnotes": [],
+          "study": {
+            "notes_en": "Buzurjmihr (Bozorgmehr-e Bokhtagan) was the legendary Grand Vizier of the Sassanian King Khosrow I Anushirvan, famed throughout the East as the archetype of philosophical prudence and deliberate counsel.",
+            "notes_ur": "بزرگمہر ایران کے عادل بادشاہ نوشیرواں کا دانشمند وزیر تھا۔ سعدی نے دربار سے اپنی گوشہ نشینی کا عذر بزرگمہر کے اس مشہور حکیمانہ قول سے پیش کیا ہے کہ خاموشی اور سوچ سمجھ کر بولنا جلد بازی کی پشیمانی سے بدرجہا بہتر ہے۔",
+            "vocabulary": [
+              {
+                "persian": "تَقَاعُد",
+                "grammar": "مصدر (عربی)",
+                "meaning_en": "holding back, tardiness, inaction",
+                "meaning_ur": "پیچھے ہٹنا، سستی، توقف",
+                "urdu_cognates": "تقاعد"
+              },
+              {
+                "persian": "بَطِیْء",
+                "grammar": "صفت (عربی)",
+                "meaning_en": "slow, deliberate",
+                "meaning_ur": "سست، تاخیر کرنے والا",
+                "urdu_cognates": "بطیء الہضم، بطیء"
+              },
+              {
+                "persian": "دِرَنْگ",
+                "grammar": "اسم",
+                "meaning_en": "delay, hesitation, pause",
+                "meaning_ur": "دیر، توقف",
+                "urdu_cognates": "بے درنگ"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p21_03",
+          "book_page": 21,
+          "pdf_page": 23,
+          "type": "stanza",
+          "header_persian": "نَظْم",
+          "header_urdu": "نظم",
+          "lines": [
+            {
+              "persian_m1": "سُخَنْ دَانِ پَرْوَرْدَۂ پِیْرِ کُہَنْ",
+              "persian_m2": "بِیَنْدِیْشَدْ آنْگَہْ بَگُوْیَدْ سُخَنْ",
+              "urdu_m1": "بات کا جاننے والا، تجربہ کار، پرانا بوڑھا",
+              "urdu_m2": "سوچتا ہے پھر بات کرتا ہے"
+            },
+            {
+              "persian_m1": "مَزَنْ بﮯ تَأَمُّلْ بَہ گُفْتَارْ دَمْ",
+              "persian_m2": "نِکُوْ گُوْے وَ گَرْ دِیْر گُوْئِیْ چَہ غَمْ",
+              "urdu_m1": "بدون سوچے بات کہنا شروع نہ کر",
+              "urdu_m2": "بات بہتر کہہ، دیر میں کہے تو کیا غم"
+            }
+          ],
+          "english_trans": "The seasoned orator trained by old masters / First reflects, and only then speaks. / Never commence discourse without forethought: / Speak well — and what matter if thou speakest late?",
+          "footnotes": [],
+          "study": {
+            "notes_en": "Saadi champions deliberative rhetoric over impulsive verbosity. 'Nīkū gūy va gar dīr gūyī chih gham' is one of the most cited maxims across Persian and Urdu literature.",
+            "notes_ur": "سعدی فرماتے ہیں کہ بات کو پرکھ کر اور تول کر کہنا چاہیے۔ اچھا اور پائیدار بولنا دیر سے بولنے کے عیب کو دھو دیتا ہے۔",
+            "vocabulary": [
+              {
+                "persian": "تَأَمُّل",
+                "grammar": "مصدر (عربی)",
+                "meaning_en": "reflection, contemplation, deliberation",
+                "meaning_ur": "غور و فکر، سوچ بچار",
+                "urdu_cognates": "تأمل"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p22_01",
+          "book_page": 22,
+          "pdf_page": 24,
+          "type": "stanza",
+          "header_persian": "نَظْم (تتمہ)",
+          "header_urdu": "نظم (تتمہ)",
+          "lines": [
+            {
+              "persian_m1": "بِیَنْدِیْش وَانْگَہْ بَرْآوَرْ نَفَسْ",
+              "persian_m2": "وَزَاں پِیْشْ بَسْ کُن کَہ گُوْیَنْد بَسْ",
+              "urdu_m1": "سوچ لے پھر بات نکال !",
+              "urdu_m2": "اور اس سے پہلے ختم کر دے کہ لوگ 'بس' کہیں"
+            },
+            {
+              "persian_m1": "بَہ نُطْقْ آدَمِیْ بِہْتَرَسْتْ اَزْ دَوَابْ",
+              "persian_m2": "دَوَابْ اَزْ تُوْ بِہْ گَرْ نَگُوْئِیْ صَوَابْ",
+              "urdu_m1": "گویائی کی وجہ سے آدمی جانوروں سے افضل ہے",
+              "urdu_m2": "اگر تو ٹھیک بات نہ کہے تو تجھ سے جانور بہتر ہیں"
+            }
+          ],
+          "english_trans": "Ponder first, and then draw breath to speak: / And cease before the listeners cry 'Enough!' / By the gift of speech, man is superior to beasts: / Yet beasts are superior to thee if thou speakest not aright!",
+          "footnotes": [],
+          "study": {
+            "notes_en": "The distinction between human rationality (*nutq*, articulated intellect) and brute beasts (*dawābb*). When speech loses truth and discernment, humanity falls beneath bestial nature.",
+            "notes_ur": "انسان کی جانوروں پر فضیلت کا مدار قوتِ گویائی اور عقل پر ہے۔ اگر انسان اس گویائی کو غلط اور بے ہودہ باتوں میں ضائع کرے تو بے زبان جانور اس سے بہتر ثابت ہوتے ہیں۔",
+            "vocabulary": [
+              {
+                "persian": "دَوَابّ",
+                "grammar": "اسم جمع (دابّہ کی جمع)",
+                "meaning_en": "beasts, quadrupeds, animals",
+                "meaning_ur": "چارپائے، جانور",
+                "urdu_cognates": "دواب"
+              },
+              {
+                "persian": "صَوَاب",
+                "grammar": "اسم صفت (عربی)",
+                "meaning_en": "correct, right, true",
+                "meaning_ur": "درست، ٹھیک، مناسب",
+                "urdu_cognates": "صواب، قرینِ صواب"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p22_02",
+          "book_page": 22,
+          "pdf_page": 24,
+          "type": "prose",
+          "persian": "فَکَیْفَ دَرْ نَظَرِ اَعْیَانِ حَضْرَتِ خُدَاوَنْدِیْ عَزَّ نَصْرُہٗ کَہ مَجْمَعِ اَہْلِ دِلْ سْت وَ مَرْکَزِ عُلَمَائے مُتَبَحِّر، اَگَرْ دَرْ سِیَاقَتِ سُخَنْ دَلِیْرِیْ کُنَمْ، شُوْخِیْ کَرْدَہ بَاشَمْ، وَ بِضَاعَتِ مُزْجَاةٌ بَہ حَضْرَتِ عَزِیْزْ آوَرْدَہ، وَ شَبَہ دَرْ بَازَارِ جَوْہَرِیَاں جَوے نَیَارَدْ، وَ چِرَاغْ پِیْشِ آفْتَابْ پَرْتَوے نَدَارَدْ، وَ مَنَارَۂ بُلَنْد بَرْ دَامَنِ کُوْہِ اَلْوَنْدْ پَسْتْ نُمَایَدْ۔",
+          "urdu_interlinear": "تو پھر شاہی دربار کے سرداروں کے سامنے کیا ہو، خدا کرے اس کی فتح غالب ہو، جو اہل دل کا مجمع ہے اور ماہر علماء کا مرکز ہے اگر طرزِ کلام میں دلیری کروں تو میری گستاخی ہوگی اور عزیز مصر کے دربار میں کھوٹی پونجی لے جانا ہوگی اور کہ جوہر یوں کے بازار میں پوتے ایک جو کے بھی لائق نہیں اور آفتاب کے سامنے چراغ کی کوئی روشنی نہیں اور کوہِ الوند کے دامن میں بلند منارہ پست نظر آتا ہے۔",
+          "english_trans": "How then, before the grandees of His Royal Majesty — may his victory be glorious! — which is an assembly of enlightened souls and the cynosure of erudite scholars: if I should make bold in the art of discourse, I would have committed presumption, bringing 'scanty goods' before the Mighty Prince of Egypt! Glass beads fetch not a single barley-corn in the jewelers' market; a lamp casts no radiance before the sun; and a towering minaret appears diminutive against the slopes of Mount Alvand!",
+          "footnotes": [
+            "پوتہ نہایت معمولی موتی ہے۔ ۱۲",
+            "الوند ایک پہاڑ کا نام ہے جو بہت بلند ہے اور شہر ہمدان کے علاقہ میں ہے۔ ۱۲"
+          ],
+          "study": {
+            "notes_en": "'Bidā'at-un muzjāh' directly echoes the Quranic narrative of the brothers of Joseph (Surah Yusuf 12:88), presenting worthless goods before the Aziz of Egypt. Saadi compares his own prose to glass beads (*shabah*) in a jewelers' bazaar, a lamp before the sun, and a minaret against Mount Alvand.",
+            "notes_ur": "'بضاعتِ مزجاۃ' قرآنی تلمیح ہے (سورۂ یوسف آیت ۸۸) جب برادرانِ یوسف نے عزیزِ مصر کے سامنے معمولی اور کھوٹی پونجی پیش کی۔ سعدی نے یہاں کسرِ نفسی کے اعلیٰ نمونے پیش کیے ہیں: جوہر کے بازار میں شیشہ، آفتاب کے سامنے چراغ، اور کوہِ الوند کے سامنے مینار۔",
+            "vocabulary": [
+              {
+                "persian": "بِضَاعَتِ مُزْجَاة",
+                "grammar": "ترکیبِ توصیفی (عربی)",
+                "meaning_en": "worthless merchandise, meager capital",
+                "meaning_ur": "کھوٹی پونجی، معمولی مال",
+                "urdu_cognates": "بضاعت"
+              },
+              {
+                "persian": "شَبَہ",
+                "grammar": "اسم",
+                "meaning_en": "glass bead, fake pearl",
+                "meaning_ur": "پوتہ، نقلی موتی یا پتھر",
+                "urdu_cognates": "شبہ"
+              },
+              {
+                "persian": "اَلْوَنْد",
+                "grammar": "اسمِ علم",
+                "meaning_en": "Mount Alvand (near Hamadan)",
+                "meaning_ur": "کوہِ الوند (ہمدان کا بلند پہاڑ)",
+                "urdu_cognates": "الوند"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p22_03",
+          "book_page": 22,
+          "pdf_page": 24,
+          "type": "stanza",
+          "header_persian": "مَثْنَوِیْ",
+          "header_urdu": "مثنوی",
+          "lines": [
+            {
+              "persian_m1": "ہَرْ کَہ گَرْدَن بَہ دَعْوٰیْ اَفْرَازَدْ",
+              "persian_m2": "خِوِیْشْتَن رَا بَہ گَرْدَن اَنْدَازَدْ",
+              "urdu_m1": "جو شخص کسی دعویٰ کے لئے گردن اونچی کرتا ہے",
+              "urdu_m2": "وہ اپنے آپ کو سرنگوں کر کے گراتا ہے"
+            },
+            {
+              "persian_m1": "سَعْدِیْ اُفْتَادَہ اَسْتْ وَ آزَادَہ",
+              "persian_m2": "کَسْ نَیَایَدْ بَہ جَنْگِ اُفْتَادَہ",
+              "urdu_m1": "سعدی عاجز اور آزاد آدمی ہے",
+              "urdu_m2": "عاجز سے لڑنے کوئی نہیں آتا !"
+            },
+            {
+              "persian_m1": "اَوَّلْ اَنْدِیْشَہ وَانْگَہِیْ گُفْتَارْ",
+              "persian_m2": "پَائے پِیْشْ آمَدَسْتْ وَ پَسْ دِیْوَارْ",
+              "urdu_m1": "پہلے سوچ لے پھر بات کر",
+              "urdu_m2": "نیو پہلے ہے دیوار پیچھے !"
+            },
+            {
+              "persian_m1": "نَخْل بَنْدَمْ وَلے نَہ دَرْ بُسْتَاں",
+              "persian_m2": "شَاہِدَمْ مَنْ وَلے نَہ دَرْ کَنْعَاں",
+              "urdu_m1": "میں مالی ہوں لیکن نہ باغ میں",
+              "urdu_m2": "میں معشوق ہوں لیکن نہ کنعان میں"
+            }
+          ],
+          "english_trans": "Whoever raises his neck in self-assertion / Casts himself down headlong! / Saadi is humble and unencumbered: / No one comes to battle against the fallen! / First reflection, then discourse: / The foundation comes first, and the wall thereafter! / I am a palm-gardener, yet not in a royal garden; / I am a beloved, yet not in Canaan!",
+          "footnotes": [],
+          "study": {
+            "notes_en": "'Pāy pēsh āmad-ast va pas dēwār': the foundation precedes the wall. 'Shāhidam vali nah dar Kan'ān': Saadi admits he may be considered charming, yet in the presence of Egyptian beauty (symbolizing Prophet Joseph of Canaan), his charm vanishes.",
+            "notes_ur": "سعدی فرماتے ہیں کہ تکبر کرنے والا خود منہ کے بل گرتا ہے؛ میں تو عاجز ہوں اور گرے ہوئے پر کوئی تلوار نہیں چلاتا۔ اور کنعان کی تلمیح سے حضرت یوسف کا ذکر کیا کہ ان کے سامنے کوئی حسن کا دعویٰ نہیں کر سکتا۔",
+            "vocabulary": [
+              {
+                "persian": "نَخْل بَنْد",
+                "grammar": "اسمِ فاعلِ ترکیبی",
+                "meaning_en": "palm dresser, artificial flower maker",
+                "meaning_ur": "مالی، درخت سجانے والا، گل تراش",
+                "urdu_cognates": "نخلبند"
+              },
+              {
+                "persian": "شَاہِد",
+                "grammar": "اسم (عربی)",
+                "meaning_en": "fair beloved, handsome youth",
+                "meaning_ur": "خوبصورت محبوب",
+                "urdu_cognates": "شاہد و ساقی"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p22_04",
+          "book_page": 22,
+          "pdf_page": 24,
+          "type": "prose",
+          "persian": "لُقْمَانْ رَا گُفْتَنْدْ: حِکْمَتْ اَزْ کِہْ آمُوْخْتِیْ؟ گُفْتْ: اَزْ نَابِیْنَا یَاں، کَہ تَا جَائے نَہ بِیْنَنْدْ پَائے نَہ نِہَنْدْ۔ قَدِّمِ الْخُرُوْجَ قَبْلَ الْوُلُوْجِ۔ مِصْرَعْ:",
+          "urdu_interlinear": "لقمان سے لوگوں نے پوچھا تو نے دانائی کس سے سیکھی اس نے کہا اندھوں سے کہ جب تک جگہ نہ ٹٹول لیں قدم نہیں دھرتے ہیں۔ داخل ہونے سے پہلے نکلنے کی سوچ لے ۔",
+          "english_trans": "They asked Luqman the Sage: 'From whom didst thou learn wisdom?' He replied: 'From the blind: for they never set down their foot until they have first tested the ground!' Secure the exit before venturing into the entrance!",
+          "footnotes": [],
+          "study": {
+            "notes_en": "The famous Arabic proverb: 'Qaddim al-khurūja qabl al-wulūj' (Plan your departure before entering). Luqman personifies patient practical prudence.",
+            "notes_ur": "'قَدِّمِ الْخُرُوْجَ قَبْلَ الْوُلُوْجِ' عربی مقولہ ہے یعنی کسی کام یا مقام میں داخل ہونے سے پہلے وہاں سے نکلنے کا راستہ سوچ لو۔ لقمان حکیم نے اندھوں کی احتیاط سے یہ سبق سیکھا کہ بے دیکھے قدم نہ بڑھایا جائے۔",
+            "vocabulary": [
+              {
+                "persian": "وُلُوْج",
+                "grammar": "مصدر (عربی)",
+                "meaning_en": "entering, penetrating",
+                "meaning_ur": "داخل ہونا",
+                "urdu_cognates": "ولوج"
+              },
+              {
+                "persian": "خُرُوْج",
+                "grammar": "مصدر (عربی)",
+                "meaning_en": "exiting, departing",
+                "meaning_ur": "نکلنا، باہر آنا",
+                "urdu_cognates": "خروج، خارج"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "section_id": "dibacha_compilation_and_catalog",
+      "title_ur": "دیباچہ: سببِ تالیف اور گلستان کے آٹھ ابواب کی فہرست",
+      "title_en": "Dibacha: Motive for Compilation & The Catalog of the 8 Chapters",
+      "pdf_page": 25,
+      "book_page": 23,
+      "content_type": "bilingual_text",
+      "entries": [
+        {
+          "id": "entry_p23_01",
+          "book_page": 23,
+          "pdf_page": 25,
+          "type": "stanza",
+          "header_persian": "مِصْرَعْ وَ قِطْعَہ",
+          "header_urdu": "مصرع و قطعہ",
+          "lines": [
+            {
+              "persian_m1": "مَرْدِیْت بَیَازْمَا وَانْگَہْ زَنْ کُنْ",
+              "persian_m2": "گَرْچِہ شَاطِر بُوَدْ خُرُوْس بَہ جَنْگ",
+              "urdu_m1": "پہلے قوتِ مردمی کو آزما لے پھر شادی کر",
+              "urdu_m2": "مرغ اگرچہ لڑنے میں چالاک ہو"
+            },
+            {
+              "persian_m1": "چَہ زَنَدْ پِیْشِ بَازِ رُوْئِیْں چَنْگ؟",
+              "persian_m2": "گُرْبَہ شِیْرَسْتْ دَرْ گِرِفْتَنِ مُوْش",
+              "urdu_m1": "لیکن کانسی کے پنجے والے باز کے مقابلہ میں کیا کر سکتا ہے؟",
+              "urdu_m2": "چوہا پکڑنے میں بلّی شیر ہے !"
+            },
+            {
+              "persian_m1": "لِیْکْ مُوْشَسْتْ مَصَافِ پَلَنْگ",
+              "persian_m2": "گُرْبَہ شِیْرَسْتْ دَرْ گِرِفْتَنِ مُوْش",
+              "urdu_m1": "لیکن چیتے کی لڑائی میں وہ چوہا ہے",
+              "urdu_m2": "چوہا پکڑنے میں بلّی شیر ہے !"
+            }
+          ],
+          "english_trans": "Test thy manhood before taking a wife! / Though the fighting cock be swift and bold in combat, / What can he strike before a bronze-taloned falcon? / The cat is a lion when hunting mice, / Yet a mouse when pitted against a leopard!",
+          "footnotes": [],
+          "study": {
+            "notes_en": "Two classic proverbs highlighting relative strength: the fighting cock against the bronze falcon (*bāz-e rūyīn-chang*), and the domestic cat acting as a lion against mice but a mouse against leopards.",
+            "notes_ur": "ضرب الامثال اشعار ہیں: 'گربہ شیر است در گرفتن موش، لیک موش است در مصاف پلنگ'۔ ہر شے اپنے سے کمزور پر شیر ہوتی ہے مگر طاقتور کے سامنے بے بس۔",
+            "vocabulary": [
+              {
+                "persian": "شَاطِر",
+                "grammar": "صفت (عربی)",
+                "meaning_en": "nimble, agile, shrewd",
+                "meaning_ur": "چالاک، چست",
+                "urdu_cognates": "شاطر"
+              },
+              {
+                "persian": "رُوْئِیْں چَنْگ",
+                "grammar": "صفتِ مرکب",
+                "meaning_en": "having brass/bronze talons",
+                "meaning_ur": "کانسی کے پنجے والا",
+                "urdu_cognates": "روئیں تن"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p23_02",
+          "book_page": 23,
+          "pdf_page": 25,
+          "type": "prose",
+          "persian": "اَمَّا بِاعْتِمَادِ وُسْعَتِ اَخْلَاقِ بُزُرْگَاں، کَہ چَشْم اَزْ عِوَائِبِ زِیْرْدَسْتَاں پُوْشَنْد، وَ دَرْ اِفْشَائے جَرَائِمِ کِہْتَرَاں نَکُوْشَنْد، کَلِمَۂ چَنْد بَطَرِیْقِ اِخْتِصَار اَزْ نَوَادِر وَ اَمْثَالْ، وَ شِعْرْ، وَ حِکَایَاتْ، وَ سِیَرِ مُلُوْکِ مَاضِیْ رَحِمَہُمُ اللّٰہُ دَرْ اِیْں کِتَابْ دَرْجْ کَرْدِیْم، وَ بَرْخِے اَزْ عُمْرِ گِرَاں مَایَہ بَرْ وَے خَرْج، مُوْجِبِ تَصْنِیْفِ کِتَابْ اِیْں بُوْد، وَ بِاللّٰہِ التَّوْفِیْقْ۔ قِطْعَہ:",
+          "urdu_interlinear": "لیکن بزرگوں کے اخلاق کی وسعت کے بھروسے پر کیونکہ وہ چھوٹوں کے عیب سے چشم پوشی کرتے ہیں اور چھوٹوں کے عیب ظاہر نہیں کرتے ہیں۔ چند کلمے مختصر طور پر نادر باتوں، مثالوں، شعر، حکایتوں، گذشتہ بادشاہوں کی عادتوں کے اس کتاب میں ہم نے لکھ دیئے ہیں اور تھوڑی سی قیمتی عمر اس پر خرچ کی ہے اس کتاب کی تصنیف کا سبب یہ تھا اور توفیق خدا کی جانب سے ہے۔",
+          "english_trans": "Yet relying upon the boundless generosity of the great — who veil the flaws of subordinates and seek not to expose the shortcomings of the humble — I have recorded in this book a few concise maxims of rarity, parables, poems, tales, and the conduct of past kings (may God have mercy upon them), expending upon it a portion of precious life. Such was the cause of compiling this book, and from God alone comes all success!",
+          "footnotes": [],
+          "study": {
+            "notes_en": "Saadi's definitive programmatic statement outlining the pedagogical contents of the Gulistan: rare aphorisms (*nawādir*), parables (*amthāl*), verses (*shi'r*), moral anecdotes (*hikāyāt*), and royal chronicles (*siyar al-mulūk*).",
+            "notes_ur": "سعدی کا کتاب کی نوعیت اور مواد پر جامع بیان ہے۔ انہوں نے نایاب اقوال، حکایات، تمثیلات اور بادشاہوں کے تاریخی واقعات کو یکجا کرنے کا مقصد بیان کیا ہے۔",
+            "vocabulary": [
+              {
+                "persian": "عِوَائِب",
+                "grammar": "اسم جمع (عیب کی جمع)",
+                "meaning_en": "faults, defects, vices",
+                "meaning_ur": "عیوب، خامیاں",
+                "urdu_cognates": "معائب"
+              },
+              {
+                "persian": "اِفْشَاء",
+                "grammar": "مصدر (عربی)",
+                "meaning_en": "revealing, disclosing, exposing",
+                "meaning_ur": "ظاہر کرنا، فاش کرنا",
+                "urdu_cognates": "افشا، افشائے راز"
+              },
+              {
+                "persian": "سِیَر",
+                "grammar": "اسم جمع (سیرت کی جمع)",
+                "meaning_en": "biographies, conduct, histories",
+                "meaning_ur": "حالاتِ زندگی، کردار",
+                "urdu_cognates": "سیرت، سیر"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p23_03",
+          "book_page": 23,
+          "pdf_page": 25,
+          "type": "stanza",
+          "header_persian": "قِطْعَہ",
+          "header_urdu": "قطعہ",
+          "lines": [
+            {
+              "persian_m1": "بِمَانَدْ سَالْہَا اِیْں نَظْمْ وَ تَرْتِیْبْ",
+              "persian_m2": "زِ مَا ہَرْ ذَرَّۂ خَاکْ اُفْتَادَہ جَائِیْ",
+              "urdu_m1": "یہ نظم اور یہ ترتیب برسوں رہے گی",
+              "urdu_m2": "ہماری خاک کا ایک ایک ذرہ جگہ جگہ پڑا ہوگا"
+            },
+            {
+              "persian_m1": "غَرَضْ نَقْشِیْسْتْ کَزْ مَا یَادْ مَانَدْ",
+              "persian_m2": "کَہ ہَسْتِیْ رَا نَمِیْ بِیْنَمْ بَقَائِیْ",
+              "urdu_m1": "غرض یہ ایک نقش ہے جو ہماری یادگار رہے گا",
+              "urdu_m2": "اس لئے کہ ہستی کو تو بقا نہیں معلوم ہوتی ہے"
+            },
+            {
+              "persian_m1": "مَگَرْ صَاحِبْدِلے رُوْزے بَہ رَحْمَتْ",
+              "persian_m2": "کُنَدْ دَرْ کَارِ دَرْوِیْشَاں دُعَائِیْ",
+              "urdu_m1": "شاید کوئی صاحبِ دل کسی دن رحم کھا کر",
+              "urdu_m2": "درویشوں کے معاملہ میں کوئی دعا کر دے"
+            }
+          ],
+          "english_trans": "This verse and arrangement shall endure for centuries, / While every speck of our dust lies scattered far and wide! / My sole purpose is that an inscription should survive as our memorial, / For I behold no permanence in mortal existence — / Save perhaps some warm-hearted soul one day in compassion / Might utter a prayer for the welfare of this dervish!",
+          "footnotes": [],
+          "study": {
+            "notes_en": "One of the most poignant and immortal couplets in world literature: 'Gharaz naqshēst k-az mā yād mānad / Kih hastī rā namī-bīnam baqā'ē'. It captures the transcendent longing of the author for spiritual remembrance across generations.",
+            "notes_ur": "سعدی کا لازوال اور تاریخ ساز قطعہ ہے۔ انسان کی فانی ہستی مٹ جائے گی مگر یہ علمی اور ادبی نقوش زمانوں تک زندہ رہیں گے، اور مصنف کا مقصد فقط کسی باخدا انسان کی دعائے مغفرت کا حصول ہے۔",
+            "vocabulary": [
+              {
+                "persian": "نَقْش",
+                "grammar": "اسم (عربی)",
+                "meaning_en": "design, mark, inscription, print",
+                "meaning_ur": "نشان، تحریر، یادگار",
+                "urdu_cognates": "نقش، نقوش، نقش بر آب"
+              },
+              {
+                "persian": "صَاحِبْدِل",
+                "grammar": "صفتِ مرکب",
+                "meaning_en": "pious person, mystic, enlightened soul",
+                "meaning_ur": "اہلِ دل، عارف، خدا رسیدہ انسان",
+                "urdu_cognates": "صاحبِ دل"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p23_04",
+          "book_page": 23,
+          "pdf_page": 25,
+          "type": "prose",
+          "persian": "اِمْعَانِ نَظَرْ دَرْ تَرْتِیْبِ کِتَابْ وَ تَہْذِیْبِ اَبْوَابْ اِیْجَازِ سُخَنْ رَا مَصْلَحَتْ دِیْد، تَا مَر اِیْں رَوْضَۂ غَنَّا وَ حَدِیْقَۂ غَلْبَا رَا چُوں بَہِشْتْ بَہ ہَشْتْ بَابْ اِتِّفَاقْ اُفْتَاد، اَزِیْں سَبَبْ مُخْتَصَرْ آمَدْ، تَا بَہ مَلَالَتْ نَہ اَنْجَامَدْ۔ وَاللّٰہُ اَعْلَمُ بِالصَّوَابِ، وَ اِلَیْہِ الْمَرْجَعُ وَالْمَآبُ۔",
+          "urdu_interlinear": "نظر کی گہرائی نے کتاب کی ترتیب اور بابوں کی تہذیب میں بات کے اختصار کو مناسب سمجھا چنانچہ اس گھنان باغ اور گھنے باغیچہ کو بہشت کی طرح آٹھ باب میں اتفاق ہو گیا اسی وجہ سے مختصر ہوگئی تاکہ کدورت نہ پیدا ہو اور خدا بہتر بات زیادہ جانتا ہے اور اسی کی طرف مرجع اور ٹھکانا ہے۔",
+          "english_trans": "Deep consideration in the arrangement of the book and refinement of its sections determined that brevity was the wisest course. Thus, like Paradise, this luxuriant garden and verdant orchard was apportioned into Eight Chapters, kept concise lest it lead to weariness. And God knows best what is right, and unto Him is the return and final abode!",
+          "footnotes": [],
+          "study": {
+            "notes_en": "Saadi explicitly ties the 8 chapters of the Gulistan to the traditional 8 Gates of Paradise (*hasht bāb-e bihisht*). The Quranic phrase 'Rawdah ghannā' and 'Hadiqah ghalbā' evokes the lush beauty of celestial gardens.",
+            "notes_ur": "اسلامی عقیدے کے مطابق جنت کے آٹھ دروازے ہیں۔ سعدی نے گلستان کو بھی آٹھ ابواب میں تقسیم کیا تاکہ ہر باب جنت کے ایک دروازے کی طرح حکمت و معارف کی سیر کرائے۔",
+            "vocabulary": [
+              {
+                "persian": "اِمْعَانِ نَظَر",
+                "grammar": "ترکیبِ اضافی (عربی)",
+                "meaning_en": "deep scrutiny, careful inspection",
+                "meaning_ur": "گہری نظر، غور و خوض",
+                "urdu_cognates": "امعانِ نظر"
+              },
+              {
+                "persian": "رَوْضَۂ غَنَّا",
+                "grammar": "ترکیبِ توصیفی (عربی)",
+                "meaning_en": "luxuriant, verdant garden",
+                "meaning_ur": "سرسبز و شاداب باغ",
+                "urdu_cognates": "روضہ"
+              },
+              {
+                "persian": "اِیْجَاز",
+                "grammar": "مصدر (عربی)",
+                "meaning_en": "brevity, conciseness",
+                "meaning_ur": "مختصر کلام، اختصار",
+                "urdu_cognates": "ایجاز، اعجاز و ایجاز"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p24_01",
+          "book_page": 24,
+          "pdf_page": 26,
+          "type": "stanza",
+          "header_persian": "فِہْرِسْتِ اَبْوَابِ ہَشْتْ گَانَہ",
+          "header_urdu": "گلستان کے آٹھ ابواب کی فہرست",
+          "lines": [
+            {
+              "persian_m1": "بَابِ اَوَّلْ: دَرْ سِیْرَتِ پَادْشَاہَاں",
+              "persian_m2": "بَابِ دُوَّمْ: دَرْ اَخْلَاقِ دَرْوِیْشَاں",
+              "urdu_m1": "پہلا باب: بادشاہوں کی عادت کے بیان میں",
+              "urdu_m2": "دوسرا باب: درویشوں کے اخلاق کے بیان میں"
+            },
+            {
+              "persian_m1": "بَابِ سِوَّمْ: دَرْ فَضِیْلَتِ قَنَاعَتْ",
+              "persian_m2": "بَابِ چَہَارُمْ: دَرْ فَوَائِدِ خَامُوْشِیْ",
+              "urdu_m1": "تیسرا باب: قناعت کی فضیلت کے بیان میں",
+              "urdu_m2": "چوتھا باب: چپ رہنے کی فضیلت کے بیان میں"
+            },
+            {
+              "persian_m1": "بَابِ پَنْجُمْ: دَرْ عِشْقْ وَ جَوَانِیْ",
+              "persian_m2": "بَابِ شَشُمْ: دَرْ ضَعْفْ وَ پِیْرِیْ",
+              "urdu_m1": "پانچواں باب: عاشقی اور جوانی کے بیان میں",
+              "urdu_m2": "چھٹا باب: بڑھاپے کی کمزوری کے بیان میں"
+            },
+            {
+              "persian_m1": "بَابِ ہَفْتُمْ: دَرْ تَأْثِیْرِ تَرْبِیَتْ",
+              "persian_m2": "بَابِ ہَشْتُمْ: دَرْ آدَابِ صُحْبَتْ وَ حِکْمَتْ",
+              "urdu_m1": "ساتواں باب: پرورش کی تاثیر کے بیان میں",
+              "urdu_m2": "آٹھواں باب: ساتھ رہنے کے طریقوں اور حکمت کے بیان میں"
+            }
+          ],
+          "english_trans": "Chapter I: On the Manners of Kings / Chapter II: On the Morals of Dervishes / Chapter III: On the Excellence of Contentment / Chapter IV: On the Benefits of Silence / Chapter V: On Love and Youth / Chapter VI: On Weakness and Old Age / Chapter VII: On the Effects of Education / Chapter VIII: On the Rules of Conduct in Life",
+          "footnotes": [],
+          "study": {
+            "notes_en": "The canonical eightfold structure of Saadi's Gulistan, framing human societal existence from sovereignty and monastic asceticism through love, aging, pedagogy, and ethical aphorisms.",
+            "notes_ur": "گلستانِ سعدی کا اصل ڈھانچہ انہی آٹھ ابواب پر قائم ہے جو معاشرت، سیاست، اخلاقیات اور روحانیات کے تمام پہلوؤں کا احاطہ کرتے ہیں۔",
+            "vocabulary": [
+              {
+                "persian": "سِیْرَت",
+                "grammar": "اسم (عربی)",
+                "meaning_en": "character, conduct, habits",
+                "meaning_ur": "کردار، عادات، طور طریقہ",
+                "urdu_cognates": "سیرت"
+              },
+              {
+                "persian": "قَنَاعَت",
+                "grammar": "اسم (عربی)",
+                "meaning_en": "contentment, satisfaction with one's lot",
+                "meaning_ur": "صبر و شکر، قناعت",
+                "urdu_cognates": "قناعت، قانع"
+              },
+              {
+                "persian": "خَامُوْشِی",
+                "grammar": "اسم مصدر",
+                "meaning_en": "silence, taciturnity",
+                "meaning_ur": "چپ رہنا، سکوت",
+                "urdu_cognates": "خاموشی"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p24_02",
+          "book_page": 24,
+          "pdf_page": 26,
+          "type": "stanza",
+          "header_persian": "مَثْنَوِیْ (تَارِیْخِ تَصْنِیْف)",
+          "header_urdu": "مثنوی (تاریخِ تالیف ۶۵۶ھ)",
+          "lines": [
+            {
+              "persian_m1": "دَرِیْں مُدَّتْ کَہ مَا رَا وَقْتِ خُوْشْ بُوْد",
+              "persian_m2": "زِ ہِجْرَتْ شَشْصَدْ وَ پَنْجَاہْ وَ شَشْ بُوْد",
+              "urdu_m1": "جس زمانہ میں کہ ہمارا اچھا وقت تھا",
+              "urdu_m2": "ہجری سن چھ سو چھپن (۶۵۶ھ) تھا !"
+            },
+            {
+              "persian_m1": "مُرَادِ مَا نَصِیْحَتْ بُوْدْ وَ گُفْتِیْم",
+              "persian_m2": "حَوَالَتْ بَا خُدَا کَرْدِیْم وَ رَفْتِیْم",
+              "urdu_m1": "ہمارا مقصد نصیحت کرنا تھا اور ہم نے کر دی",
+              "urdu_m2": "ہم نے خدا کے سپرد کر دیا اور ہم رخصت ہو گئے"
+            }
+          ],
+          "english_trans": "During this season when our time was sweet, / The year was six hundred and fifty-six of the Hijra (1258 CE)! / Our intention was counsel, and we have spoken it; / We have commended our work unto God, and departed!",
+          "footnotes": [],
+          "study": {
+            "notes_en": "656 AH (1258 CE) is the historic date of the compilation of the Gulistan, coinciding dramatically with the Mongol sack of Baghdad and the fall of the Abbasid Caliphate, cementing Shiraz as an enduring sanctuary of Persian literature.",
+            "notes_ur": "۶۵۶ھ (۱۲۵۸ء) گلستان کا سنِ تکمیل ہے۔ یہی وہ تاریخی سال ہے جس میں ہلاکو خان نے بغداد کو تاراج کیا اور خلافتِ عباسیہ کا خاتمہ ہوا۔ سعدی نے اس پرفتن دور میں گلستان مکمل کر کے دنیا کو امن اور اخلاق کا ابدی پیغام دیا۔",
+            "vocabulary": [
+              {
+                "persian": "شَشْصَد",
+                "grammar": "عدد",
+                "meaning_en": "six hundred (600)",
+                "meaning_ur": "چھ سو",
+                "urdu_cognates": "ششصد"
+              },
+              {
+                "persian": "حَوَالَت",
+                "grammar": "اسم (عربی)",
+                "meaning_en": "entrusting, referring, assigning",
+                "meaning_ur": "سپرد کرنا، سونپ دینا",
+                "urdu_cognates": "حوالہ، حوالے کرنا"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "section_id": "bab1_hikayat_01",
+      "title_ur": "باب اول: حکایت ۱ — اسیر کا بادشاہ کو دشنام اور دروغِ مصلحت آمیز",
+      "title_en": "Chapter 1: Story 1 — The Captive's Curse & The Benevolent Lie",
+      "pdf_page": 26,
+      "book_page": 24,
+      "content_type": "bilingual_text",
+      "entries": [
+        {
+          "id": "entry_p24_03",
+          "book_page": 24,
+          "pdf_page": 26,
+          "type": "prose",
+          "section_banner": {
+            "persian": "بَابِ اَوَّلْ: دَرْ سِیْرَتِ پَادْشَاہَاں",
+            "urdu": "پہلا باب: بادشاہوں کی عادت کے بیان میں !"
+          },
+          "persian": "پَادْشَاہِے رَا شَنِیْدَمْ کَہ بَہ کُشْتَنِ اَسِیْرِے اِشَارَتْ کَرْد،",
+          "urdu_interlinear": "میں نے ایک بادشاہ کے بارے میں سنا کہ اس نے ایک قیدی کو قتل کرنے کا حکم دیا",
+          "english_trans": "I heard of a king who gave the signal for the execution of a captive.",
+          "footnotes": [],
+          "study": {
+            "notes_en": "The iconic opening sentence of Chapter 1 of the Gulistan. Saadi begins immediately *in media res* with a life-and-death ethical crisis.",
+            "notes_ur": "گلستان کے باب اول کی پہلی اور شہرۂ آفاق حکایت کا آغاز ہے۔ سعدی سیدھے اصل واقعے سے سبق آموز گفتگو شروع کرتے ہیں۔",
+            "vocabulary": [
+              {
+                "persian": "اَسِیْر",
+                "grammar": "اسم (عربی)",
+                "meaning_en": "captive, prisoner of war",
+                "meaning_ur": "قیدی، گرفتار شدہ",
+                "urdu_cognates": "اسیر، اسیری"
+              },
+              {
+                "persian": "اِشَارَت",
+                "grammar": "اسم (عربی)",
+                "meaning_en": "sign, gesture, command",
+                "meaning_ur": "حکم، اشارہ کرنا",
+                "urdu_cognates": "اشارہ، اشارۃً"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p25_01",
+          "book_page": 25,
+          "pdf_page": 27,
+          "type": "prose",
+          "persian": "بِیْچَارَہ دَرْ آں حَالَتِ نَوْمِیْدِیْ بَہ زَبَانِے کَہ دَاشْتْ مَلِکْ رَا دُشْنَامْ دَادَنْ گِرِفْتْ، وَ سَقَطْ گُفْتَنْ، کَہ گُفْتَہ اَنْد: ہَرْ کَہ دَسْتْ اَزْ جَاں بِشُوْیَدْ، ہَرْ چِہ دَرْ دِلْ آیَدْ بَگُوْیَدْ۔ بَیْت:",
+          "urdu_interlinear": "بیچارے نے اُس ناامیدی کی حالت میں اپنی زبان میں بادشاہ کو گالیاں دینا اور سخت وسست کہنا شروع کر دیا اس لئے کہ لوگوں نے کہا ہے جو کوئی جان سے ہاتھ دھو لیتا ہے جو کچھ دل میں آتا ہو کہتا ہو۔",
+          "english_trans": "The wretched man, in that state of desperation, began in his own tongue to revile the king and utter harsh insults; for as they have said: 'Whoever washes his hands of life utters whatever rises in his heart!'",
+          "footnotes": [],
+          "study": {
+            "notes_en": "'Dast az jān shustan' (to wash one's hands of life) is a classic Persian idiom meaning to abandon all hope of survival.",
+            "notes_ur": "'دست از جان شستن' فارسی کا محاورہ ہے جس کا اردو ترجمہ 'جان سے ہاتھ دھونا' بنتا ہے۔ مایوسی میں انسان نتائج کے خوف سے آزاد ہو کر سچ یا غصہ نکال دیتا ہے۔",
+            "vocabulary": [
+              {
+                "persian": "دُشْنَام",
+                "grammar": "اسم",
+                "meaning_en": "abuse, curse, vilification",
+                "meaning_ur": "گالی، دشنام",
+                "urdu_cognates": "دشنام، دشنام طرازی"
+              },
+              {
+                "persian": "سَقَط",
+                "grammar": "اسم (عربی)",
+                "meaning_en": "foul words, improper speech",
+                "meaning_ur": "سخت سست، نازیبا کلمات",
+                "urdu_cognates": "سقط، ساقط"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p25_02",
+          "book_page": 25,
+          "pdf_page": 27,
+          "type": "couplet",
+          "header_persian": "بَیْت",
+          "header_urdu": "بیت",
+          "persian_m1": "وَقْتِ ضَرُوْرَتْ چُو نَمَانَدْ گُرِیْزْ",
+          "persian_m2": "دَسْتْ بَگِیْرَدْ سَرِ شَمْشِیْرِ تِیْزْ",
+          "urdu_m1": "ضرورت کے موقع پر جب بھاگنا ممکن نہ رہے",
+          "urdu_m2": "تو ہاتھ تیز تلوار کی نوک پکڑ لیتا ہے",
+          "english_trans": "In the hour of dire extremity, when escape is cut off: / The bare hand seizes the sharp edge of the naked blade!",
+          "footnotes": [],
+          "study": {
+            "notes_en": "A vivid somatic metaphor of extreme desperation: grasping the cutting blade of an executioner's sword with bare hands.",
+            "notes_ur": "جب جان بچانے کا کوئی راستہ نہ بچے تو انسان تلوار کی دھار کو بھی ننگے ہاتھوں سے پکڑنے سے دریغ نہیں کرتا۔",
+            "vocabulary": [
+              {
+                "persian": "گُرِیْز",
+                "grammar": "اسم مصدر",
+                "meaning_en": "escape, flight",
+                "meaning_ur": "بھاگنا، فرار، بچاؤ",
+                "urdu_cognates": "گریز، گریز پا"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p25_03",
+          "book_page": 25,
+          "pdf_page": 27,
+          "type": "couplet",
+          "header_persian": "شِعْر (عَرَبِیْ)",
+          "header_urdu": "شعر (عربی)",
+          "persian_m1": "اِذَا یَئِسَ الْإِنْسَانُ طَالَ لِسَانُہٗ",
+          "persian_m2": "کَسِنَّوْرٍ مَّغْلُوْبٍ یَّصُوْلُ عَلَى الْکَلْبِ",
+          "urdu_m1": "انسان جب ناامید ہو جاتا ہے تو اُس کی زبان دراز ہو جاتی ہے",
+          "urdu_m2": "جیسے دبی ہوئی بلی کتے پر حملہ کر دیتی ہے",
+          "english_trans": "When man despairs, his tongue grows long and bold: / Like a cornered cat that leaps fiercely upon a hound!",
+          "footnotes": [],
+          "study": {
+            "notes_en": "Arabic proverb inserted by Saadi to illustrate psychological resistance when all avenues of survival are closed.",
+            "notes_ur": "عربی کا یہ ضرب المثل شعر سعدی نے نقل کیا کہ مایوسی میں کمزور بھی طاقتور پر حملہ آور ہو جاتا ہے، جیسے گھری ہوئی بلی کتے پر جھپٹتی ہے۔",
+            "vocabulary": [
+              {
+                "persian": "سِنَّوْر",
+                "grammar": "اسم (عربی)",
+                "meaning_en": "cat",
+                "meaning_ur": "بلی",
+                "urdu_cognates": "سنور"
+              },
+              {
+                "persian": "یَصُوْل",
+                "grammar": "فعل مضارع (عربی)",
+                "meaning_en": "attacks, leaps upon",
+                "meaning_ur": "حملہ کرتا ہے، جھپٹتا ہے",
+                "urdu_cognates": "صولت"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p25_04",
+          "book_page": 25,
+          "pdf_page": 27,
+          "type": "prose",
+          "persian": "مَلِکْ پُرْسِیْد کَہ: چِہ مِیْ گُوْیَدْ؟ یَکِے اَزْ وُزَرَائے نِیْکْ مَحْضَرْ گُفْت: اَے خُدَاوَنْد! ہَمِیْ گُوْیَد: وَالْکَاظِمِیْنَ الْغَیْظَ وَالْعَافِیْنَ عَنِ النَّاسِ۔ مَلِکْ رَا رَحْمَتْ آمَدْ، وَ اَزْ سَرِ خُوْنِ او دَرْگُذَشْتْ۔ وَزِیْرِ دِیْگَر کَہ ضِدِّ او بُوْدْ گُفْت: اَبْنَائے جِنْسِ مَا رَا نَشَایَدْ دَرْ حَضْرَتِ پَادْشَاہَاں جُزْ بَہ رَاسْتِیْ سُخَنْ گُفْتَنْ، اِیْں مَلِکْ رَا دُشْنَامْ دَادْ وَ نَاسَزَا گُفْتْ۔ مَلِکْ رُوْے اَزِیْں سُخَنْ دَرْہَمْ کَشِیْدْ وَ گُفْت: آں دُرُوْغ کَہ وَے گُفْتْ پَسَنْدِیْدَہ تَر آمَدْ مَرَا اَزِیْں رَاسْتْ کَہ تُوْ گُفْتِیْ، کَہ رُوْئے آں دَرْ مَصْلَحَتْ بُوْد، وَ بِنَائے اِیْں بَرْ خُبْثے، وَ خِرَدْمَنْدَاں گُفْتَہ اَنْد: دُرُوْغِ مَصْلَحَتْ آمِیْزْ بِہْ اَزْ رَاسْتِیْ فِتْنَہ اَنْگِیْزْ۔ شِعْر:",
+          "urdu_interlinear": "بادشاہ نے دریافت کیا کہ کیا کہتا ہے؟ ایک نیک خصلت وزیر بولا اے بادشاہ وہ یہ کہہ رہا ہے وہ لوگ بہت اچھے ہیں جو غصہ پی جاتے ہیں اور لوگوں کو معاف کر دیتے ہیں بادشاہ کو رحم آ گیا اور اس کو قتل کرنے کا خیال ترک کر دیا ۔ دوسرا وزیر جو اس وزیر کا مخالف تھا بولا، ہمارے ہم پیشہ لوگوں کے لئے مناسب نہیں ہے بادشاہوں کے دربار میں سچی بات کے سوا کچھ کہنا ۔ اس نے تو بادشاہ کو گالیاں دی ہیں اور نامناسب باتیں کہی ہیں۔ بادشاہ اس بات کو سن کر ناراض ہوا اور بولا وہ جھوٹ جو اُس وزیر نے بولا مجھے اس سچ سے بہت پسند آیا جو تو نے کہا اس لئے کہ اس کا رخ نیکی کی طرف تھا اور اس سچ کی بنیاد خباثت پر اور عقلمندوں نے کہا ہے مصلحت آمیز جھوٹ فتنہ پیدا کر دینے والے سچ سے بہتر ہے",
+          "english_trans": "The king inquired: 'What does he say?' A virtuous minister of good character replied: 'O Lord! He is reciting: \"Those who restrain their anger and pardon fellow men\" (Quran 3:134).' Thereupon the king was moved to mercy and remitted his death sentence. Another minister, who was his adversary, spoke: 'It ill becomes men of our rank to utter anything before sovereigns save the strict truth: this man reviled the king and spoke insolently!' At this speech, the king frowned in displeasure and said: 'That lie which he spoke is more pleasing to me than this truth which thou hast uttered; for his words were directed toward conciliation and benevolence, whereas thine are founded upon malice! And the sages have said: \"A benevolent lie is better than a mischief-stirring truth!\"'",
+          "footnotes": [],
+          "study": {
+            "notes_en": "'Durūgh-e maslahat-āmēz bih az rāstī-ye fitnah-angēz': one of the most famous ethical aphorisms in Eastern thought. Saadi prioritizes the preservation of human life and social harmony over rigid, malicious literalism.",
+            "notes_ur": "سعدی کا شہرۂ آفاق قول: 'دروغِ مصلحت آمیز بہ از راستیٔ فتنہ انگیز'۔ یعنی وہ جھوٹ جو کسی مظلوم کی جان بچا لے اور نیکی پر مبنی ہو اس سچ سے ہزار درجہ بہتر ہے جس کا مقصد فساد اور خونریزی ہو۔",
+            "vocabulary": [
+              {
+                "persian": "نِیْکْ مَحْضَر",
+                "grammar": "صفتِ مرکب",
+                "meaning_en": "of virtuous disposition, kindly presence",
+                "meaning_ur": "نیک سیرت، اچھے اخلاق والا",
+                "urdu_cognates": "نیک محضر"
+              },
+              {
+                "persian": "مَصْلَحَت",
+                "grammar": "اسم (عربی)",
+                "meaning_en": "benevolent purpose, conciliation, welfare",
+                "meaning_ur": "بھلائی، بہتری، خیر خواہی",
+                "urdu_cognates": "مصلحت، مصلحت آمیز"
+              },
+              {
+                "persian": "خُبْث",
+                "grammar": "اسم (عربی)",
+                "meaning_en": "malice, wickedness, corruption",
+                "meaning_ur": "خباثت، کینہ، برائی",
+                "urdu_cognates": "خباثت، خبیث"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p25_05",
+          "book_page": 25,
+          "pdf_page": 27,
+          "type": "couplet",
+          "header_persian": "شِعْر",
+          "header_urdu": "شعر",
+          "persian_m1": "ہَرْ کَہ شَاہْ آنْ کُنَدْ کَہ او گُوْیَدْ",
+          "persian_m2": "حَیْفْ بَاشَدْ کَہ جُزْ نِکُوْ گُوْیَدْ",
+          "urdu_m1": "جو شخص ایسا ہو کہ بادشاہ وہی کرتا ہو جو وہ کہہ دے",
+          "urdu_m2": "تو بڑے افسوس کی بات ہو کہ وہ شخص نیکی کے سوا بات کہے",
+          "english_trans": "Whoever possesses such influence that the monarch acts upon his counsel: / What a tragedy if he should speak anything but good!",
+          "footnotes": [],
+          "study": {
+            "notes_en": "Counsel for ministers and royal advisors: power and proximity to the crown must always be wielded for compassion and justice, never for spite.",
+            "notes_ur": "وزراء اور مشیروں کے لیے نصیحت ہے کہ اگر ان کی بات بادشاہ کے ہاں وزنی ہو تو انہیں ہمیشہ خلقِ خدا کے حق میں خیر اور معافی کی سفارش کرنی چاہیے۔",
+            "vocabulary": [
+              {
+                "persian": "حَیْف",
+                "grammar": "اسم/کلمۂ تاسف",
+                "meaning_en": "pity, sorrow, regret",
+                "meaning_ur": "افسوس، حیف",
+                "urdu_cognates": "حیف"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p26_01",
+          "book_page": 26,
+          "pdf_page": 28,
+          "type": "stanza",
+          "header_persian": "لَطِیْفَہ: بَرْ طَاقِ اَیْوَانِ فَرِیْدُوْں نِوِشْتَہ بُوْدْ",
+          "header_urdu": "لطیفہ: فریدوں کے محل کی محراب پر لکھا ہوا تھا",
+          "lines": [
+            {
+              "persian_m1": "جَہَاں اَے بَرَادَرْ نَمَانَدْ بَہ کَسْ",
+              "persian_m2": "دِلْ اَنْدَرْ جَہَاں آفَرِیْں بَنْدْ وَ بَسْ",
+              "urdu_m1": "اے بھائی دنیا کسی کے پاس نہیں ٹکتی",
+              "urdu_m2": "تو دنیا کے پیدا کرنیوالے سے دل لگا اور بس"
+            },
+            {
+              "persian_m1": "مَکُنْ تَکْیَہ بَرْ مُلْکِ دُنْیَا وَ پُشْتْ",
+              "persian_m2": "کَہ بَسِیَارْ کَسْ چُوں تُوْ پَرْوَرْدْ وَ کُشْتْ",
+              "urdu_m1": "دنیا کی حکومت پر سہارا اور بھروسہ نہ کر",
+              "urdu_m2": "کیونکہ دنیا نے تجھ جیسے بہت سے پالے اور مار ڈالے"
+            },
+            {
+              "persian_m1": "چُو آہَنْگِ رَفْتَنْ کُنَدْ جَانِ پَاکْ",
+              "persian_m2": "چِہ بَرْ تَخْتْ مُرْدَنْ چِہ بَرْ رُوْئے خَاکْ",
+              "urdu_m1": "جب پاک جان دنیا سے روانگی کا ارادہ کرے",
+              "urdu_m2": "تو زمین اور تخت پر مرنا برابر ہے"
+            }
+          ],
+          "english_trans": "The world, O brother, abides with no one! / Fasten thy heart upon the World-Creator, and that suffices! / Place no reliance upon worldly kingdom and support: / For many like unto thee hath it nurtured, and then slain! / When the pure soul prepares to depart: / What matters it whether one dies upon an imperial throne or upon the bare dust?",
+          "footnotes": [
+            "فریدوں ایران کے ایک قدیم بادشاہ کا نام ہے جس نے ضحاک کو شکست دی اور ایران توران شام و روم پر قابض ہو کر نہایت عدل و انصاف کے ساتھ حکمرانی کی۔ ۱۲"
+          ],
+          "study": {
+            "notes_en": "The immortal inscription on the portal of King Faridun's archway (*tāq-e aywān-e Farēdūn*). It provides the moral resolution to Hikayat 1: worldly rule is temporary; true allegiance belongs to the Creator.",
+            "notes_ur": "فریدوں کے ایوان کی پیشانی پر کندہ اشعار جن میں دنیا کی ناپائیداری کا فلسفہ بیان کیا گیا ہے۔ بادشاہ کے تخت پر جان نکلے یا خاک پر، موت کے سامنے دونوں برابر ہیں۔",
+            "vocabulary": [
+              {
+                "persian": "طَاق",
+                "grammar": "اسم (عربی)",
+                "meaning_en": "arch, vault, portico",
+                "meaning_ur": "محراب، محرابی چھت",
+                "urdu_cognates": "طاق، طاقچہ"
+              },
+              {
+                "persian": "آہَنْگ",
+                "grammar": "اسم مصدر",
+                "meaning_en": "intent, resolve, tune",
+                "meaning_ur": "ارادہ، قصد، عزم",
+                "urdu_cognates": "آہنگ، ہم آہنگ"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "section_id": "bab1_hikayat_02",
+      "title_ur": "باب اول: حکایت ۲ — سلطان محمود سبکتگین کا خواب اور نوشیرواں کا عدل",
+      "title_en": "Chapter 1: Story 2 — The Vision of Sultan Mahmud of Ghazna",
+      "pdf_page": 26,
+      "book_page": 26,
+      "content_type": "bilingual_text",
+      "entries": [
+        {
+          "id": "entry_p26_02",
+          "book_page": 26,
+          "pdf_page": 28,
+          "type": "prose",
+          "header_persian": "حِکَایَت",
+          "header_urdu": "حکایت",
+          "persian": "یَکِے اَزْ مُلُوْکِ خُرَاسَانْ سُلْطَانْ مَحْمُوْدِ سَبُکْتَگِیْنْ رَا بَخْوَابْ دِیْدْ کَہ جُمْلَہ وُجُوْدِ او رِیْخْتَہ بُوْدْ وَ خَاکْ شُدَہ، مَگَرْ چَشْمَانَشْ کَہ ہَمْچُنَاں دَرْ چَشْمْخَانَہ ہَمِیْ گَرْدِیْدْ وَ نَظَرْ مِیْ کَرْد، سَائِرِ حُکَمَا اَزْ تَأْوِیْلِ آں فَرُوْ مَانْدَنْدْ، مَگَرْ دَرْوِیْشے کَہ بَجَا آوَرْدْ وَ گُفْت: ہَنُوْزْ نِگَرَاں اَسْتْ کَہ مُلْکَشْ بَا دِیْگَرَاں اَسْتْ۔ قِطْعَہ:",
+          "urdu_interlinear": "خراسان کے ایک بادشاہ نے سلطان محمود سبکتگین کو خواب میں دیکھا کہ اس کا تمام بدن گل سڑ گیا اور خاک ہو گیا تھا لیکن اس کی آنکھیں اُسی طرح آنکھوں کے حلقوں میں گھوم ہی رہی ہیں اور دیکھ رہی ہیں۔ تمام عقلمند اس خواب کی تعبیر سے عاجز آ گئے مگر ایک درویش جس نے تعبیر دی اور کہا ابھی تک دیکھ رہا ہے کہ اُس کا ملک دوسروں کے پاس ہے۔",
+          "english_trans": "One of the kings of Khorasan saw Sultan Mahmud of Sebuktegin in a dream: his whole body had dissolved into decay and become dust, save only his eyes, which were still rolling in their sockets and gazing about! All the sages were baffled by the interpretation of this vision, save for a dervish who divined its meaning and said: 'He is still gazing in anguish because his kingdom belongs to others!'",
+          "footnotes": [],
+          "study": {
+            "notes_en": "Hikayat 2 presents a striking macabre image of post-mortem monarchical covetousness: Sultan Mahmud of Ghazna, the great conqueror of Northern India, reduced to dust yet unable to close his covetous eyes while others inherit his empire.",
+            "notes_ur": "حکایت ۲ میں سلطان محمود غزنوی کے خواب کی تمثیل ہے کہ خاک میں مل جانے کے بعد بھی اس کی آنکھیں حلقوں میں گھوم رہی ہیں کہ اس کی چھوڑی ہوئی سلطنت دوسروں کے ہاتھ میں ہے۔ انسان کی طمع قبر میں بھی پیچھا نہیں چھوڑتی۔",
+            "vocabulary": [
+              {
+                "persian": "چَشْمْخَانَہ",
+                "grammar": "اسمِ ظرفِ مکاں",
+                "meaning_en": "eye socket, orbit",
+                "meaning_ur": "آنکھ کا حلقہ، دیدہ خانہ",
+                "urdu_cognates": "چشم خانہ"
+              },
+              {
+                "persian": "تَأْوِیْل",
+                "grammar": "مصدر (عربی)",
+                "meaning_en": "interpretation (of dreams/texts)",
+                "meaning_ur": "تعبیر، وضاحت",
+                "urdu_cognates": "تاویل"
+              },
+              {
+                "persian": "نِگَرَاں",
+                "grammar": "اسمِ فاعل",
+                "meaning_en": "looking, watchful, anxious",
+                "meaning_ur": "دیکھنے والا، نگراں",
+                "urdu_cognates": "نگراں، نگران"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p26_03",
+          "book_page": 26,
+          "pdf_page": 28,
+          "type": "stanza",
+          "header_persian": "قِطْعَہ",
+          "header_urdu": "قطعہ",
+          "lines": [
+            {
+              "persian_m1": "بَسْ نَامْوَر بَہ زِیْرِ زَمِیْنْ دَفْن کَرْدَہ اَنْد",
+              "persian_m2": "کَزْ ہَسْتِیَشْ بَرْ رُوْئے زَمِیْنْ یَکْ نِشَاں نَمَانْد",
+              "urdu_m1": "بہت سے نامور لوگوں کو زمین کے نیچے دفن کر دیا ہے",
+              "urdu_m2": "جن کی ہستی کا روئے زمین پر ایک نشان بھی نہیں رہا"
+            },
+            {
+              "persian_m1": "وَ آنْ پِیْر لَاشَہ رَا کَہ سِپُرْدَنْدْ زِیْرِ خَاکْ",
+              "persian_m2": "خَاکَشْ چُنَاں بِخُوْرْد کَزُوْ اِسْتِخْوَاں نَمَانْد",
+              "urdu_m1": "وہ بوڑھا مردہ جس کو زمین کے سپرد کیا",
+              "urdu_m2": "مٹی نے اس کو ایسا کھایا کہ اس کی ہڈی بھی نہ بچی"
+            },
+            {
+              "persian_m1": "زِنْدَہ اَسْتْ نَامِ فَرُّخِ نُوْشِیْرْوَاں بَہ عَدْل",
+              "persian_m2": "گَرْچِہ بَسے گُذَشْتْ کَہ نُوْشِیْرْوَاں نَمَانْد",
+              "urdu_m1": "نوشیرواں کا مبارک نام انصاف کرنے کیوجہ سے زندہ ہے",
+              "urdu_m2": "اگرچہ بہت زمانہ گذر گیا کہ نوشیرواں نہ رہا"
+            },
+            {
+              "persian_m1": "خَیْرِے کُنْ اَے فُلَاں وَ غَنِیْمَتْ شُمَار عُمْر",
+              "persian_m2": "زَآں پِیْشْتَر کَہ بَانْگْ بَرْ آیَدْ: فُلَاں نَمَانْد",
+              "urdu_m1": "اے فلانے کوئی نیکی کرلے اور عمر کو غنیمت سمجھ",
+              "urdu_m2": "اس سے پہلے کہ یہ آواز آئے کہ فلاں نہ رہا"
+            }
+          ],
+          "english_trans": "Many a celebrated hero have they buried beneath the earth, / Of whose existence not a trace remains upon its face! / And that aged corpse which they committed to the dust: / The earth hath consumed it so that not a single bone survives! / Yet the blessed name of Nushirwan lives on through justice, / Though ages have passed since Nushirwan departed! / Perform a good deed, O man, and count life a golden opportunity, / Ere the cry goes forth: 'So-and-so is no more!'",
+          "footnotes": [
+            "نوشیرواں ایک عادل بادشاہ کا نام ہے۔ شیخ سعدی کے زمانے میں اس کو گذرے ہوئے سات سو برس ہوئے تھے۔"
+          ],
+          "study": {
+            "notes_en": "'Zindah-ast nām-e farrukh-e Nūshīrwān ba-'adl': Anushirvan the Just remains immortalized because his governance was anchored in equity, contrasting with tyrants whose names are obliterated.",
+            "notes_ur": "سعدی کا لازوال شعر کہ نوشیرواں کا جسم مٹ گیا مگر اس کا نام انصاف کی بدولت سات صدیوں بعد بھی زندہ ہے۔ نیکی اور انصاف ہی دنیا میں انسان کی ابدی یادگار ہے۔",
+            "vocabulary": [
+              {
+                "persian": "لَاشَہ",
+                "grammar": "اسم",
+                "meaning_en": "corpse, carcass",
+                "meaning_ur": "مردہ جسم، لاش",
+                "urdu_cognates": "لاشہ، لاش"
+              },
+              {
+                "persian": "فَرُّخ",
+                "grammar": "صفت",
+                "meaning_en": "blessed, auspicious, fortunate",
+                "meaning_ur": "مبارک، فرخندہ",
+                "urdu_cognates": "فرخ، فرخندہ"
+              },
+              {
+                "persian": "اِسْتِخْوَاں",
+                "grammar": "اسم",
+                "meaning_en": "bone",
+                "meaning_ur": "ہڈی",
+                "urdu_cognates": "استخوان"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "section_id": "bab1_hikayat_03",
+      "title_ur": "باب اول: حکایت ۳ — کوتاہ قد شہزادہ، میدانِ جنگ کی شجاعت اور بھائیوں کا حسد",
+      "title_en": "Chapter 1: Story 3 — The Short Prince & Valorous Deeds in Battle",
+      "pdf_page": 29,
+      "book_page": 27,
+      "content_type": "bilingual_text",
+      "entries": [
+        {
+          "id": "entry_p27_01",
+          "book_page": 27,
+          "pdf_page": 29,
+          "type": "prose",
+          "header_persian": "حِکَایَت ۳",
+          "header_urdu": "حکایت ۳",
+          "persian": "مَلِکْ زَادَہ رَا شَنِیْدَمْ کَہ کُوْتَاہ وَ حَقِیْر بُوْد، وَ دِیْگَر بَرَادَرَانَشْ بُلَنْد وَ خُوْبْرُوْے، بَارے پِدَرْ بَہ کَرَاہَتْ وَ اِسْتِحْقَارْ دَرْ وَے نَظَرْ ہَمِیْ کَرْد، پِسَر بَفِرَاسَتْ وَ اِسْتِبْصَارْ دَرْ یَافْتْ وَ گُفْت: اَے پِدَرْ! کُوْتَاہِ خِرَدْمَنْد بِہْ کَہ نَادَانِ بُلَنْد، نَہ ہَرْ چِہ بَقَامَتْ کِہْتَر بَقِیْمَتْ بِہْتَر، فِقْرَہ: اَلشَّاةُ نَظِیْفَةٌ وَالْفِیْلُ جِیْفَةٌ۔ شِعْر:",
+          "urdu_interlinear": "میں نے ایک شہزادہ کے بارے میں سنا کہ پستہ قد اور بدصورت تھا اور اس کے دوسرے بھائی لمبے اور خوبصورت تھے ایک مرتبہ باپ حقارت اور ناپسندیدگی سے اس کو دیکھ رہا تھا شہزادہ ذہانت اور دانائی سے اس بات کو سمجھ گیا اور بولا اے ابا جان ٹھگنا عقلمند لمبے بے وقوف سے اچھا ہوتا ہے کیا یہ بات درست نہیں ہو کہ جو چیز قد میں چھوٹی ہوتی ہو قیمت میں بہتر ہوتی ہو بکری پاک ہے اور ہاتھی مردار۔",
+          "english_trans": "I heard of a prince who was short of stature and plain in appearance, while his brothers were tall and handsome. Once his father looked upon him with aversion and disdain. The son, perceiving this through keen intuition and wisdom, said: 'O father! A wise dwarf is better than a tall dunce! Not everything smaller in stature is lower in value: \"The sheep is pure, while the elephant is an unclean carcass!\"'",
+          "footnotes": [
+            "بکری حلال ہے یعنی اس کا دودھ پینا اور گوشت کھانا حلال ہے اور ہاتھی مردار ہے۔ ۱۲"
+          ],
+          "study": {
+            "notes_en": "Hikayat 3 addresses the prejudice of judging men by physical appearance rather than inner character, intellect, and courage.",
+            "notes_ur": "حکایت ۳ میں ظاہری قد و قامت پر باطنی دانائی اور شجاعت کی برتری کا بیان ہے۔ شہزادے نے اپنے باپ کو فہمائش کی کہ قد کی لمبائی سے انسان کی قیمت متعین نہیں ہوتی۔",
+            "vocabulary": [
+              {
+                "persian": "اِسْتِبْصَار",
+                "grammar": "مصدر (عربی)",
+                "meaning_en": "keen insight, discernment",
+                "meaning_ur": "بصیرت، گہری سوجھ بوجھ",
+                "urdu_cognates": "بصیرت، استبصار"
+              },
+              {
+                "persian": "جِیْفَہ",
+                "grammar": "اسم (عربی)",
+                "meaning_en": "carrion, unclean carcass",
+                "meaning_ur": "مردار، سڑا ہوا گوشت",
+                "urdu_cognates": "جیفہ"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p27_02",
+          "book_page": 27,
+          "pdf_page": 29,
+          "type": "couplet",
+          "header_persian": "شِعْر (عَرَبِیْ)",
+          "header_urdu": "شعر (عربی)",
+          "persian_m1": "اَقَلُّ جِبَالِ الْاَرْضِ طُوْرٌ وَ اِنَّہٗ",
+          "persian_m2": "لَاَعْظَمُ عِنْدَ اللّٰہِ قَدْرًا وَّ مَنْزِلًا",
+          "urdu_m1": "کوہِ طور زمین کے چھوٹے پہاڑوں میں سے ہے اور یقیناً وہ",
+          "urdu_m2": "قدر و منزلت میں اللہ کے نزدیک سب سے بڑا ہو",
+          "english_trans": "Mount Sinai is among the smallest of earth's mountains, / Yet in rank and honor before God it is the greatest!",
+          "footnotes": [],
+          "study": {
+            "notes_en": "Mount Sinai (Tur) is physically modest compared to lofty ranges, yet spiritually supreme because God spoke directly to Prophet Moses (*Kalīm Allāh*) upon it.",
+            "notes_ur": "کوہِ طور ظاہری اونچائی میں چھوٹا ہے لیکن مقام و مرتبے میں تمام پہاڑوں سے بلند ہے کیونکہ اس پر اللہ تعالیٰ نے حضرت موسیٰؑ سے ہم کلامی کا شرف بخشا۔",
+            "vocabulary": [
+              {
+                "persian": "طُوْر",
+                "grammar": "اسمِ علم",
+                "meaning_en": "Mount Sinai",
+                "meaning_ur": "کوہِ طور",
+                "urdu_cognates": "طور، وادیٔ طور"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p27_03",
+          "book_page": 27,
+          "pdf_page": 29,
+          "type": "stanza",
+          "header_persian": "قِطْعَہ",
+          "header_urdu": "قطعہ",
+          "lines": [
+            {
+              "persian_m1": "آں شَنِیْدِیْ کَہ لَاغَرِے دَانَا",
+              "persian_m2": "گُفْتْ بَارے بَہ بَلْہِے فَرَبَہ:",
+              "urdu_m1": "آپ نے وہ بات سنی جو ایک دبلے عقلمند نے",
+              "urdu_m2": "ایک مرتبہ موٹے بے وقوف سے کہی"
+            },
+            {
+              "persian_m1": "اَسْبِ تَازِیْ اَگَرْ ضَعِیْف بُوَدْ",
+              "persian_m2": "ہَمْچُنَاں اَزْ طَوِیْلَۂ خَر بِہْ",
+              "urdu_m1": "عربی گھوڑا اگرچہ کم زور ہو",
+              "urdu_m2": "پھر بھی طویلے بھر گدھوں سے بہتر ہے"
+            }
+          ],
+          "english_trans": "Hast thou heard what a lean sage once said / To a corpulent fool? / 'An Arabian charger, even if emaciated, / Is yet of more worth than a stable full of asses!'",
+          "footnotes": [
+            "طویلہ میں یاء معروف ہے یا مَجہول سے پڑھنا غلط ہے۔ مجازاً اصطبل کو کہتے ہیں ورنہ دراصل اس رسی کا نام ہے جس میں یکایک پاؤں باندھ کر گھوڑوں یا گدھوں کا باندھتے ہیں۔"
+          ],
+          "study": {
+            "notes_en": "'Asb-e tāzī agar za'eef buwad / Hamchunān az tawēlah-ye khar bih': nobility of breed and spirit trumps sheer bulk.",
+            "notes_ur": "فارسی کا مشہور ضرب المثل شعر ہے کہ ایک لاغر عربی گھوڑا گدھوں کے پورے اصطبل پر بھاری ہے۔ اصل قدروقیمت نسل اور جوہر کی ہوتی ہے۔",
+            "vocabulary": [
+              {
+                "persian": "بَلْہ",
+                "grammar": "اسم صفت (عربی)",
+                "meaning_en": "fool, simpleton",
+                "meaning_ur": "بے وقوف، احمق",
+                "urdu_cognates": "ابلہ، ابلہی"
+              },
+              {
+                "persian": "فَرَبَہ",
+                "grammar": "صفت",
+                "meaning_en": "fat, plump, corpulent",
+                "meaning_ur": "موٹا، فربہ اندام",
+                "urdu_cognates": "فربہ، فربہی"
+              },
+              {
+                "persian": "طَوِیْلَہ",
+                "grammar": "اسم (عربی)",
+                "meaning_en": "tether-rope, stable",
+                "meaning_ur": "اصطبل، جانور باندھنے کا طویلہ",
+                "urdu_cognates": "طویلہ"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p27_04",
+          "book_page": 27,
+          "pdf_page": 29,
+          "type": "prose",
+          "persian": "پِدَرْ بِخَنْدِیْدْ وَ اَرْکَانِ دَوْلَتْ بَپَسَنْدِیْدَنْدْ وَ بَرَادَرَاں بَجَاں بَرَ رَنْجِیْدَنْد۔ قِطْعَہ:",
+          "urdu_interlinear": "باپ ہنس پڑا اور ارکانِ دولت نے یہ بات پسند کی اور بھائیوں کو دلی صدمہ ہوا",
+          "english_trans": "The father laughed; the pillars of state applauded; but the brothers were deeply vexed in their hearts.",
+          "footnotes": [],
+          "study": {
+            "notes_en": "The seed of sibling rivalry and jealousy (*hasad*) is planted when the wise prince wins the court's admiration.",
+            "notes_ur": "باپ اور درباری شہزادے کی بذلہ سنجی پر خوش ہوئے مگر بھائیوں کے دل میں حسد کی آگ بھڑک اٹھی۔",
+            "vocabulary": [
+              {
+                "persian": "اَرْکَانِ دَوْلَت",
+                "grammar": "مرکب اضافی",
+                "meaning_en": "pillars of state, ministers, nobles",
+                "meaning_ur": "امراء، وزراء، ارکانِ حکومت",
+                "urdu_cognates": "ارکانِ دولت"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p27_05",
+          "book_page": 27,
+          "pdf_page": 29,
+          "type": "stanza",
+          "header_persian": "قِطْعَہ",
+          "header_urdu": "قطعہ",
+          "lines": [
+            {
+              "persian_m1": "تَا مَرْدْ سُخَنْ نَہ گُفْتَہ بَاشَدْ",
+              "persian_m2": "عَیْبْ وَ ہُنَرَشْ نَہُفْتَہ بَاشَدْ",
+              "urdu_m1": "جب تک آدمی نے بات نہ کہی ہو",
+              "urdu_m2": "اُس کا عیب و ہنر چھپا ہوا ہوتا ہے"
+            },
+            {
+              "persian_m1": "ہَرْ بِیْشَہ گُمَاں مَبَرْ کَہ خَالِیْسْتْ",
+              "persian_m2": "شَایَدْ کَہ پَلَنْگْ خُفْتَہ بَاشَدْ",
+              "urdu_m1": "ہر جھاڑی نہ سمجھ کہ وہ خالی ہے",
+              "urdu_m2": "شاید تیندوا سویا ہوا ہو !"
+            }
+          ],
+          "english_trans": "So long as a man hath not spoken: / His faults and talents remain concealed! / Deem not every forest to be empty: / Perchance a sleeping leopard lurks therein!",
+          "footnotes": [],
+          "study": {
+            "notes_en": "Two universally celebrated couplets of Saadi: speech is the true revealer of human worth, and outer silence may conceal ferocious inner capability.",
+            "notes_ur": "سعدی کا لازوال شعر ہے: 'تا مرد سخن نہ گفتہ باشد، عیب و ہنرش نہفتہ باشد'۔ انسان کی بول چال ہی اس کے چھپے ہوئے عیب یا کمال کو آشکار کرتی ہے۔",
+            "vocabulary": [
+              {
+                "persian": "نَہُفْتَہ",
+                "grammar": "اسمِ مفعول",
+                "meaning_en": "hidden, concealed",
+                "meaning_ur": "چھپا ہوا، پوشیدہ",
+                "urdu_cognates": "نہفتہ"
+              },
+              {
+                "persian": "بِیْشَہ",
+                "grammar": "اسم",
+                "meaning_en": "forest, jungle, thicket",
+                "meaning_ur": "جنگل، کچھار، جھاڑی",
+                "urdu_cognates": "بیشہ"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p27_06",
+          "book_page": 27,
+          "pdf_page": 29,
+          "type": "prose",
+          "persian": "شَنِیْدَمْ کَہ مَلِکْ رَا دَر آں مُدَّتْ دُشْمَنے صَعْبْ رُوْئے نَمُوْد، چُوں لَشْکَر اَزْ ہَرْ دُوْ طَرَفْ رُوْئے دَرْ ہَمْ آوَرْدَنْدْ وَ قَصْدِ مُبَارَزَتْ کَرْدَنْد، اَوَّلْ کَسِے کَہ بَہ مَیْدَانْ دَرْ آمَدْ آں پِسَر بُوْدْ، وَ گُفْت: قِطْعَہ:",
+          "urdu_interlinear": "میں نے سنا کہ اُسی زمانہ میں بادشاہ کے ایک سخت دشمن نے سر اٹھایا جب دونوں طرف کے لشکر آمنے سامنے ہوئے اور انہوں نے مٹھ بھیڑ کا ارادہ کیا سب سے پہلے جو میدان میں اُترا وہی شہزادہ تھا اور اس نے کہا",
+          "english_trans": "I heard that about that time a formidable enemy confronted the king. When the two armies came face to face and prepared for battle, the very first person to gallop forth into the arena was that same short prince, and he exclaimed:",
+          "footnotes": [],
+          "study": {
+            "notes_en": "The narrative reaches its turning point: when crisis strikes, the tall handsome brothers shrink back, while the short prince charges ahead.",
+            "notes_ur": "جب سلطنت پر کڑا وقت آیا اور دشمن سے معرکہ آرائی ہوئی تو ظاہری وجاہت والے بھائی پیچھے رہ گئے اور اسی بظاہر پست قد شہزادے نے اول صف میں اتر کر دادِ شجاعت دی۔",
+            "vocabulary": [
+              {
+                "persian": "صَعْب",
+                "grammar": "صفت (عربی)",
+                "meaning_en": "formidable, severe, arduous",
+                "meaning_ur": "سخت، دشوار، ہولناک",
+                "urdu_cognates": "صعب"
+              },
+              {
+                "persian": "مُبَارَزَت",
+                "grammar": "مصدر (عربی)",
+                "meaning_en": "single combat, duel, fighting",
+                "meaning_ur": "میدانِ جنگ میں مقابلہ، مٹھ بھیڑ",
+                "urdu_cognates": "مبارزت، مبارز"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p28_01",
+          "book_page": 28,
+          "pdf_page": 30,
+          "type": "stanza",
+          "header_persian": "قِطْعَہ",
+          "header_urdu": "قطعہ",
+          "lines": [
+            {
+              "persian_m1": "آنْ نَہ مَنْ بَاشَمْ کَہ رُوْزِ جَنْگْ بِیْنِیْ پُشْتِ مَنْ",
+              "persian_m2": "آنَمْ کَانْدَرْ مِیَانِ خَاکْ وَ خُوْں بِیْنِیْ سَرَمْ",
+              "urdu_m1": "میں وہ نہیں ہوں کہ لڑائی کے دن تو میری پشت دیکھے",
+              "urdu_m2": "میں وہ ہوں کہ خاک اور خون میں تو ایک سر دیکھے گا"
+            },
+            {
+              "persian_m1": "کَانْکَہ جَنْگْ آرَدْ بَخُوْنِ خِوِیْشْ بَازِیْ مِیْکُنَدْ",
+              "persian_m2": "رُوْزِ مَیْدَاں وَانْکَہ بِگْرِیْزَدْ بَخُوْنِ لَشْکَرِے",
+              "urdu_m1": "کیونکہ لڑائی کے دن جو جنگ کرتا ہے وہ اپنے خون سے کھیلتا ہے",
+              "urdu_m2": "اور جو بھاگتا ہے وہ (اپنے) پورے لشکر کا خون کرتا ہے"
+            }
+          ],
+          "english_trans": "'I am not that man whose back thou shalt behold on the day of battle: / I am he whose head thou shalt see rolled in dust and blood! / For he who fights upon the battlefield plays with his own blood alone; / But he who flees sheds the blood of the entire army!'",
+          "footnotes": [],
+          "study": {
+            "notes_en": "A stirring battle rally. Fleeing cowards do not merely save their own skins; their desertion demoralizes the lines and causes the slaughter of their entire army.",
+            "notes_ur": "شہزادے کا پرجوش رجزیہ کلام ہے کہ میدان سے بھاگنے والا بزدل صرف اپنی جان نہیں بچاتا بلکہ پوری فوج کے خون کا مجرم بنتا ہے۔",
+            "vocabulary": [
+              {
+                "persian": "پُشْت",
+                "grammar": "اسم",
+                "meaning_en": "back (as in fleeing)",
+                "meaning_ur": "پیٹھ، پشت دکھانا",
+                "urdu_cognates": "پشت، پشت پناہ"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p28_02",
+          "book_page": 28,
+          "pdf_page": 30,
+          "type": "prose",
+          "persian": "اِیْں بَگُفْتْ وَ بَرْ سِپَاہِ دُشْمَن زَد، تَنے چَنْد مَرْدَانِ کَارِیْ رَا بِکُشْت، چُوں بَہ پِیْشِ پِدَرْ آمَدْ، زَمِیْنِ خِدْمَتْ بَبُوْسِیْدْ وَ گُفْت: قِطْعَہ:",
+          "urdu_interlinear": "اس نے یہ کہا اور دشمن کے سپاہیوں پر ٹوٹ پڑا، چند تجربہ کار سپاہیوں کو قتل کیا جب باپ کے سامنے آیا زمینِ خدمت چومی اور کہا",
+          "english_trans": "He spoke these words and charged into the ranks of the enemy, slaying several seasoned champions. Returning before his father, he kissed the ground of obeisance and said:",
+          "footnotes": [],
+          "study": {
+            "notes_en": "'Mardān-e kārī': veteran warriors, formidable combatants. The young prince proves his martial mettle before his father.",
+            "notes_ur": "'مردانِ کاری' سے مراد جنگ آزمودہ اور تجربہ کار سورما ہیں۔ شہزادے نے تن تنہا دشمن کے صف شکن دستوں کو دھول چٹا دی۔",
+            "vocabulary": [
+              {
+                "persian": "مَرْدَانِ کَارِی",
+                "grammar": "ترکیبِ توصیفی",
+                "meaning_en": "effective, veteran warriors",
+                "meaning_ur": "تجربہ کار جنگجو، کاری وار کرنے والے",
+                "urdu_cognates": "کاری ضرب"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p28_03",
+          "book_page": 28,
+          "pdf_page": 30,
+          "type": "stanza",
+          "header_persian": "قِطْعَہ",
+          "header_urdu": "قطعہ",
+          "lines": [
+            {
+              "persian_m1": "اَے کَہ شَخْصِ مَنَتْ حَقِیْر نَمُوْد",
+              "persian_m2": "تَا دُرُشْتِیْ ہُنَرْ نَہ پِنْدَارِیْ",
+              "urdu_m1": "اے وہ کہ میرا جسم تجھے کمزور لگا",
+              "urdu_m2": "کہیں موٹاپے کو تو ہنر نہ سمجھے"
+            },
+            {
+              "persian_m1": "اَسْبِ لَاغَرْ مِیَاں بَہ کَار آیَدْ",
+              "persian_m2": "رُوْزِ مَیْدَاں نَہ گَاوِ پَرْوَارِیْ",
+              "urdu_m1": "پتلی کمر والا گھوڑا لڑائی کے دن کام آتا ہے",
+              "urdu_m2": "نہ کہ پروار کا بیل"
+            }
+          ],
+          "english_trans": "'O thou to whom my stature appeared contemptible! / Beware lest thou mistakest bulkiness for merit! / A slender-waisted steed is of service on the day of battle, / Not a fattened ox from the stall!'",
+          "footnotes": [
+            "پروار اس گھر کو کہتے ہیں جو گرمی کے زمانے میں بیل وغیرہ چرانے والے گائے بیلوں وغیرہ کو آرام دینے کے لئے سایہ دار اور ٹھنڈی جگہوں میں بنا لیتے ہیں۔ ۱۲"
+          ],
+          "study": {
+            "notes_en": "'Gāv-e parwārī' (a fattened stall ox): clumsy, heavy, and useless in warfare, contrasted with the lean, agile battle steed (*asb-e lāghar-miyān*).",
+            "notes_ur": "شہزادے نے باپ کو یاد دلایا کہ موٹاپا اور قد کاٹھ ہنر نہیں ہوتا۔ میدانِ کارزار میں دبلا پھرتیلا گھوڑا کام آتا ہے نہ کہ سست اور موٹا پلا ہوا بیل۔",
+            "vocabulary": [
+              {
+                "persian": "دُرُشْتِی",
+                "grammar": "اسم کیفیت",
+                "meaning_en": "bulk, roughness, heaviness",
+                "meaning_ur": "موٹاپا، بھاری بھرکم جسامت",
+                "urdu_cognates": "درشت"
+              },
+              {
+                "persian": "پَرْوَارِی",
+                "grammar": "صفت نسبتی",
+                "meaning_en": "stall-fattened (ox)",
+                "meaning_ur": "پلا ہوا، موٹا تازہ کیا گیا",
+                "urdu_cognates": "پروار، پروردہ"
+              }
+            ]
+          }
+        },
+        {
+          "id": "entry_p28_04",
+          "book_page": 28,
+          "pdf_page": 30,
+          "type": "prose",
+          "persian": "آوَرْدَہ اَنْد کَہ سِپَاہِ دُشْمَن بَسِیَارْ بُوْدْ وَ اِیْنَانْ اَنْدَکْ، وَ جَمَاعَتِے آہَنْگِ گُرِیْز کَرْدَنْد، پِسَر نَعْرَہ بَزَدْ وَ گُفْت: اَے مَرْدَاں! بَکُوْشِیْدْ، تَا جَامَۂ زَنَاں نَپُوْشِیْدْ۔ سَوَارَاں رَا بَگُفْتَنِ او تَہَوُّرْ زِیَادَتْ گَشْتْ، وَ بَہ یَکْ بَار حَمْلَہ کَرْدَنْد، شَنِیْدَمْ کَہ ہَمْدَرْ آں رُوْز بَرْ دُشْمَن ظَفَرْ یَافْتَنْد، پِدَرْ سَرْ وَ چَشْمَشْ رَا بَبُوْسِیْدْ وَ دَرْ کَنَارْ گِرِفْتْ، وَ ہَرْ رُوْزْ نَظَرَشْ زِیَادَتْ کَرْد، تَا وَلِیْعَہْدِ خِوِیْش کَرْد۔",
+          "urdu_interlinear": "بیان کرتے ہیں کہ دشمن کے سپاہی بہت تھے اور یہ تھوڑے اور (ان میں سے) کچھ لوگوں نے بھاگنے کی ٹھانی شہزادہ نے نعرہ مارا اور کہا، اے بہادرو کوشش کرو خبردار ہرگز عورتوں کا جامہ نہ پہنو۔ اس کے کہنے سے سواروں کی بہادری بڑھ گئی اور ایک بارگی حملہ کر دیا میں نے سنا کہ اسی روز انہوں نے دشمنوں پر فتح پائی باپ نے اس کے سر اور آنکھوں پر بوسہ دیا اور بغلگیر ہوا اور اس پر روز افزوں توجہ کی یہاں تک کہ اس کو اپنا ولی عہد کر دیا۔",
+          "english_trans": "They relate that the enemy's army was vast while theirs was small, and a company of soldiers resolved to flee. The prince raised a war-cry and shouted: 'O men! Strive manfully, lest ye be forced to don the garments of women!' At his words, the courage of the cavalry mounted, and they launched a concerted assault. I heard that on that very day they achieved total victory over the enemy. The father kissed his head and eyes, embraced him closely, and each day augmented his favor towards him, until he proclaimed him heir apparent to the throne.",
+          "footnotes": [],
+          "study": {
+            "notes_en": "'Bakūshēd tā jāmah-ye zanān napōshēd': an ancient martial admonition shaming cowardice. The prince's leadership turns impending defeat into decisive victory.",
+            "notes_ur": "شہزادے نے لشکر کو غیرت دلائی کہ ہمت ہارو گے تو دشمن تمہیں قید کر کے عورتوں کے لباس پہنائے گا۔ اس نعرے نے پسپا ہوتے فوجیوں میں نئی روح پھونک دی اور وہ فتح یاب ہوئے۔",
+            "vocabulary": [
+              {
+                "persian": "تَہَوُّر",
+                "grammar": "مصدر (عربی)",
+                "meaning_en": "valour, reckless daring, bravery",
+                "meaning_ur": "شجاعت، بہادری، بے جگری",
+                "urdu_cognates": "تہور"
+              },
+              {
+                "persian": "وَلِیْعَہْد",
+                "grammar": "اسم منصب",
+                "meaning_en": "heir apparent, crown prince",
+                "meaning_ur": "جانشین، ولی عہد",
+                "urdu_cognates": "ولی عہد"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+
+out_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data/batch_03_pages_021_030.json")
+with open(out_path, "w", encoding="utf-8") as f:
+    json.dump(batch_03, f, ensure_ascii=False, indent=2)
+
+print(f"Successfully generated {out_path}")
