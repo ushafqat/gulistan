@@ -23,11 +23,23 @@ class EpubBook:
         self.direction = direction
         self.chapters = [] # list of dicts: {'id', 'title', 'filename', 'content_xhtml'}
         self.fonts = [] # list of dicts: {'id', 'filename', 'filepath', 'media_type'}
+        self.images = [] # list of dicts: {'id', 'filename', 'filepath', 'media_type'}
         self.css_content = ""
         self.cover_image = None
 
     def set_cover(self, image_filepath):
         self.cover_image = image_filepath
+
+    def add_image(self, image_filepath, filename=None, media_type="image/png"):
+        if not filename:
+            filename = os.path.basename(image_filepath)
+        image_id = f"img_{len(self.images) + 1}"
+        self.images.append({
+            "id": image_id,
+            "filename": filename,
+            "filepath": image_filepath,
+            "media_type": media_type
+        })
 
     def add_font(self, font_filepath, filename=None, media_type="font/woff"):
         if not filename:
@@ -83,6 +95,8 @@ body {
 """
             zf.writestr("OEBPS/style.css", default_css)
 
+            has_cover = bool(self.cover_image and os.path.exists(self.cover_image))
+
             # 4. Chapters XHTML
             for chap in self.chapters:
                 doc = f"""<?xml version="1.0" encoding="utf-8"?>
@@ -104,6 +118,19 @@ body {
                 f'        <li><a href="{c["filename"]}">{escape_xml(c["title"])}</a></li>'
                 for c in self.chapters
             ])
+            first_chap = self.chapters[0]["filename"] if self.chapters else "cover_metadata.xhtml"
+            landmarks_xhtml = ""
+            if has_cover:
+                landmarks_xhtml = f"""
+    <nav epub:type="landmarks" id="landmarks" hidden="">
+      <h2>Landmarks</h2>
+      <ol>
+        <li><a epub:type="cover" href="cover.xhtml">سرورق</a></li>
+        <li><a epub:type="toc" href="nav.xhtml">فہرست مضامین</a></li>
+        <li><a epub:type="bodymatter" href="{first_chap}">آغاز کتاب</a></li>
+      </ol>
+    </nav>"""
+
             nav_xhtml = f"""<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="{self.language}" lang="{self.language}" dir="{self.direction}">
@@ -118,7 +145,7 @@ body {
     <ol>
 {nav_items}
     </ol>
-  </nav>
+  </nav>{landmarks_xhtml}
 </body>
 </html>"""
             zf.writestr("OEBPS/nav.xhtml", nav_xhtml.encode("utf-8"))
@@ -189,9 +216,15 @@ body {
                 if os.path.exists(font["filepath"]):
                     manifest_items.append(f'    <item id="{font["id"]}" href="fonts/{font["filename"]}" media-type="{font["media_type"]}"/>')
 
+            for img in self.images:
+                if os.path.exists(img["filepath"]):
+                    with open(img["filepath"], "rb") as imf:
+                        zf.writestr(f"OEBPS/images/{img['filename']}", imf.read())
+                    manifest_items.append(f'    <item id="{img["id"]}" href="images/{img["filename"]}" media-type="{img["media_type"]}"/>')
+
             spine_items = []
             if has_cover:
-                spine_items.append('    <itemref idref="cover-page" linear="no"/>')
+                spine_items.append('    <itemref idref="cover-page"/>')
 
             for c in self.chapters:
                 manifest_items.append(f'    <item id="{c["id"]}" href="{c["filename"]}" media-type="application/xhtml+xml"/>')

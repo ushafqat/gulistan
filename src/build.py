@@ -1865,15 +1865,16 @@ def build_epubs(batches):
     epub_css = """
 @font-face {
     font-family: 'Mehr Nastaliq';
-    src: url('fonts/Mehr_Nastaliq.woff') format('woff');
+    src: url('fonts/Mehr_Nastaliq.woff') format('woff'),
+         url('fonts/Mehr_Nastaliq.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 body {
     direction: rtl;
     text-align: right;
-    font-family: 'Mehr Nastaliq', serif;
-    margin: 1.5em;
+    font-family: 'Mehr Nastaliq', 'Noto Nastaliq Urdu', serif;
+    margin: 1.2em;
     line-height: 2.3;
     color: #111;
 }
@@ -1883,11 +1884,11 @@ h1, h2, h3 {
     margin: 1em 0;
 }
 .persian-text {
-    font-size: 1.4em;
+    font-size: 1.35em;
     color: #0b3c5d;
     font-weight: bold;
     margin-top: 1em;
-    line-height: 2.0;
+    line-height: 2.1;
 }
 .urdu-interlinear {
     font-size: 1.05em;
@@ -1899,7 +1900,11 @@ h1, h2, h3 {
 }
 .couplet {
     text-align: center;
-    margin: 1em 0;
+    margin: 1.2em 0;
+    padding: 0.8em;
+    background: #f7fbf8;
+    border: 1px solid #c4ded0;
+    border-radius: 6px;
 }
 .verse-m1, .verse-m2 {
     display: block;
@@ -1921,20 +1926,36 @@ h1, h2, h3 {
 .study-box {
     background-color: #f7fbf8;
     border: 1px solid #c4ded0;
+    border-radius: 6px;
     padding: 1em;
-    margin: 1em 0;
+    margin: 1.2em 0;
     font-size: 0.9em;
 }
 table.vocab {
     width: 100%;
     border-collapse: collapse;
     font-size: 0.85em;
-    margin-top: 0.5em;
+    margin-top: 0.8em;
 }
-table.vocab th, table.vocab td {
-    border: 1px solid #ccc;
-    padding: 4px 8px;
+table.vocab th {
+    background-color: #e4f2e7;
+    color: #185c31;
+    border: 1px solid #c4ded0;
+    padding: 6px 8px;
     text-align: right;
+}
+table.vocab td {
+    border: 1px solid #c4ded0;
+    padding: 6px 8px;
+    text-align: right;
+}
+.frontispiece-meta-box {
+    background: #fdfefe;
+    border: 2px solid #165c32;
+    border-radius: 8px;
+    padding: 1.5em;
+    margin: 1.5em auto;
+    text-align: center;
 }
 """
 
@@ -1962,11 +1983,19 @@ table.vocab th, table.vocab td {
         epub_orig.set_cover(cover_full_path)
         epub_study.set_cover(cover_full_path)
 
-    # Embed Mehr Nastaliq font into EPUB packages
-    mehr_font_path = os.path.join(FONTS_DIR, "Mehr_Nastaliq.woff")
-    if os.path.exists(mehr_font_path):
-        epub_orig.add_font(mehr_font_path, "Mehr_Nastaliq.woff", "font/woff")
-        epub_study.add_font(mehr_font_path, "Mehr_Nastaliq.woff", "font/woff")
+    # Embed Mehr Nastaliq fonts (both WOFF and TTF for universal e-reader support)
+    for font_file, mime in [("Mehr_Nastaliq.woff", "font/woff"), ("Mehr_Nastaliq.ttf", "font/ttf")]:
+        font_path = os.path.join(FONTS_DIR, font_file)
+        if os.path.exists(font_path):
+            epub_orig.add_font(font_path, font_file, mime)
+            epub_study.add_font(font_path, font_file, mime)
+
+    # Embed authentic calligraphy and publisher cartouche
+    for img_file in ["title_calligraphy.png", "publisher_cartouche.png"]:
+        img_path = os.path.join(ASSETS_DIR, img_file)
+        if os.path.exists(img_path):
+            epub_orig.add_image(img_path, img_file, "image/png")
+            epub_study.add_image(img_path, img_file, "image/png")
 
     for b in batches:
         for sec in b["sections"]:
@@ -1975,10 +2004,16 @@ table.vocab th, table.vocab td {
             title = sec["title_ur"]
 
             if stype == "metadata":
-                body = f"""<h1>گُلِسْتَانِ مُتَرْجَمْ</h1>
-<p style="text-align:center;"><strong>تالیف:</strong> شیخ مصلح الدین سعدی شیرازیؒ</p>
-<p style="text-align:center;"><strong>ترجمہ و حواشی:</strong> مولانا قاضی سجاد حسین مدظلہ (صدر مدرس مدرسہ عالیہ فتحپوری دہلی)</p>
-<p style="text-align:center;"><strong>ناشر:</strong> مکتبہ رحمانیہ، اردو بازار، لاہور</p>"""
+                body = """<div style="text-align:center;margin:1.5em 0;">
+  <img src="images/title_calligraphy.png" alt="گُلِسْتَانِ مُتَرْجَمْ" style="max-width:85%;height:auto;"/>
+</div>
+<div class="frontispiece-meta-box">
+  <p style="text-align:center;font-size:1.15em;margin:0.5em 0;"><strong style="color:#165c32;">تالیف:</strong> شیخ مصلح الدین سعدی شیرازیؒ</p>
+  <p style="text-align:center;font-size:1.15em;margin:0.5em 0;"><strong style="color:#165c32;">ترجمہ و حواشی:</strong> مولانا قاضی سجاد حسین مدظلہ (صدر مدرس مدرسہ عالیہ فتحپوری دہلی)</p>
+  <div style="margin-top:1.5em;text-align:center;">
+    <img src="images/publisher_cartouche.png" alt="مکتبہ رحمانیہ لاہور" style="max-width:55%;height:auto;"/>
+  </div>
+</div>"""
                 epub_orig.add_chapter(title, f"{sid}.xhtml", body)
                 epub_study.add_chapter(title, f"{sid}.xhtml", body)
 
