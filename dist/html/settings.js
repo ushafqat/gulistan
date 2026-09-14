@@ -185,5 +185,24 @@
         closeLightbox();
       }
     });
+
+    // Global Study Notes Accordion Toggle (Expand / Collapse All)
+    const toggleAllNotesBtn = document.getElementById('toggleAllNotesBtn');
+    const toggleAllNotesText = document.getElementById('toggleAllNotesText');
+    if (toggleAllNotesBtn) {
+      let allExpanded = false;
+      toggleAllNotesBtn.addEventListener('click', () => {
+        allExpanded = !allExpanded;
+        const detailsList = document.querySelectorAll('details.study-collapse');
+        detailsList.forEach(d => {
+          d.open = allExpanded;
+        });
+        if (toggleAllNotesText) {
+          toggleAllNotesText.textContent = allExpanded 
+            ? 'تمام حل لغات بند کریں (Collapse All Notes)' 
+            : 'تمام حل لغات کھولیں (Expand All Notes)';
+        }
+      });
+    }
   });
 })();

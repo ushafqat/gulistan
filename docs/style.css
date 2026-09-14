@@ -756,90 +756,170 @@ body[data-theme="dark"] .frontispiece-title-img {
     margin-top: 0.4rem;
 }
 
-/* Bilingual Segment Blocks */
-.segment-card {
+/* ============================================================
+   AUTHENTIC LITHOGRAPH BOOK-PAGE LEAF LAYOUT
+   ============================================================ */
+.book-page-leaf {
+    scroll-margin-top: 85px;
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    margin-bottom: 1.8rem;
-    padding: 1.8rem;
-    box-shadow: var(--shadow-soft);
+    border: 2px solid var(--border-jadwal);
+    border-radius: 6px;
+    margin: 3rem auto;
+    max-width: 860px;
+    box-shadow: 0 4px 24px rgba(22, 92, 50, 0.08), 0 1px 3px rgba(0,0,0,0.05);
     position: relative;
+    overflow: hidden;
     transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
-.segment-badge {
-    position: absolute;
-    top: -11px;
-    right: 18px;
-    background: var(--accent-emerald);
-    color: #fff;
-    padding: 2px 10px;
-    border-radius: 10px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* Persian typography */
-.persian-text {
-    font-family: var(--font-persian);
-    font-size: calc(1.75rem * var(--font-scale));
-    line-height: 2.3;
-    color: var(--persian-color);
-    direction: rtl;
-    text-align: right;
-    margin-bottom: 0.6rem;
-    font-weight: 600;
-}
-
-/* Urdu interlinear */
-.urdu-interlinear {
-    font-family: var(--font-urdu);
-    font-size: calc(1.2rem * var(--font-scale) * var(--urdu-size-offset));
-    line-height: var(--line-height-urdu);
-    color: var(--urdu-color);
-    direction: rtl;
-    text-align: right;
-    padding: 0.55rem 0.9rem;
-    background: var(--interlinear-bg);
-    border-right: 3px solid var(--accent-gold);
-    border-radius: 4px;
-    margin-bottom: 1rem;
-}
-
-/* Verses / Couplets */
-.couplet-container {
-    text-align: center;
-    margin: 1.2rem 0;
-}
-
-.couplet-header {
-    display: inline-block;
-    background: var(--ctrl-bg);
-    color: var(--accent-emerald);
-    border: 1px solid var(--border-color);
-    font-weight: 700;
-    padding: 2px 14px;
-    border-radius: 10px;
-    font-size: 0.8rem;
-    margin-bottom: 0.6rem;
-}
-
-.verse-line {
+/* 3-Part Running Header Strip (دیباچہ | صفحہ ۶ | گلستان مترجم) */
+.page-header-strip {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--border-jadwal);
+    padding: 0.5rem 1.4rem;
+    background: var(--banner-bg);
+    font-family: var(--font-urdu);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--accent-emerald);
+}
+
+.page-header-right {
+    flex: 1;
+    text-align: right;
+    font-size: 1.15rem;
+}
+
+.page-header-center {
+    flex: 1;
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--accent-crimson);
+}
+
+.page-header-left {
+    flex: 1;
+    text-align: left;
+    font-size: 1.15rem;
+    color: var(--accent-gold);
+}
+
+/* Inner Double Jadwal Frame */
+.page-jadwal-inner {
+    border: 1px solid var(--border-jadwal);
+    margin: 6px;
+    padding: 1.6rem 2rem;
+    position: relative;
+}
+
+.page-content-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+/* Centered Calligraphic Verse Ornament (بیت / قطعہ) */
+.verse-ornament {
+    text-align: center;
+    font-family: var(--font-urdu);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent-emerald);
+    margin: 1.2rem auto 0.4rem;
+    display: table;
+    padding: 0 1rem;
+}
+
+.verse-ornament::before, .verse-ornament::after {
+    content: "✤";
+    color: var(--accent-gold);
+    padding: 0 0.5rem;
+    font-size: 1.05rem;
+}
+
+/* Side-by-Side Couplets & Stanzas Grid with Central Divider */
+.couplet-block {
+    margin: 0.8rem 0;
+}
+
+.verse-couplet-grid {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: var(--verse-bg);
+}
+
+.verse-col {
+    flex: 1;
+    padding: 0.8rem 1.2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 1.5rem;
+}
+
+.verse-col-divider {
+    width: 1px;
+    background-color: var(--border-jadwal);
+    margin: 6px 0;
+    flex-shrink: 0;
+}
+
+.persian-verse {
+    font-family: var(--font-urdu);
+    font-size: calc(1.5rem * var(--font-scale));
+    font-weight: 700;
+    color: var(--persian-color);
+    line-height: var(--line-height-urdu);
+    margin-bottom: 0.25rem;
     direction: rtl;
+}
+
+.urdu-interlinear-verse {
+    font-family: var(--font-urdu);
+    font-size: calc(1.08rem * var(--font-scale) * var(--urdu-size-offset));
+    color: var(--urdu-color);
+    line-height: var(--line-height-urdu);
+    direction: rtl;
+}
+
+/* Continuous Interlinear Prose Block */
+.prose-interlinear-block {
+    margin: 0.8rem 0;
+    padding: 0.4rem 0;
+}
+
+.persian-prose {
+    font-family: var(--font-urdu);
+    font-size: calc(1.5rem * var(--font-scale));
+    font-weight: 700;
+    color: var(--persian-color);
+    line-height: var(--line-height-urdu);
+    direction: rtl;
+    text-align: justify;
+    text-justify: inter-word;
+    margin-bottom: 0.25rem;
+}
+
+.urdu-interlinear-prose {
+    font-family: var(--font-urdu);
+    font-size: calc(1.1rem * var(--font-scale) * var(--urdu-size-offset));
+    color: var(--urdu-color);
+    line-height: var(--line-height-urdu);
+    direction: rtl;
+    text-align: justify;
+    text-justify: inter-word;
+    padding-right: 0.8rem;
+    border-right: 3px solid var(--accent-crimson);
     margin-bottom: 0.5rem;
 }
 
-.verse-hemistich {
-    flex: 1;
-    min-width: 220px;
-}
-
-/* Quranic verse */
+/* Quranic verse block */
 .quran-block {
     text-align: center;
     background: var(--banner-bg);
@@ -855,52 +935,110 @@ body[data-theme="dark"] .frontispiece-title-img {
     line-height: 2.2;
     color: var(--accent-emerald);
     direction: rtl;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
 }
 
-/* Footnotes */
-.footnotes-box {
-    margin-top: 1.2rem;
-    padding-top: 0.9rem;
-    border-top: 1px dashed var(--border-color);
+.urdu-interlinear-quran {
+    font-family: var(--font-urdu);
+    font-size: calc(1.15rem * var(--font-scale) * var(--urdu-size-offset));
+    color: var(--urdu-color);
+    line-height: var(--line-height-urdu);
+    direction: rtl;
+    text-align: center;
+}
+
+/* Grouped Bottom Footnotes */
+.page-footnotes-container {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1.5px solid var(--border-jadwal);
     direction: rtl;
     text-align: right;
 }
 
-.footnote-title {
-    font-size: 0.85rem;
+.page-footnotes-title {
+    font-family: var(--font-urdu);
+    font-size: 1.12rem;
     font-weight: 700;
-    color: var(--accent-gold);
-    margin-bottom: 0.4rem;
+    color: var(--accent-crimson);
+    margin-bottom: 0.5rem;
 }
 
-.footnote-item {
+.footnote-entry {
     font-family: var(--font-urdu);
-    font-size: calc(1.05rem * var(--font-scale) * var(--urdu-size-offset));
-    line-height: var(--line-height-urdu);
+    font-size: calc(1.02rem * var(--font-scale) * var(--urdu-size-offset));
     color: var(--text-secondary);
+    line-height: 2.1;
     margin-bottom: 0.4rem;
     padding-right: 0.4rem;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
-/* Study layer (Interactive / Extended) */
-.study-layer {
-    margin-top: 1.3rem;
-    padding: 1.1rem;
-    background: var(--study-bg);
-    border: 1px solid var(--study-border);
+/* ============================================================
+   COLLAPSIBLE STUDY SCAFFOLDING (Study Edition)
+   ============================================================ */
+.study-collapse {
+    margin: 0.5rem 0 0.8rem 0;
+    border: 1px dashed var(--study-border);
     border-radius: 8px;
-    transition: background-color 0.25s ease;
+    background: var(--study-bg);
+    overflow: hidden;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
-.study-title {
+.study-collapse[open] {
+    border-style: solid;
+    border-color: var(--accent-emerald);
+    box-shadow: 0 2px 10px rgba(22, 92, 50, 0.05);
+}
+
+.study-summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 0.4rem 0.8rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-weight: 700;
+    justify-content: flex-start;
+    user-select: none;
+    outline: none;
+}
+
+.study-summary::-webkit-details-marker {
+    display: none;
+}
+
+.study-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: var(--font-urdu);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--tag-color);
+    background: var(--tag-bg);
+    border: 1px solid var(--tag-border);
+    padding: 3px 12px;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.study-summary:hover .study-badge {
+    background: var(--ctrl-bg-hover);
     color: var(--accent-emerald);
-    margin-bottom: 0.8rem;
-    font-size: 0.9rem;
+    border-color: var(--accent-emerald);
+}
+
+.study-collapse[open] .study-badge {
+    background: var(--accent-emerald);
+    color: #ffffff;
+    border-color: var(--accent-emerald);
+}
+
+.study-drawer {
+    padding: 1.1rem 1.3rem;
+    border-top: 1px solid var(--study-border);
 }
 
 .study-notes-en {
@@ -964,6 +1102,38 @@ body[data-theme="dark"] .frontispiece-title-img {
     margin: 2px;
     font-family: var(--font-urdu);
     border: 1px solid var(--tag-border);
+}
+
+/* Global Study Reading Toolbar */
+.study-reading-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 1.5rem auto 1rem;
+    max-width: 860px;
+    padding: 0 0.5rem;
+}
+
+.btn-toggle-notes {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--bg-card);
+    color: var(--accent-emerald);
+    border: 1.5px solid var(--accent-emerald);
+    padding: 0.45rem 1.2rem;
+    border-radius: 20px;
+    font-family: var(--font-urdu);
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    transition: all 0.2s ease;
+}
+
+.btn-toggle-notes:hover {
+    background: var(--accent-emerald);
+    color: #ffffff;
 }
 
 footer.site-footer {
@@ -1339,44 +1509,49 @@ footer.site-footer {
         padding: 0.8rem 0.6rem;
     }
 
-    .segment-card {
-        padding: 1.25rem 0.9rem;
-        border-radius: 10px;
-        margin-bottom: 1.25rem;
+    .book-page-leaf {
+        margin: 1.5rem auto;
+        border-radius: 4px;
     }
 
-    .segment-badge {
-        top: -10px;
-        right: 12px;
-        font-size: 0.7rem;
-        padding: 1px 8px;
+    .page-header-strip {
+        padding: 0.45rem 0.8rem;
+        font-size: 0.98rem;
     }
 
-    .persian-text {
-        font-size: calc(1.5rem * var(--font-scale));
-        line-height: 2.1;
-        margin-bottom: 0.5rem;
+    .page-header-center {
+        font-size: 1.2rem;
     }
 
-    .urdu-interlinear {
-        font-size: calc(1.1rem * var(--font-scale) * var(--urdu-size-offset));
-        line-height: var(--line-height-urdu);
-        padding: 0.5rem 0.75rem;
-        margin-bottom: 0.8rem;
+    .page-jadwal-inner {
+        margin: 4px;
+        padding: 1rem 0.8rem;
     }
 
-    .verse-line {
+    .verse-couplet-grid {
         flex-direction: column;
-        gap: 0.6rem;
     }
 
-    .verse-hemistich {
+    .verse-col-divider {
         width: 100%;
-        min-width: unset;
+        height: 1px;
+        margin: 0;
     }
 
-    .verse-hemistich:last-child {
-        padding-right: 0.5rem;
+    .verse-col {
+        padding: 0.6rem 0.5rem;
+    }
+
+    .persian-verse {
+        font-size: calc(1.35rem * var(--font-scale));
+    }
+
+    .persian-prose {
+        font-size: calc(1.35rem * var(--font-scale));
+    }
+
+    .urdu-interlinear-verse, .urdu-interlinear-prose {
+        font-size: calc(1.02rem * var(--font-scale) * var(--urdu-size-offset));
     }
 
     .quran-block {
