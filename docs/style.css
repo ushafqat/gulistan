@@ -10,6 +10,22 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Noto Naskh Arabic';
+    src: url('fonts/NotoNaskhArabic-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Naskh Arabic';
+    src: url('fonts/NotoNaskhArabic-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     /* 1. Default Theme: سبز سرورق (Cover Emerald) */
     --bg-main: #edf5ef;

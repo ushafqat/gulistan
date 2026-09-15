@@ -113,6 +113,22 @@ def generate_css():
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Noto Naskh Arabic';
+    src: url('fonts/NotoNaskhArabic-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Naskh Arabic';
+    src: url('fonts/NotoNaskhArabic-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     /* 1. Default Theme: سبز سرورق (Cover Emerald) */
     --bg-main: #edf5ef;
@@ -3070,78 +3086,97 @@ def build_html_editions(batches):
 def build_epubs(batches):
     epub_css = """
 @font-face {
-    font-family: 'Mehr Nastaliq';
-    src: url('fonts/Mehr_Nastaliq.woff') format('woff'),
-         url('fonts/Mehr_Nastaliq.ttf') format('truetype');
+    font-family: 'Noto Naskh Arabic';
+    src: url('fonts/NotoNaskhArabic-Regular.ttf') format('truetype');
     font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Noto Naskh Arabic';
+    src: url('fonts/NotoNaskhArabic-Bold.ttf') format('truetype');
+    font-weight: bold;
     font-style: normal;
 }
 body {
     direction: rtl;
     text-align: right;
-    font-family: 'Mehr Nastaliq', 'Noto Nastaliq Urdu', serif;
+    font-family: 'Noto Naskh Arabic', 'Noto Naskh', 'Geeza Pro', 'Amiri', serif;
     margin: 1.2em;
-    line-height: 2.3;
+    line-height: 1.95;
     color: #111;
 }
 h1, h2, h3 {
+    font-family: 'Noto Naskh Arabic', 'Noto Naskh', 'Geeza Pro', serif;
     text-align: center;
     color: #165c32;
     margin: 1em 0;
+    line-height: 1.4;
 }
 .persian-text {
-    font-size: 1.35em;
+    font-family: 'Noto Naskh Arabic', 'Noto Naskh', 'Geeza Pro', serif;
+    font-size: 1.25em;
     color: #0b3c5d;
     font-weight: bold;
     margin-top: 1em;
-    line-height: 2.1;
+    line-height: 1.85;
 }
 .urdu-interlinear {
+    font-family: 'Noto Naskh Arabic', 'Noto Naskh', 'Geeza Pro', serif;
     font-size: 1.05em;
     color: #222;
     margin-bottom: 1em;
     padding-right: 0.8em;
     border-right: 3px solid #ad2020;
-    line-height: 2.3;
+    line-height: 1.9;
 }
 .couplet {
+    font-family: 'Noto Naskh Arabic', 'Noto Naskh', 'Geeza Pro', serif;
     text-align: center;
     margin: 1.2em 0;
     padding: 0.8em;
     background: #f7fbf8;
     border: 1px solid #c4ded0;
     border-radius: 6px;
+    line-height: 1.85;
 }
 .verse-m1, .verse-m2 {
     display: block;
     margin: 0.3em 0;
+    line-height: 1.85;
 }
 .quran {
+    font-family: 'Noto Naskh Arabic', 'Noto Naskh', 'Geeza Pro', serif;
     text-align: center;
     color: #165c32;
-    font-size: 1.3em;
+    font-size: 1.25em;
     margin: 1em 0;
+    line-height: 1.8;
 }
 .footnotes {
+    font-family: 'Noto Naskh Arabic', 'Noto Naskh', 'Geeza Pro', serif;
     margin-top: 1.5em;
     border-top: 1px dashed #ccc;
     padding-top: 0.8em;
-    font-size: 0.85em;
+    font-size: 0.88em;
     color: #555;
+    line-height: 1.65;
 }
 .study-box {
+    font-family: 'Noto Naskh Arabic', 'Noto Naskh', 'Geeza Pro', serif;
     background-color: #f7fbf8;
     border: 1px solid #c4ded0;
     border-radius: 6px;
     padding: 1em;
     margin: 1.2em 0;
     font-size: 0.9em;
+    line-height: 1.65;
 }
 table.vocab {
     width: 100%;
     border-collapse: collapse;
     font-size: 0.85em;
     margin-top: 0.8em;
+    font-family: 'Noto Naskh Arabic', 'Noto Naskh', 'Geeza Pro', serif;
 }
 table.vocab th {
     background-color: #e4f2e7;
@@ -3149,11 +3184,13 @@ table.vocab th {
     border: 1px solid #c4ded0;
     padding: 6px 8px;
     text-align: right;
+    font-family: 'Noto Naskh Arabic', 'Noto Naskh', 'Geeza Pro', serif;
 }
 table.vocab td {
     border: 1px solid #c4ded0;
     padding: 6px 8px;
     text-align: right;
+    font-family: 'Noto Naskh Arabic', 'Noto Naskh', 'Geeza Pro', serif;
 }
 table.verse-table {
     width: 100%;
@@ -3161,12 +3198,15 @@ table.verse-table {
     border-collapse: collapse;
     border: 1px solid #c4ded0;
     background-color: #f7fbf8;
+    font-family: 'Noto Naskh Arabic', 'Noto Naskh', 'Geeza Pro', serif;
 }
 table.verse-table td {
     width: 50%;
     text-align: center;
     vertical-align: top;
     padding: 0.6em 0.8em;
+    font-family: 'Noto Naskh Arabic', 'Noto Naskh', 'Geeza Pro', serif;
+    line-height: 1.85;
 }
 table.verse-table td.col-divider {
     border-left: 1px solid #165c32;
@@ -3177,6 +3217,7 @@ table.verse-table td.col-divider {
     font-weight: bold;
     color: #165c32;
     margin: 1.2em 0 0.3em 0;
+    font-family: 'Noto Naskh Arabic', 'Noto Naskh', 'Geeza Pro', serif;
 }
 .frontispiece-meta-box {
     background: #fdfefe;
@@ -3185,6 +3226,7 @@ table.verse-table td.col-divider {
     padding: 1.5em;
     margin: 1.5em auto;
     text-align: center;
+    font-family: 'Noto Naskh Arabic', 'Noto Naskh', 'Geeza Pro', serif;
 }
 """
 
@@ -3212,8 +3254,8 @@ table.verse-table td.col-divider {
         epub_orig.set_cover(cover_full_path)
         epub_study.set_cover(cover_full_path)
 
-    # Embed Mehr Nastaliq fonts (both WOFF and TTF for universal e-reader support)
-    for font_file, mime in [("Mehr_Nastaliq.woff", "font/woff"), ("Mehr_Nastaliq.ttf", "font/ttf")]:
+    # Embed Noto Naskh Arabic fonts (Regular and Bold for full typographic fidelity)
+    for font_file, mime in [("NotoNaskhArabic-Regular.ttf", "font/ttf"), ("NotoNaskhArabic-Bold.ttf", "font/ttf")]:
         font_path = os.path.join(FONTS_DIR, font_file)
         if os.path.exists(font_path):
             epub_orig.add_font(font_path, font_file, mime)

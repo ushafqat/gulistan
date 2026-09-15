@@ -88,7 +88,7 @@ class EpubBook:
 body {
     direction: rtl;
     text-align: right;
-    font-family: serif;
+    font-family: 'Noto Naskh Arabic', serif;
     margin: 1em;
     line-height: 2.0;
 }

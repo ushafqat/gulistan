@@ -41,7 +41,7 @@ This publishing pipeline automatically compiles two complementary editions:
 
 Both EPUB3 editions (`dist/Gulistan_Original.epub` and `dist/Gulistan_Study_Edition.epub`) feature:
 * **Embedded Authentic Cover Art:** Appears automatically in the Apple Books shelf and on the title page.
-* **Embedded Mehr Nastaliq Web Font:** Displays authentic Nastaliq offline natively without requiring external font installations.
+* **Embedded Noto Naskh Arabic Font (Regular & Bold):** Displays crisp, perfectly rendered Arabic/Persian/Urdu text offline natively across Apple Books, Kindle, Kobo, and e-readers without baseline clipping or distortion.
 * **RTL Reading Order:** Full IDPF EPUB3 compliance with RTL page progression and EPUB2 NCX fallback.
 
 ---
