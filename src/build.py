@@ -3268,13 +3268,11 @@ table.verse-table td.col-divider {
             epub_orig.add_image(img_path, img_file, "image/png")
             epub_study.add_image(img_path, img_file, "image/png")
 
+    # A. Metadata & Cover Plate
     for b in batches:
         for sec in b["sections"]:
-            stype = sec.get("content_type")
-            sid = sec["section_id"]
-            title = sec["title_ur"]
-
-            if stype == "metadata":
+            if sec.get("content_type") == "metadata":
+                title = sec["title_ur"]
                 body = """<div style="text-align:center;margin:1.5em 0;">
   <img src="images/title_calligraphy.png" alt="گُلِسْتَانِ مُتَرْجَمْ" style="max-width:85%;height:auto;"/>
 </div>
@@ -3285,10 +3283,15 @@ table.verse-table td.col-divider {
     <img src="images/publisher_cartouche.png" alt="مکتبہ رحمانیہ لاہور" style="max-width:55%;height:auto;"/>
   </div>
 </div>"""
-                epub_orig.add_chapter(title, f"{sid}.xhtml", body)
-                epub_study.add_chapter(title, f"{sid}.xhtml", body)
+                epub_orig.add_chapter(title, "cover_metadata.xhtml", body)
+                epub_study.add_chapter(title, "cover_metadata.xhtml", body)
+                break
 
-            elif stype == "urdu_essay":
+    # B. Foreword / Biography of Sheikh Saadi
+    for b in batches:
+        for sec in b["sections"]:
+            if sec.get("content_type") == "urdu_essay":
+                title = sec["title_ur"]
                 body = f"<h2>{escape_xml(title)}</h2>"
                 if sec.get("khutbah"):
                     body += f'<p style="text-align:center;font-weight:bold;color:#165c32;margin:1.5em 0;font-size:1.3em;">{escape_xml(sec["khutbah"])}</p>'
@@ -3311,92 +3314,208 @@ table.verse-table td.col-divider {
                 sig = sec.get("signature")
                 if sig:
                     body += f'<div style="margin-top:2em;text-align:left;border-top:1px solid #ccc;padding-top:1em;"><p><strong style="color:#ad2020;">{escape_xml(sig.get("author"))}</strong><br/>{escape_xml(sig.get("role"))}<br/><small>{escape_xml(sig.get("date"))}</small></p></div>'
-                epub_orig.add_chapter(title, f"{sid}.xhtml", body)
-                epub_study.add_chapter(title, f"{sid}.xhtml", body)
+                epub_orig.add_chapter(title, "pesh_lafz.xhtml", body)
+                epub_study.add_chapter(title, "pesh_lafz.xhtml", body)
+                break
 
-            elif stype == "bilingual_text":
-                body_o = f"<h2>{escape_xml(title)}</h2>"
-                body_s = f"<h2>{escape_xml(title)}</h2>"
-
+    # C. Bilingual Book Pages (Organized Page-by-Page like the Real Book)
+    bilingual_pages = {}
+    for b in batches:
+        for sec in b["sections"]:
+            if sec.get("content_type") == "bilingual_text":
                 for e in sec.get("entries", []):
-                    # Original rendering
-                    entry_o = ""
-                    if e.get("section_banner"):
-                        sb = e["section_banner"]
-                        entry_o += f"""<div style="margin:22px 0 16px 0;padding:12px 16px;background:#e2f0e6;border:2px solid #165c32;border-radius:6px;text-align:center;">
-  <div style="font-size:1.35em;font-weight:bold;color:#165c32;line-height:2.0;">{escape_xml(sb.get("persian",""))}</div>
-  <div style="font-size:0.95em;color:#4a5c52;margin-top:4px;line-height:1.8;">{escape_xml(sb.get("urdu",""))}</div>
+                    bp = str(e.get("book_page") or "1")
+                    if bp not in bilingual_pages:
+                        bilingual_pages[bp] = []
+                    bilingual_pages[bp].append(e)
+
+    sorted_pages = sorted(bilingual_pages.keys(), key=lambda x: int(x) if x.isdigit() else 999)
+    for bp in sorted_pages:
+        bp_num = int(bp) if bp.isdigit() else 1
+        urdu_page = to_urdu_numerals(bp_num)
+        page_entries = bilingual_pages[bp]
+
+        if bp_num >= 25:
+            sec_label = "باب ۱"
+            chap_title = f"باب ۱: در سیرتِ پادشاہاں — صفحہ {urdu_page}"
+        else:
+            sec_label = "دیباچہ"
+            chap_title = f"دیباچہ — صفحہ {urdu_page}"
+
+        # 3-Part Running Header (Exact Lithograph Structure)
+        header_strip_html = f"""<table class="epub-header-strip" style="width:100%;border-bottom:2px solid #165c32;margin-bottom:1.2em;padding-bottom:0.3em;">
+  <tr>
+    <td style="text-align:right;font-weight:bold;color:#165c32;width:33%;">{escape_xml(sec_label)}</td>
+    <td style="text-align:center;font-weight:bold;color:#ad2020;width:34%;">صفحہ {urdu_page}</td>
+    <td style="text-align:left;font-weight:bold;color:#165c32;width:33%;">گُلِسْتَانِ مُتَرْجَمْ</td>
+  </tr>
+</table>"""
+
+        body_content = header_strip_html
+
+        if bp_num == 25:
+            body_content += """<div style="text-align:center;margin:1.5em 0;padding:12px;background:#e2f0e6;border:2px solid #165c32;border-radius:8px;">
+  <h2 style="margin:0;color:#165c32;font-size:1.35em;">بَابِ اَوَّلْ: دَرْ سِیْرَتِ پَادْشَاہَاں</h2>
+  <div style="color:#4a5c52;margin-top:6px;font-size:0.95em;">پہلا باب : بادشاہوں کی عادت کے بیان میں</div>
 </div>"""
-                    entry_o += f'<div id="{e["id"]}">'
-                    if e["type"] in ["bismillah", "quran"]:
-                        entry_o += f'<div class="quran">{escape_xml(e.get("persian") or e.get("arabic"))}</div>'
-                        entry_o += f'<div class="urdu-interlinear" style="text-align:center;">{escape_xml(e["urdu_interlinear"])}</div>'
-                    elif e["type"] == "prose":
-                        entry_o += f'<div class="persian-text">{escape_xml(e["persian"])}</div>'
-                        entry_o += f'<div class="urdu-interlinear">{escape_xml(e["urdu_interlinear"])}</div>'
-                    elif e["type"] == "couplet":
-                        if e.get("header_persian"):
-                            entry_o += f'<div class="verse-ornament">✤ {escape_xml(e["header_persian"])} ✤</div>'
-                        entry_o += f"""<table class="verse-table">
+
+        # Map footnotes for this page
+        page_footnotes = []
+        fn_map = {}
+        for e in page_entries:
+            for fn in e.get("footnotes", []):
+                if fn not in fn_map:
+                    page_footnotes.append(fn)
+                    fn_map[fn] = len(page_footnotes)
+
+        # Render classical text & Urdu interlinear (Continuous flow)
+        for e in page_entries:
+            if e.get("section_banner"):
+                sb = e["section_banner"]
+                body_content += f"""<div style="margin:20px 0 14px 0;padding:10px 14px;background:#e2f0e6;border:2px solid #165c32;border-radius:6px;text-align:center;">
+  <div style="font-size:1.25em;font-weight:bold;color:#165c32;line-height:1.8;">{escape_xml(sb.get("persian",""))}</div>
+  <div style="font-size:0.95em;color:#4a5c52;margin-top:4px;line-height:1.7;">{escape_xml(sb.get("urdu",""))}</div>
+</div>"""
+
+            fn_callouts = []
+            for fn in e.get("footnotes", []):
+                fn_idx = fn_map[fn]
+                urdu_sym = f"{to_urdu_numerals(fn_idx)}؎"
+                fn_callouts.append(f'<sup style="color:#ad2020;font-weight:bold;">[{urdu_sym}]</sup>')
+            fn_html = "".join(fn_callouts)
+
+            etype = e.get("type", "prose")
+            eid = e.get("id", "")
+
+            if etype in ["bismillah", "quran"]:
+                arabic_txt = e.get("arabic") or e.get("persian", "")
+                body_content += f"""<div id="{eid}" style="margin:1em 0;">
+  <div class="quran">{escape_xml(arabic_txt)}{fn_html}</div>
+  <div class="urdu-interlinear" style="text-align:center;border-right:none;">{escape_xml(e.get("urdu_interlinear",""))}</div>
+</div>"""
+
+            elif etype == "prose":
+                body_content += f"""<div id="{eid}" style="margin:1em 0;">
+  <div class="persian-text">{escape_xml(e.get("persian",""))}{fn_html}</div>
+  <div class="urdu-interlinear">{escape_xml(e.get("urdu_interlinear",""))}</div>
+</div>"""
+
+            elif etype == "couplet":
+                header_txt = e.get("header_persian")
+                ornament_html = f'<div class="verse-ornament">✤ {escape_xml(header_txt)} ✤</div>' if header_txt else ""
+                body_content += f"""<div id="{eid}" style="margin:1em 0;">
+{ornament_html}
+<table class="verse-table">
   <tr>
     <td>
-      <div class="persian-text" style="font-size:1.15em;margin:0;">{escape_xml(e["persian_m1"])}</div>
-      <div class="urdu-interlinear" style="border:none;margin:0.2em 0 0 0;padding:0;">{escape_xml(e["urdu_m1"])}</div>
+      <div class="persian-text" style="font-size:1.15em;margin:0;">{escape_xml(e.get("persian_m1",""))}</div>
+      <div class="urdu-interlinear" style="border:none;margin:0.2em 0 0 0;padding:0;">{escape_xml(e.get("urdu_m1",""))}</div>
     </td>
     <td class="col-divider">
-      <div class="persian-text" style="font-size:1.15em;margin:0;">{escape_xml(e["persian_m2"])}</div>
-      <div class="urdu-interlinear" style="border:none;margin:0.2em 0 0 0;padding:0;">{escape_xml(e["urdu_m2"])}</div>
+      <div class="persian-text" style="font-size:1.15em;margin:0;">{escape_xml(e.get("persian_m2",""))}{fn_html}</div>
+      <div class="urdu-interlinear" style="border:none;margin:0.2em 0 0 0;padding:0;">{escape_xml(e.get("urdu_m2",""))}</div>
+    </td>
+  </tr>
+</table>
+</div>"""
+
+            elif etype == "stanza":
+                header_txt = e.get("header_persian")
+                ornament_html = f'<div class="verse-ornament">✤ {escape_xml(header_txt)} ✤</div>' if header_txt else ""
+                lines = e.get("lines", [])
+                body_content += f"""<div id="{eid}" style="margin:1em 0;">
+{ornament_html}"""
+                for l_idx, line in enumerate(lines):
+                    is_last_line = (l_idx == len(lines) - 1)
+                    line_fn_html = fn_html if is_last_line else ""
+                    body_content += f"""<table class="verse-table">
+  <tr>
+    <td>
+      <div class="persian-text" style="font-size:1.15em;margin:0;">{escape_xml(line.get("persian_m1",""))}</div>
+      <div class="urdu-interlinear" style="border:none;margin:0.2em 0 0 0;padding:0;">{escape_xml(line.get("urdu_m1",""))}</div>
+    </td>
+    <td class="col-divider">
+      <div class="persian-text" style="font-size:1.15em;margin:0;">{escape_xml(line.get("persian_m2",""))}{line_fn_html}</div>
+      <div class="urdu-interlinear" style="border:none;margin:0.2em 0 0 0;padding:0;">{escape_xml(line.get("urdu_m2",""))}</div>
     </td>
   </tr>
 </table>"""
-                    elif e["type"] == "stanza":
-                        if e.get("header_persian"):
-                            entry_o += f'<div class="verse-ornament">✤ {escape_xml(e["header_persian"])} ✤</div>'
-                        for l in e.get("lines", []):
-                            entry_o += f"""<table class="verse-table">
-  <tr>
-    <td>
-      <div class="persian-text" style="font-size:1.15em;margin:0;">{escape_xml(l["persian_m1"])}</div>
-      <div class="urdu-interlinear" style="border:none;margin:0.2em 0 0 0;padding:0;">{escape_xml(l["urdu_m1"])}</div>
-    </td>
-    <td class="col-divider">
-      <div class="persian-text" style="font-size:1.15em;margin:0;">{escape_xml(l["persian_m2"])}</div>
-      <div class="urdu-interlinear" style="border:none;margin:0.2em 0 0 0;padding:0;">{escape_xml(l["urdu_m2"])}</div>
-    </td>
-  </tr>
-</table>"""
+                body_content += "</div>"
 
-                    if e.get("footnotes"):
-                        entry_o += '<div class="footnotes"><strong>حواشی:</strong><br/>'
-                        for fn in e["footnotes"]:
-                            entry_o += f'• {escape_xml(fn)}<br/>'
-                        entry_o += '</div>'
-                    entry_o += '</div>'
+        # End of Page: Authentic Urdu Footnotes (For both Original & Study editions)
+        if page_footnotes:
+            body_content += f"""<div class="footnotes">
+  <div style="text-align:center;font-weight:bold;color:#165c32;margin-bottom:0.6em;font-size:1.05em;">✤ حواشی کتاب (صفحہ {urdu_page}) ✤</div>"""
+            for fn_idx, fn in enumerate(page_footnotes, start=1):
+                urdu_sym = f"{to_urdu_numerals(fn_idx)}؎"
+                body_content += f'<div style="margin-bottom:0.4em;"><strong style="color:#ad2020;">[{urdu_sym}]</strong> {escape_xml(fn)}</div>'
+            body_content += "</div>"
 
-                    body_o += entry_o + '<hr/>'
-                    body_s += entry_o
+        # For Original EPUB: page content ends here
+        body_orig = body_content
 
-                    # Study rendering
-                    english_trans = e.get("english_trans", "")
-                    study = e.get("study", {})
-                    if english_trans or study.get("vocabulary") or study.get("notes_en") or study.get("notes_ur"):
-                        body_s += '<div class="study-box">'
-                        if english_trans:
-                            body_s += f'<div style="font-style:italic;margin-bottom:0.7em;color:#1a221e;background:#faf7f0;padding:8px 12px;border-left:3px solid #996515;"><strong>English Translation:</strong> “{escape_xml(english_trans)}”</div>'
-                        if study.get("notes_en"):
-                            body_s += f'<p><strong>Study Note (English):</strong> {escape_xml(study["notes_en"])}</p>'
-                        if study.get("notes_ur"):
-                            body_s += f'<p><strong>وضاحت (اردو):</strong> {escape_xml(study["notes_ur"])}</p>'
-                        if study.get("vocabulary"):
-                            body_s += '<table class="vocab"><tr><th>لفظ</th><th>English</th><th>معنی (اردو)</th><th>اردو مشترک الفاظ</th></tr>'
-                            for v in study["vocabulary"]:
-                                body_s += f'<tr><td><strong>{escape_xml(v["persian"])}</strong></td><td>{escape_xml(v.get("meaning_en",""))}</td><td>{escape_xml(v.get("meaning_ur",""))}</td><td>{escape_xml(v.get("urdu_cognates",""))}</td></tr>'
-                            body_s += '</table>'
-                        body_s += '</div>'
-                    body_s += '<hr/>'
+        # For Study EPUB: Append Unified End-of-Page Study Apparatus
+        page_trans_items = []
+        page_vocab_items = []
+        for e_idx, e in enumerate(page_entries, start=1):
+            en_trans = e.get("english_trans", "")
+            study = e.get("study", {})
+            notes_en = study.get("notes_en", "")
+            notes_ur = study.get("notes_ur", "")
+            if en_trans or notes_en or notes_ur:
+                urdu_idx = to_urdu_numerals(e_idx)
+                item_html = f'<div class="study-trans-card" style="background:#ffffff;border-left:3px solid #9e6b18;border-radius:4px;padding:8px 12px;margin-bottom:0.8em;font-size:0.9em;">'
+                item_html += f'<div style="font-size:0.85em;color:#9e6b18;font-weight:bold;margin-bottom:3px;">فقرہ / شعر [{urdu_idx}]</div>'
+                if en_trans:
+                    item_html += f'<div style="font-style:italic;color:#1a221e;line-height:1.6;margin-bottom:4px;">“{escape_xml(en_trans)}”</div>'
+                if notes_en:
+                    item_html += f'<div style="font-size:0.88em;color:#333;margin-top:4px;"><strong>Note:</strong> {escape_xml(notes_en)}</div>'
+                if notes_ur:
+                    item_html += f'<div style="font-size:0.92em;color:#165c32;margin-top:4px;"><strong>وضاحت:</strong> {escape_xml(notes_ur)}</div>'
+                item_html += '</div>'
+                page_trans_items.append(item_html)
 
-                epub_orig.add_chapter(title, f"{sid}.xhtml", body_o)
-                epub_study.add_chapter(title, f"{sid}.xhtml", body_s)
+            for v in study.get("vocabulary", []):
+                page_vocab_items.append(v)
+
+        body_study = body_content
+        if page_trans_items or page_vocab_items:
+            body_study += f"""<div class="page-study-apparatus" style="background-color:#f7fbf8;border:1px solid #c4ded0;border-top:2px solid #165c32;border-radius:8px;padding:1.2em;margin-top:2em;">
+  <div style="text-align:center;border-bottom:2px solid #165c32;padding-bottom:0.5em;margin-bottom:1em;">
+    <div style="font-size:1.15em;font-weight:bold;color:#165c32;">مطالعہ و فرہنگ — صفحہ {urdu_page}</div>
+    <div style="font-size:0.85em;color:#4a5c52;">Study Notes, English Translation &amp; Vocabulary for Page {bp_num}</div>
+  </div>"""
+
+            if page_trans_items:
+                body_study += '<div style="font-weight:bold;color:#165c32;margin-bottom:0.6em;font-size:0.95em;">انگریزی ترجمہ و ادبی نکات (Translations &amp; Notes):</div>'
+                body_study += "\n".join(page_trans_items)
+
+            if page_vocab_items:
+                body_study += f"""<div style="margin-top:1.2em;">
+  <div style="font-weight:bold;color:#165c32;margin-bottom:0.5em;font-size:0.95em;">فرہنگ و لغت — صفحہ {urdu_page} (Vocabulary &amp; Root Analysis):</div>
+  <table class="vocab">
+    <tr>
+      <th>لفظ</th>
+      <th>صرفی حیثیت (Grammar)</th>
+      <th>English</th>
+      <th>معنی (اردو)</th>
+      <th>مشترک الفاظ (Cognates)</th>
+    </tr>"""
+                for v in page_vocab_items:
+                    body_study += f"""    <tr>
+      <td><strong>{escape_xml(v.get("persian",""))}</strong></td>
+      <td style="font-size:0.85em;">{escape_xml(v.get("grammar",""))}</td>
+      <td>{escape_xml(v.get("meaning_en",""))}</td>
+      <td>{escape_xml(v.get("meaning_ur",""))}</td>
+      <td style="font-size:0.85em;">{escape_xml(v.get("urdu_cognates",""))}</td>
+    </tr>"""
+                body_study += """  </table>
+</div>"""
+            body_study += "</div>"
+
+        filename = f"page_{bp_num:03d}.xhtml"
+        epub_orig.add_chapter(chap_title, filename, body_orig)
+        epub_study.add_chapter(chap_title, filename, body_study)
 
     orig_epub_path = os.path.join(DIST_DIR, "Gulistan_Original.epub")
     study_epub_path = os.path.join(DIST_DIR, "Gulistan_Study_Edition.epub")
